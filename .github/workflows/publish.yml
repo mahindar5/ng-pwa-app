@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: dist
-          path: "./dist/ng-pwa-app"
+          path: dist
 
   deploy:
     needs: build
