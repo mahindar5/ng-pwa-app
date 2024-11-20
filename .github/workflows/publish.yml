@@ -23,8 +23,9 @@ jobs:
           cache: "npm"
       - name: Configure npm for publishing
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-          echo "registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "@mahindar5:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
       - run: npm ci
       - run: npm run build -- --output-path=dist --base-href=/ng-pwa-app/
 
