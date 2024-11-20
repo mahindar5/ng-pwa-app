@@ -1,0 +1,77 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="display-flex justify-content-space-between width-100-pc">
+
+				<div class="m-10">AI Agent</div>
+				<!--
+				@if(fileList.length > 0) {
+				<small class="m-l-20">
+					<ion-label>Total: {{ (fileList).length }}, </ion-label>
+					<ion-label>Done: {{ (fileList | search:'status':'done').length }}, </ion-label>
+					<ion-label>Failed: {{ (fileList | search:'status':'error').length }} </ion-label>
+				</small>
+				} -->
+				<span>
+					<ion-select [(ngModel)]="selectedModel" interface="popover">
+						@for(model of models; track model) {
+						<ion-select-option [disabled]="model.disabled" [value]="model">
+							{{ model.name }}
+							@if(model.retryAfter && model.disabled) {
+							<small class="m-l-10">({{ model.retryAfterDate }})</small>
+							}
+						</ion-select-option>
+						}
+					</ion-select>
+				</span>
+				<span>
+					<ion-select [(ngModel)]="selectedPrompt" interface="popover" (ngModelChange)="updateFileList()">
+						@for(prompt of prompts; track prompt) {
+						<ion-select-option [value]="prompt">{{ prompt.name }}</ion-select-option>
+						}
+					</ion-select>
+				</span>
+			</div>
+		</ion-title>
+		<ion-buttons slot="end">
+			<ion-button title="Select Files" fill="clear" (click)="selectFiles()">
+				<ion-icon name="document-outline"></ion-icon>
+			</ion-button>
+			<ion-button title="Select Folder" fill="clear" (click)="selectFolder()">
+				<ion-icon name="folder-outline"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content #myContent scrollEvents="true" scrollbarThemeDirective>
+	<div #dropZone class="drop-zone" (dragover)="handleDrag($event, 'over')" (dragleave)="handleDrag($event, 'leave')"
+		(drop)="onDrop($event)">
+		<div class="drop-message">Drag and drop a file here</div>
+	</div>
+	<div class="m-20">
+		<ion-textarea rows="10" label="Prompt" [counter]="true" maxlength="20000" color="primary"
+			labelPlacement="stacked" [(ngModel)]="this.selectedPrompt.prompt" (keyup.enter)="start()"
+			placeholder="Type your prompt" fill="solid">
+			<ion-button fill="clear" slot="end" aria-label="Show/hide"
+				[disabled]="!this.selectedPrompt.prompt || this.fileList.length <1 ||( this.isProcessing)"
+				(click)="start()">
+				<ion-icon slot="icon-only" name="send" aria-hidden="true"></ion-icon>
+			</ion-button>
+		</ion-textarea>
+	</div>
+	<ion-list>
+		@for (file of fileList; track file) {
+		<ion-progress-bar [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
+			[value]="file.status === 'done' ? 1 : file.status === 'error' ? 0.5 : 0"
+			[color]="file.status === 'error' ? 'danger' : 'primary'">
+		</ion-progress-bar>
+		<ion-item [title]="file.res">
+			<ion-label>{{ file.path }}</ion-label>
+		</ion-item>
+		}
+	</ion-list>
+</ion-content>
