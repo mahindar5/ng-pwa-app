@@ -35,6 +35,7 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@main
         with:
+          name: github-pages
           path: dist/browser
 
   deploy:
