@@ -48,7 +48,7 @@
 			labelPlacement="stacked" [(ngModel)]="this.selectedPrompt().prompt" (keyup.enter)="processFiles()"
 			placeholder="Type your prompt" fill="solid">
 			<ion-button fill="clear" slot="end" aria-label="Show/hide"
-				[disabled]="!this.selectedPrompt().prompt || this.fileList().length <1 ||( this.isProcessing)"
+				[disabled]="!this.selectedPrompt().prompt || this.fileList().length <1 ||( this.isProcessing())"
 				(click)="processFiles()">
 				<ion-icon slot="icon-only" name="send" aria-hidden="true"></ion-icon>
 			</ion-button>

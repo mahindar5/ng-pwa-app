@@ -12,8 +12,9 @@ import { cloudDoneOutline, createOutline, documentOutline, folderOutline, send }
 	standalone: true,
 	providers: [GithubCopilotService, FileService],
 	imports: [
-		FormsModule, IonHeader, IonProgressBar, IonToolbar, IonButtons, IonMenuButton, IonTitle,
-		IonButton, IonIcon, IonContent, IonList, IonItem, IonLabel, IonTextarea, IonSelect, IonSelectOption
+		FormsModule, IonHeader, IonProgressBar, IonToolbar, IonButtons,
+		IonMenuButton, IonTitle, IonButton, IonIcon, IonContent,
+		IonList, IonItem, IonLabel, IonTextarea, IonSelect, IonSelectOption
 	],
 })
 export class AIAgentComponent implements OnInit {
@@ -27,7 +28,7 @@ export class AIAgentComponent implements OnInit {
 	selectedPrompt = signal(prompts[0]);
 	prompts = signal(prompts);
 	models = signal<GithubCopilotModel[]>([]);
-	selectedModel = signal<GithubCopilotModel>(this.models()[0]);
+	selectedModel = signal<GithubCopilotModel>({} as GithubCopilotModel);
 	allFileHandles = signal<FileItem[]>([]);
 	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
 
@@ -40,9 +41,9 @@ export class AIAgentComponent implements OnInit {
 	}
 
 	private loadModels(): void {
-		const models = this.githubCopilotService.loadModels();
-		this.models.set(models);
-		this.selectedModel.set(models.find(m => !m.disabled) || models[0]);
+		const loadedModels = this.githubCopilotService.loadModels();
+		this.models.set(loadedModels);
+		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
 	}
 
 	private async showAuthenticationAlert(data: DeviceResponse): Promise<void> {
@@ -50,20 +51,18 @@ export class AIAgentComponent implements OnInit {
 		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
 		const message = `Please visit ${verification_uri} and enter code ${user_code} to authenticate. Code expires at ${expirationTime}.`;
 
-		return new Promise<void>(async (resolve) => {
-			const alert = await this.alertController.create({
-				header: 'Authentication',
-				message,
-				buttons: [
-					{ text: 'Completed', handler: () => resolve() },
-					{ text: 'Cancel', role: 'cancel' },
-					{ text: 'Copy Code', handler: () => { navigator.clipboard.writeText(user_code); return false; } },
-					{ text: 'Open Browser', handler: () => { window.open(verification_uri, '_blank'); return false; } }
-				]
-			});
-			await alert.present();
-			await alert.onDidDismiss();
+		const alert = await this.alertController.create({
+			header: 'Authentication',
+			message,
+			buttons: [
+				{ text: 'Completed', handler: () => { } },
+				{ text: 'Cancel', role: 'cancel' },
+				{ text: 'Copy Code', handler: () => { navigator.clipboard.writeText(user_code); return false; } },
+				{ text: 'Open Browser', handler: () => { window.open(verification_uri, '_blank'); return false; } }
+			]
 		});
+		await alert.present();
+		await alert.onDidDismiss();
 	}
 
 	async processFiles(): Promise<void> {
@@ -73,11 +72,17 @@ export class AIAgentComponent implements OnInit {
 				try {
 					const file = await fileItem.handle.getFile();
 					const content = await file.text();
-					const fileExt = fileItem.path.split('.').pop();
+					const fileExt = fileItem.path.split('.').pop()!;
 					this.selectedPrompt.set(prompts.find(p => p.name === fileExt) || prompts[0]);
 					const finalPrompt = `${this.selectedPrompt().prompt}\n\nCode for ${fileItem.handle.name}\n\n${content}`;
+
 					fileItem.status = 'inprogress';
-					let response = await this.githubCopilotService.chat(finalPrompt, this.selectedModel().name, this.showAuthenticationAlert.bind(this));
+					let response = await this.githubCopilotService.chat(
+						finalPrompt,
+						this.selectedModel().name,
+						this.showAuthenticationAlert.bind(this)
+					);
+
 					if (response.status === 429) {
 						const model = this.models().find(m => m.name === this.selectedModel().name);
 						if (model) {
@@ -88,11 +93,11 @@ export class AIAgentComponent implements OnInit {
 						}
 						throw new Error('Rate limit exceeded. Please try again later.');
 					}
-					response = this.fileService.extractCode(response);
+
+					fileItem.res = this.fileService.extractCode(response);
 					fileItem.status = 'done';
-					fileItem.res = response;
 					await this.fileService.writeToFile(fileItem);
-				} catch (error: unknown) {
+				} catch (error) {
 					console.error(error);
 					fileItem.status = 'error';
 					fileItem.res = (error as Error).message;
