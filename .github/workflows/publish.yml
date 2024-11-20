@@ -12,6 +12,7 @@ on:
 permissions:
   contents: read # This is necessary to checkout the repository
   id-token: write # This is necessary to deploy to GitHub Pages
+  pages: write # This is necessary to deploy to GitHub Pages
 
 jobs:
   build:
