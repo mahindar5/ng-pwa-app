@@ -45,11 +45,11 @@
 	</div>
 	<div class="m-20">
 		<ion-textarea rows="10" label="Prompt" [counter]="true" maxlength="20000" color="primary"
-			labelPlacement="stacked" [(ngModel)]="this.selectedPrompt().prompt" (keyup.enter)="start()"
+			labelPlacement="stacked" [(ngModel)]="this.selectedPrompt().prompt" (keyup.enter)="processFiles()"
 			placeholder="Type your prompt" fill="solid">
 			<ion-button fill="clear" slot="end" aria-label="Show/hide"
 				[disabled]="!this.selectedPrompt().prompt || this.fileList().length <1 ||( this.isProcessing)"
-				(click)="start()">
+				(click)="processFiles()">
 				<ion-icon slot="icon-only" name="send" aria-hidden="true"></ion-icon>
 			</ion-button>
 		</ion-textarea>

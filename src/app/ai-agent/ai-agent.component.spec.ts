@@ -1,23 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AIAgentComponent } from './ai-agent.component';
 
-import { AiAgentComponent } from './ai-agent.component';
 
 describe('AiAgentComponent', () => {
-  let component: AiAgentComponent;
-  let fixture: ComponentFixture<AiAgentComponent>;
+	let component: AIAgentComponent;
+	let fixture: ComponentFixture<AIAgentComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AiAgentComponent]
-    })
-    .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [AIAgentComponent]
+		})
+			.compileComponents();
 
-    fixture = TestBed.createComponent(AiAgentComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(AIAgentComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
