@@ -19,7 +19,10 @@
     "module": "ES2022",
 	"typeRoots": [
 	  "node_modules/@types"
-	]
+	],
+	"paths": {
+		"@mahindar5/common-lib": ["../common-lib/dist"]
+	}
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
