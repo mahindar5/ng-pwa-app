@@ -5,9 +5,13 @@ name: ng-pwa-app-deploy
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  packages: write
+  contents: read
 
 jobs:
   build:
