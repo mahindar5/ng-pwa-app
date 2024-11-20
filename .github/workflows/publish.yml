@@ -34,7 +34,7 @@ jobs:
       - run: npm ci
       - run: npm run build  -- --configuration=production --output-path=dist
       - name: Archive production artifacts
-        uses: actions/upload-artifact@main
+        uses: actions/upload-pages-artifact@main
         with:
           name: github-pages
           path: dist/browser
