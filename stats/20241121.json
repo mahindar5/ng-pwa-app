@@ -11643,7 +11643,7 @@
       "format": "esm"
     },
     "src/app/ai-agent/ai-agent.component.ts": {
-      "bytes": 19654,
+      "bytes": 19704,
       "imports": [
         {
           "path": "@angular/common",
@@ -12038,7 +12038,7 @@
       },
       "bytes": 952
     },
-    "chunk-SSCXYNT6.js": {
+    "chunk-EMEZN6VA.js": {
       "imports": [
         {
           "path": "chunk-LZJGM7G2.js",
@@ -12111,12 +12111,12 @@
       "entryPoint": "src/app/ai-agent/ai-agent.component.ts",
       "inputs": {
         "src/app/ai-agent/ai-agent.component.ts": {
-          "bytesInOutput": 8710
+          "bytesInOutput": 8775
         }
       },
-      "bytes": 9714
+      "bytes": 9775
     },
-    "main-OY3UVTVA.js": {
+    "main-LCOFW3LI.js": {
       "imports": [
         {
           "path": "chunk-LZJGM7G2.js",
@@ -12183,7 +12183,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SSCXYNT6.js",
+          "path": "chunk-EMEZN6VA.js",
           "kind": "dynamic-import"
         }
       ],
