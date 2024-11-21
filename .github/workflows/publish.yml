@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read # This is necessary to checkout the repository
+  contents: write # This is necessary to checkout the repository and write the artifacts
   id-token: write # This is necessary to deploy to GitHub Pages
   pages: write # This is necessary to deploy to GitHub Pages
   packages: read # This is necessary to install dependencies from GitHub Packages
@@ -34,6 +34,19 @@ jobs:
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
       - run: npm ci && npm install @mahindar5/common-lib@latest
       - run: npm run build -- --output-path=dist --base-href=/ng-pwa-app/
+
+      - name: Copy stats.json to repo root
+        run: |
+          mkdir -p stats
+          cp dist/stats.json stats/${{ github.run_number }}.json
+
+      - name: Commit stats/buildnumber.json
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add stats/${{ github.run_number }}.json
+          git commit -m 'Add ${{ github.run_number }}.json'
+          git push
       - name: Archive production artifacts
         uses: actions/upload-pages-artifact@main
         with:
