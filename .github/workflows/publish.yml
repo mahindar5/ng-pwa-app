@@ -41,20 +41,13 @@ jobs:
           DATE=$(date +'%Y%m%d')
           cp dist/stats.json stats/${DATE}.json
 
-      - name: Force update of stats file
-        run: |
-          DATE=$(date +'%Y%m%d')
-          echo "Ensuring changes are detectable"
-          touch stats/${DATE}.json  # Update the file timestamp to ensure Git detects changes
-
       - name: Commit stats file
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           DATE=$(date +'%Y%m%d')
-          git add stats/${DATE}.json  # Add the file even if it only has updated content
-          git status                  # Verify the file is staged
-          git commit -m "Update ${DATE}.json"
+          git add stats/${DATE}.json  # Explicitly add only the stats file
+          git commit -m "Update ${DATE}.json [skip ci]" || echo "No changes to commit for stats/${DATE}.json"
           git push
 
       - name: Archive production artifacts
