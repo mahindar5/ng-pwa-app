@@ -41,17 +41,17 @@ export class AIAgentComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.loadModels();
+		this.initializeModels();
 	}
 
-	private loadModels(): void {
+	private initializeModels(): void {
 		const loadedModels = this.githubCopilotService.loadModels();
 		this.models.set(loadedModels);
 		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
 	}
 
-	private async showAuthenticationAlert(data: DeviceResponse): Promise<boolean> {
-		const { user_code, verification_uri, expires_in } = data;
+	private async showAuthenticationAlert(response: DeviceResponse): Promise<boolean> {
+		const { user_code, verification_uri, expires_in } = response;
 		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
 		const message = `Please visit ${verification_uri} and enter code ${user_code} to authenticate. Code expires at ${expirationTime}.`;
 
@@ -73,56 +73,65 @@ export class AIAgentComponent implements OnInit {
 		this.isProcessing.set(true);
 		try {
 			for (const fileItem of this.fileList()) {
-				try {
-					const file = await fileItem.handle.getFile();
-					const content = await file.text();
-					const fileExt = fileItem.path.split('.').pop()!;
-					this.selectedPrompt.set(prompts.find(p => p.name === fileExt) || prompts[0]);
-					const finalPrompt = `${this.selectedPrompt().prompt}\n\nCode for ${fileItem.handle.name}\n\n${content}`;
-
-					fileItem.status = 'inprogress';
-					let response = await this.githubCopilotService.message(
-						finalPrompt,
-						this.selectedModel(),
-						this.showAuthenticationAlert.bind(this)
-					);
-
-					this.handleRateLimitResponse(response);
-
-					fileItem.res = this.fileService.extractCode(response as string); fileItem.status = 'done';
-					await this.fileService.writeToFile(fileItem);
-				} catch (error) {
-					console.error(error);
-					fileItem.status = 'error';
-					fileItem.res = (error as Error).message;
-				}
+				await this.handleFileProcessing(fileItem);
 			}
 		} finally {
 			this.isProcessing.set(false);
 		}
 	}
 
-	private handleRateLimitResponse(response: string | UserRoleText[] | RetryAfterResponseModel) {
+	private async handleFileProcessing(fileItem: FileItem): Promise<void> {
+		try {
+			const file = await fileItem.handle.getFile();
+			const content = await file.text();
+			const fileExt = fileItem.path.split('.').pop()!;
+			const prompt = prompts.find(p => p.name === fileExt) || prompts[0];
+			this.selectedPrompt.set(prompt);
+			const finalPrompt = `${prompt.prompt}\n\nCode for ${fileItem.handle.name}\n\n${content}`;
+
+			fileItem.status = 'inprogress';
+			const response = await this.githubCopilotService.message(
+				finalPrompt,
+				this.selectedModel(),
+				this.showAuthenticationAlert.bind(this)
+			);
+
+			this.processResponse(response);
+			this.updateFileItemObject(fileItem, 'done', this.fileService.extractCode(response as string));
+			this.fileService.writeToFile(fileItem);
+		} catch (error) {
+			console.error(error);
+			this.updateFileItemObject(fileItem, 'error', (error as Error).message);
+		}
+	}
+
+	private updateFileItemObject(fileItem: FileItem, status: 'inprogress' | 'done' | 'error', res: string): void {
+		fileItem.status = status;
+		fileItem.res = res;
+	}
+
+
+	private processResponse(response: string | UserRoleText[] | RetryAfterResponseModel): void {
 		if (typeof response === 'object' && 'retryAfter' in response) {
 			const model = this.models().find(m => m.name === this.selectedModel().name);
 			if (model) {
 				model.retryAfter = response.retryAfter;
 				model.retryAfterCreatedAt = new Date().toISOString();
 				localStorage.setItem('models', JSON.stringify(this.models()));
-				this.loadModels();
+				this.initializeModels();
 			}
 			throw new Error('Rate limit exceeded. Please try again later.');
 		}
 	}
 
-	handleDrag(event: DragEvent, action: 'over' | 'leave'): void {
+	handleDrag(event: DragEvent, action: 'add' | 'remove'): void {
 		event.preventDefault();
-		this.dropZoneRef()?.nativeElement.classList[action === 'over' ? 'add' : 'remove']('drag-over');
+		this.dropZoneRef()?.nativeElement.classList[action === 'add' ? 'add' : 'remove']('drag-over');
 	}
 
 	async onDrop(event: DragEvent): Promise<void> {
 		event.preventDefault();
-		this.handleDrag(event, 'leave');
+		this.handleDrag(event, 'remove');
 		this.allFileHandles.set(await this.fileService.handleDrop(event));
 	}
 
@@ -134,30 +143,30 @@ export class AIAgentComponent implements OnInit {
 		this.allFileHandles.set(await this.fileService.selectFiles());
 	}
 
-
-	async sendMessage() {
+	async sendMessage(): Promise<void> {
 		try {
-			this.messages.set([...this.messages(), {
-				role: 'user',
-				text: this.message(),
-				date: new Date(),
-			}]);
+			this.addUserMessage(this.message());
 			this.isProcessing.set(true);
 
-			const response = await this.githubCopilotService.chat(this.messages(), this.selectedModel(), this.showAuthenticationAlert.bind(this));
-			this.handleRateLimitResponse(response);
+			const response = await this.githubCopilotService.chat(
+				this.messages(),
+				this.selectedModel(),
+				this.showAuthenticationAlert.bind(this)
+			);
 
+			this.processResponse(response);
 			this.message.set('');
 			this.messages.set(response as UserRoleText[]);
-			setTimeout(() => this.contentRef()?.scrollToBottom(400), 100);
+			this.contentRef()?.scrollToBottom(400)
 		} catch (error) {
 			console.error(error);
-			this.messages.set([...this.messages(), {
-				text: (error as Error).message,
-				date: new Date(),
-				role: 'model',
-			}]);
+			this.addUserMessage((error as Error).message);
+		} finally {
+			this.isProcessing.set(false);
 		}
-		this.isProcessing.set(false);
+	}
+
+	private addUserMessage(text: string): void {
+		this.messages.set([...this.messages(), { role: 'user', text, date: new Date() }]);
 	}
 }
