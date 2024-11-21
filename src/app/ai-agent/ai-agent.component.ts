@@ -126,7 +126,7 @@ export class AIAgentComponent implements OnInit {
 
 	handleDrag(event: DragEvent, action: 'add' | 'remove'): void {
 		event.preventDefault();
-		this.dropZoneRef()?.nativeElement.classList[action === 'add' ? 'add' : 'remove']('drag-over');
+		this.dropZoneRef()?.nativeElement.classList[action]('drag-over');
 	}
 
 	async onDrop(event: DragEvent): Promise<void> {

@@ -42,7 +42,7 @@
 </ion-header>
 @if(!toggleChat()) {
 <ion-content #myContent scrollEvents="true" scrollbarThemeDirective>
-	<div #dropZone class="drop-zone" (dragover)="handleDrag($event, 'over')" (dragleave)="handleDrag($event, 'leave')"
+	<div #dropZone class="drop-zone" (dragover)="handleDrag($event, 'add')" (dragleave)="handleDrag($event, 'remove')"
 		(drop)="onDrop($event)">
 		<div class="drop-message">Drag and drop a file here</div>
 	</div>
