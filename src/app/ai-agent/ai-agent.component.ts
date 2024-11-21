@@ -34,7 +34,7 @@ export class AIAgentComponent implements OnInit {
 
 	message = signal('');
 	messages = signal<UserRoleText[]>([]);
-	toggleChat = signal(true);
+	toggleChat = signal(false);
 
 	constructor() {
 		addIcons({ createOutline, cloudDoneOutline, documentOutline, folderOutline, send, chatbubblesOutline, clipboardOutline });
