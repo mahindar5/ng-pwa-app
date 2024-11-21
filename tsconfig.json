@@ -21,7 +21,7 @@
 	  "node_modules/@types"
 	],
 	"paths": {
-		"@mahindar5/common-lib": ["../common-lib/dist"]
+		"@mahindar5/*": ["../*/"]
 	}
   },
   "angularCompilerOptions": {

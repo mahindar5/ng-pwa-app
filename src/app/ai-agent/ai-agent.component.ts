@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { AlertController, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { DeviceResponse, FileItem, FileService, GithubCopilotModel, GithubCopilotService, prompts } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
-import { cloudDoneOutline, createOutline, documentOutline, folderOutline, send } from 'ionicons/icons';
+import { clipboardOutline, cloudDoneOutline, createOutline, documentOutline, folderOutline, send } from 'ionicons/icons';
 
 @Component({
 	selector: 'ai-agent-component',
@@ -22,18 +22,18 @@ export class AIAgentComponent implements OnInit {
 	private readonly fileService = inject(FileService);
 	private readonly alertController = inject(AlertController);
 
-	isProcessing = signal(false);
 	contentRef = viewChild<IonContent>('myContent');
 	dropZoneRef = viewChild<ElementRef>('dropZone');
-	selectedPrompt = signal(prompts[0]);
 	prompts = signal(prompts);
+	selectedPrompt = signal(prompts[0]);
 	models = signal<GithubCopilotModel[]>([]);
 	selectedModel = signal<GithubCopilotModel>({} as GithubCopilotModel);
 	allFileHandles = signal<FileItem[]>([]);
 	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
+	isProcessing = signal(false);
 
 	constructor() {
-		addIcons({ createOutline, cloudDoneOutline, documentOutline, folderOutline, send });
+		addIcons({ createOutline, cloudDoneOutline, documentOutline, folderOutline, send, clipboardOutline });
 	}
 
 	ngOnInit(): void {
@@ -46,7 +46,7 @@ export class AIAgentComponent implements OnInit {
 		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
 	}
 
-	private async showAuthenticationAlert(data: DeviceResponse): Promise<void> {
+	private async showAuthenticationAlert(data: DeviceResponse): Promise<boolean> {
 		const { user_code, verification_uri, expires_in } = data;
 		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
 		const message = `Please visit ${verification_uri} and enter code ${user_code} to authenticate. Code expires at ${expirationTime}.`;
@@ -55,14 +55,15 @@ export class AIAgentComponent implements OnInit {
 			header: 'Authentication',
 			message,
 			buttons: [
-				{ text: 'Completed', handler: () => { } },
+				{ text: `Copy Code (${user_code})`, handler: () => { navigator.clipboard.writeText(user_code); return false; } },
+				{ text: 'Open Browser', handler: () => { window.open(verification_uri, '_blank'); return false; } },
 				{ text: 'Cancel', role: 'cancel' },
-				{ text: 'Copy Code', handler: () => { navigator.clipboard.writeText(user_code); return false; } },
-				{ text: 'Open Browser', handler: () => { window.open(verification_uri, '_blank'); return false; } }
+				{ text: 'Completed', role: 'ok' },
 			]
 		});
 		await alert.present();
-		await alert.onDidDismiss();
+		const { role } = await alert.onDidDismiss();
+		return role === 'ok';
 	}
 
 	async processFiles(): Promise<void> {
@@ -83,7 +84,7 @@ export class AIAgentComponent implements OnInit {
 						this.showAuthenticationAlert.bind(this)
 					);
 
-					if (response.status === 429) {
+					if (typeof response !== 'string' && response.status === 429) {
 						const model = this.models().find(m => m.name === this.selectedModel().name);
 						if (model) {
 							model.retryAfter = response.retryAfter;
@@ -94,8 +95,7 @@ export class AIAgentComponent implements OnInit {
 						throw new Error('Rate limit exceeded. Please try again later.');
 					}
 
-					fileItem.res = this.fileService.extractCode(response);
-					fileItem.status = 'done';
+					fileItem.res = this.fileService.extractCode(response as string); fileItem.status = 'done';
 					await this.fileService.writeToFile(fileItem);
 				} catch (error) {
 					console.error(error);
