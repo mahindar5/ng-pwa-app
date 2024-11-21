@@ -59,8 +59,7 @@ export class AIAgentComponent implements OnInit {
 			header: 'Authentication',
 			message,
 			buttons: [
-				{ text: `Copy Code (${user_code})`, handler: () => { navigator.clipboard.writeText(user_code); return false; } },
-				{ text: 'Open Browser', handler: () => { window.open(verification_uri, '_blank'); return false; } },
+				{ text: `Copy (${user_code}) & Authenticate`, handler: () => { navigator.clipboard.writeText(user_code).then(() => window.open(verification_uri, '_blank')); return false; } },
 				{ text: 'Cancel', role: 'cancel' },
 				{ text: 'Completed', role: 'ok' },
 			]
