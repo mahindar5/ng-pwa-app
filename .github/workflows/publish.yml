@@ -39,16 +39,17 @@ jobs:
         run: |
           mkdir -p stats
           DATE=$(date +'%Y%m%d')
-          cp dist/stats.json stats/DATE.json
+          cp dist/stats.json stats/${DATE}.json
 
-      - name: Commit stats/DATE.json
+      - name: Commit stats file
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           DATE=$(date +'%Y%m%d')
-          git add --force stats/${DATE}.json
-          git commit -m 'Add ${DATE}.json [skip ci]'
+          git add stats/${DATE}.json  # Add the file even if it only has updated content
+          git commit -m "Update ${DATE}.json"
           git push
+
       - name: Archive production artifacts
         uses: actions/upload-pages-artifact@main
         with:
