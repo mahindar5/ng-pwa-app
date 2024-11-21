@@ -1,9 +1,10 @@
-import { Component, ElementRef, OnInit, computed, inject, signal, viewChild } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { Component, computed, ElementRef, inject, OnInit, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AlertController, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { DeviceResponse, FileItem, FileService, GithubCopilotModel, GithubCopilotService, prompts } from '@mahindar5/common-lib';
+import { AlertController, IonAvatar, IonButton, IonButtons, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonText, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { DeviceResponse, FileItem, FileService, GithubCopilotModel, GithubCopilotService, prompts, RetryAfterResponseModel, UserRoleText } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
-import { clipboardOutline, cloudDoneOutline, createOutline, documentOutline, folderOutline, send } from 'ionicons/icons';
+import { chatbubblesOutline, clipboardOutline, cloudDoneOutline, createOutline, documentOutline, folderOutline, send } from 'ionicons/icons';
 
 @Component({
 	selector: 'ai-agent-component',
@@ -12,8 +13,8 @@ import { clipboardOutline, cloudDoneOutline, createOutline, documentOutline, fol
 	standalone: true,
 	providers: [GithubCopilotService, FileService],
 	imports: [
-		FormsModule, IonHeader, IonProgressBar, IonToolbar, IonButtons,
-		IonMenuButton, IonTitle, IonButton, IonIcon, IonContent,
+		FormsModule, IonHeader, IonProgressBar, IonToolbar, IonButtons, DatePipe, IonInput,
+		IonMenuButton, IonTitle, IonButton, IonIcon, IonContent, IonFooter, IonAvatar, IonText,
 		IonList, IonItem, IonLabel, IonTextarea, IonSelect, IonSelectOption
 	],
 })
@@ -21,9 +22,8 @@ export class AIAgentComponent implements OnInit {
 	private readonly githubCopilotService = inject(GithubCopilotService);
 	private readonly fileService = inject(FileService);
 	private readonly alertController = inject(AlertController);
-
-	contentRef = viewChild<IonContent>('myContent');
-	dropZoneRef = viewChild<ElementRef>('dropZone');
+	private readonly contentRef = viewChild<IonContent>('myContent');
+	private readonly dropZoneRef = viewChild<ElementRef>('dropZone');
 	prompts = signal(prompts);
 	selectedPrompt = signal(prompts[0]);
 	models = signal<GithubCopilotModel[]>([]);
@@ -32,8 +32,12 @@ export class AIAgentComponent implements OnInit {
 	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
 	isProcessing = signal(false);
 
+	message = signal('');
+	messages = signal<UserRoleText[]>([]);
+	toggleChat = signal(true);
+
 	constructor() {
-		addIcons({ createOutline, cloudDoneOutline, documentOutline, folderOutline, send, clipboardOutline });
+		addIcons({ createOutline, cloudDoneOutline, documentOutline, folderOutline, send, chatbubblesOutline, clipboardOutline });
 	}
 
 	ngOnInit(): void {
@@ -78,22 +82,13 @@ export class AIAgentComponent implements OnInit {
 					const finalPrompt = `${this.selectedPrompt().prompt}\n\nCode for ${fileItem.handle.name}\n\n${content}`;
 
 					fileItem.status = 'inprogress';
-					let response = await this.githubCopilotService.chat(
+					let response = await this.githubCopilotService.message(
 						finalPrompt,
-						this.selectedModel().name,
+						this.selectedModel(),
 						this.showAuthenticationAlert.bind(this)
 					);
 
-					if (typeof response !== 'string' && response.status === 429) {
-						const model = this.models().find(m => m.name === this.selectedModel().name);
-						if (model) {
-							model.retryAfter = response.retryAfter;
-							model.retryAfterCreatedAt = new Date().toISOString();
-							localStorage.setItem('models', JSON.stringify(this.models()));
-							this.loadModels();
-						}
-						throw new Error('Rate limit exceeded. Please try again later.');
-					}
+					this.handleRateLimitResponse(response);
 
 					fileItem.res = this.fileService.extractCode(response as string); fileItem.status = 'done';
 					await this.fileService.writeToFile(fileItem);
@@ -105,6 +100,19 @@ export class AIAgentComponent implements OnInit {
 			}
 		} finally {
 			this.isProcessing.set(false);
+		}
+	}
+
+	private handleRateLimitResponse(response: string | UserRoleText[] | RetryAfterResponseModel) {
+		if (typeof response === 'object' && 'retryAfter' in response) {
+			const model = this.models().find(m => m.name === this.selectedModel().name);
+			if (model) {
+				model.retryAfter = response.retryAfter;
+				model.retryAfterCreatedAt = new Date().toISOString();
+				localStorage.setItem('models', JSON.stringify(this.models()));
+				this.loadModels();
+			}
+			throw new Error('Rate limit exceeded. Please try again later.');
 		}
 	}
 
@@ -125,5 +133,32 @@ export class AIAgentComponent implements OnInit {
 
 	async selectFiles(): Promise<void> {
 		this.allFileHandles.set(await this.fileService.selectFiles());
+	}
+
+
+	async sendMessage() {
+		try {
+			this.messages.set([...this.messages(), {
+				role: 'user',
+				text: this.message(),
+				date: new Date(),
+			}]);
+			this.isProcessing.set(true);
+
+			const response = await this.githubCopilotService.chat(this.messages(), this.selectedModel(), this.showAuthenticationAlert.bind(this));
+			this.handleRateLimitResponse(response);
+
+			this.message.set('');
+			this.messages.set(response as UserRoleText[]);
+			setTimeout(() => this.contentRef()?.scrollToBottom(400), 100);
+		} catch (error) {
+			console.error(error);
+			this.messages.set([...this.messages(), {
+				text: (error as Error).message,
+				date: new Date(),
+				role: 'model',
+			}]);
+		}
+		this.isProcessing.set(false);
 	}
 }

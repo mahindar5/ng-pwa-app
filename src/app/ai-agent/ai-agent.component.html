@@ -7,7 +7,7 @@
 			<div class="display-flex ion-justify-content-between ion-align-items-center ion-width-100">
 				<div class="m-10">AI Agent</div>
 				<span>
-					<ion-select [(ngModel)]="selectedModel" interface="popover">
+					<ion-select [(ngModel)]="selectedModel" interface="modal">
 						@for(model of models(); track model) {
 						<ion-select-option [disabled]="model.disabled" [value]="model">
 							{{ model.name }}
@@ -34,10 +34,13 @@
 			<ion-button title="Select Folder" fill="clear" (click)="selectFolder()">
 				<ion-icon name="folder-outline"></ion-icon>
 			</ion-button>
+			<ion-button title="Chat" fill="clear" (click)="toggleChat.set(!toggleChat())">
+				<ion-icon name="chatbubbles-outline"></ion-icon>
+			</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
-
+@if(!toggleChat()) {
 <ion-content #myContent scrollEvents="true" scrollbarThemeDirective>
 	<div #dropZone class="drop-zone" (dragover)="handleDrag($event, 'over')" (dragleave)="handleDrag($event, 'leave')"
 		(drop)="onDrop($event)">
@@ -65,4 +68,40 @@
 		</ion-item>
 		}
 	</ion-list>
+
+
 </ion-content>
+}
+@if(toggleChat()) {
+<ion-content #myContent>
+
+	<ion-list>
+		@for (message of messages(); track message) {
+		<ion-item>
+			<ion-avatar slot="start">
+				<img
+					src="{{ message.role == 'user' ? 'https://i2.wp.com/cdn.auth0.com/avatars/ma.png' : 'https://i2.wp.com/cdn.auth0.com/avatars/as.png' }}" />
+			</ion-avatar>
+			<ion-label style="white-space: pre-line">
+				<h2>{{ message.role }}</h2>
+				<div [innerHTML]="message.text"></div>
+				<ion-text>{{ message.date | date }}</ion-text>
+			</ion-label>
+		</ion-item>
+		}
+	</ion-list>
+</ion-content>
+<ion-footer>
+	@if (isProcessing()) {
+	<ion-progress-bar type="indeterminate"></ion-progress-bar>
+	}
+	<ion-toolbar>
+		<ion-input [(ngModel)]="message" (keyup.enter)="sendMessage()" placeholder="Type your message"></ion-input>
+		<ion-buttons slot="end">
+			<ion-button [disabled]="isProcessing() || !message()" (click)="sendMessage()">
+				<ion-icon name="send"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-footer>
+}
