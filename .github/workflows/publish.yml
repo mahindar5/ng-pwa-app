@@ -39,15 +39,15 @@ jobs:
         run: |
           mkdir -p stats
           DATE=$(date +'%Y%m%d')
-          cp dist/stats.json stats/${DATE}.json
+          cp dist/stats.json stats/DATE.json
 
-      - name: Commit stats/buildnumber.json
+      - name: Commit stats/DATE.json
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           DATE=$(date +'%Y%m%d')
-          git add stats/${DATE}.json
-          git commit -m 'Add ${DATE}.json'
+          git add --force stats/${DATE}.json
+          git commit -m 'Add ${DATE}.json [skip ci]'
           git push
       - name: Archive production artifacts
         uses: actions/upload-pages-artifact@main
