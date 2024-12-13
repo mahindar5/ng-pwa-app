@@ -11699,54 +11699,8 @@
       ],
       "format": "esm"
     },
-    "src/app/ai-agent/settings/settings/settings.component.ts": {
-      "bytes": 13178,
-      "imports": [
-        {
-          "path": "node_modules/@angular/core/fesm2022/core.mjs",
-          "kind": "import-statement",
-          "original": "@angular/core"
-        },
-        {
-          "path": "node_modules/@angular/forms/fesm2022/forms.mjs",
-          "kind": "import-statement",
-          "original": "@angular/forms"
-        },
-        {
-          "path": "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs",
-          "kind": "import-statement",
-          "original": "@ionic/angular/standalone"
-        },
-        {
-          "path": "node_modules/@mahindar5/common-lib/dist/index.js",
-          "kind": "import-statement",
-          "original": "@mahindar5/common-lib"
-        },
-        {
-          "path": "node_modules/ionicons/dist/index.js",
-          "kind": "import-statement",
-          "original": "ionicons"
-        },
-        {
-          "path": "node_modules/ionicons/icons/index.mjs",
-          "kind": "import-statement",
-          "original": "ionicons/icons"
-        },
-        {
-          "path": "node_modules/@angular/core/fesm2022/core.mjs",
-          "kind": "import-statement",
-          "original": "@angular/core"
-        },
-        {
-          "path": "<runtime>",
-          "kind": "import-statement",
-          "external": true
-        }
-      ],
-      "format": "esm"
-    },
     "src/app/ai-agent/ai-agent.component.ts": {
-      "bytes": 30631,
+      "bytes": 29848,
       "imports": [
         {
           "path": "@angular/common",
@@ -11782,11 +11736,6 @@
           "path": "node_modules/ionicons/icons/index.mjs",
           "kind": "import-statement",
           "original": "ionicons/icons"
-        },
-        {
-          "path": "src/app/ai-agent/settings/settings/settings.component.ts",
-          "kind": "import-statement",
-          "original": "./settings/settings/settings.component"
         },
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -12151,10 +12100,10 @@
       },
       "bytes": 952
     },
-    "chunk-MIJWQVWS.js": {
+    "chunk-XQL7KW2X.js": {
       "imports": [
         {
-          "path": "chunk-TXGN4J2H.js",
+          "path": "chunk-WOCOWZ2S.js",
           "kind": "import-statement"
         },
         {
@@ -12223,19 +12172,16 @@
       ],
       "entryPoint": "src/app/ai-agent/ai-agent.component.ts",
       "inputs": {
-        "src/app/ai-agent/settings/settings/settings.component.ts": {
-          "bytesInOutput": 5388
-        },
         "src/app/ai-agent/ai-agent.component.ts": {
-          "bytesInOutput": 13646
+          "bytesInOutput": 13270
         }
       },
-      "bytes": 20242
+      "bytes": 14406
     },
-    "main-2DEOHH6C.js": {
+    "main-KX7I7LXF.js": {
       "imports": [
         {
-          "path": "chunk-TXGN4J2H.js",
+          "path": "chunk-WOCOWZ2S.js",
           "kind": "import-statement"
         },
         {
@@ -12299,7 +12245,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-MIJWQVWS.js",
+          "path": "chunk-XQL7KW2X.js",
           "kind": "dynamic-import"
         }
       ],
@@ -12324,7 +12270,7 @@
       },
       "bytes": 8562
     },
-    "chunk-TXGN4J2H.js": {
+    "chunk-WOCOWZ2S.js": {
       "imports": [
         {
           "path": "chunk-E3MPQ4CP.js",
@@ -12409,10 +12355,6 @@
         {
           "path": "chunk-P6DHLUCZ.js",
           "kind": "dynamic-import"
-        },
-        {
-          "path": "chunk-P6DHLUCZ.js",
-          "kind": "dynamic-import"
         }
       ],
       "exports": [
@@ -12441,28 +12383,20 @@
         "Gb",
         "H",
         "Ha",
-        "Hb",
         "I",
         "Ia",
-        "Ib",
         "J",
         "Ja",
-        "Jb",
         "K",
         "Ka",
-        "Kb",
         "L",
         "La",
-        "Lb",
         "M",
         "Ma",
-        "Mb",
         "N",
         "Na",
-        "Nb",
         "O",
         "Oa",
-        "Ob",
         "P",
         "Pa",
         "Q",
@@ -12906,9 +12840,6 @@
         "node_modules/@mahindar5/common-lib/dist/chunk-XP4RN3RW.js": {
           "bytesInOutput": 661
         },
-        "node_modules/@mahindar5/common-lib/dist/chunk-BFOHLLWK.js": {
-          "bytesInOutput": 5170
-        },
         "node_modules/@angular/forms/fesm2022/forms.mjs": {
           "bytesInOutput": 22538
         },
@@ -12940,7 +12871,7 @@
           "bytesInOutput": 21645
         },
         "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs": {
-          "bytesInOutput": 22648
+          "bytesInOutput": 19189
         },
         "node_modules/@ionic/core/components/index7.js": {
           "bytesInOutput": 1791
@@ -13008,9 +12939,6 @@
         "node_modules/@ionic/core/components/ion-chip.js": {
           "bytesInOutput": 6789
         },
-        "node_modules/@ionic/core/components/ion-col.js": {
-          "bytesInOutput": 5817
-        },
         "node_modules/@ionic/core/components/content.js": {
           "bytesInOutput": 8535
         },
@@ -13034,12 +12962,6 @@
         },
         "node_modules/@ionic/core/components/ion-item.js": {
           "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-item-divider.js": {
-          "bytesInOutput": 9208
-        },
-        "node_modules/@ionic/core/components/ion-item-group.js": {
-          "bytesInOutput": 541
         },
         "node_modules/@ionic/core/components/watch-options.js": {
           "bytesInOutput": 402
@@ -13073,9 +12995,6 @@
         },
         "node_modules/@ionic/core/components/radio.js": {
           "bytesInOutput": 14554
-        },
-        "node_modules/@ionic/core/components/ion-row.js": {
-          "bytesInOutput": 533
         },
         "node_modules/@ionic/core/components/checkbox.js": {
           "bytesInOutput": 14766
@@ -13125,9 +13044,6 @@
         "node_modules/@ionic/core/components/ion-input.js": {
           "bytesInOutput": 41374
         },
-        "node_modules/@ionic/core/components/ion-range.js": {
-          "bytesInOutput": 27974
-        },
         "node_modules/@ionic/core/components/select-popover.js": {
           "bytesInOutput": 4613
         },
@@ -13144,10 +13060,10 @@
           "bytesInOutput": 0
         },
         "node_modules/ionicons/icons/index.mjs": {
-          "bytesInOutput": 23837
+          "bytesInOutput": 23258
         }
       },
-      "bytes": 880909
+      "bytes": 827556
     },
     "chunk-E3MPQ4CP.js": {
       "imports": [
