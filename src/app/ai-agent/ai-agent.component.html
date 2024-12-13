@@ -1,3 +1,4 @@
+@let multiSelectMode = this.multiSelectMode();
 <ion-header>
 	<ion-toolbar>
 		<ion-buttons slot="start">
@@ -28,11 +29,28 @@
 			</div>
 		</ion-title>
 		<ion-buttons slot="end">
+
+			@if (multiSelectMode) {
+			<ion-button fill="clear" (click)="this.multiSelectMode.set(false)">
+				<ion-icon slot="icon-only" name="close"></ion-icon>
+			</ion-button>
+			<ion-button fill="clear" (click)="selectAll()">
+				<ion-icon slot="icon-only" name="checkmark-done-circle"></ion-icon>
+			</ion-button>
+			}
+			@if (!multiSelectMode) {
+			<ion-button fill="clear" (click)="this.multiSelectMode.set(true)">
+				<ion-icon slot="icon-only" name="checkmark"></ion-icon>
+			</ion-button>
+			}
 			<ion-button title="Select Files" fill="clear" (click)="selectFiles()">
 				<ion-icon name="document-outline"></ion-icon>
 			</ion-button>
 			<ion-button title="Select Folder" fill="clear" (click)="selectFolder()">
 				<ion-icon name="folder-outline"></ion-icon>
+			</ion-button>
+			<ion-button title="Settings" fill="clear" (click)="openAiConfigModal()">
+				<ion-icon name="settings-outline"></ion-icon>
 			</ion-button>
 			<ion-button title="Chat" fill="clear" (click)="toggleChat.set(!toggleChat())">
 				<ion-icon name="chatbubbles-outline"></ion-icon>
@@ -64,6 +82,9 @@
 			[color]="file.status === 'error' ? 'danger' : 'primary'">
 		</ion-progress-bar>
 		<ion-item [title]="file.res">
+			@if(multiSelectMode) {
+			<ion-checkbox slot="start" [(ngModel)]="file.selected"></ion-checkbox>
+			}
 			<ion-label>{{ file.path }}</ion-label>
 		</ion-item>
 		}
@@ -84,7 +105,8 @@
 			</ion-avatar>
 			<ion-label style="white-space: pre-line">
 				<!-- <h2>{{ message.role }}</h2> -->
-				<div [innerHTML]="message.text"></div>
+				<!-- <div [innerHTML]="message.text"></div> -->
+				<pre [innerHTML]="message.text" class="wrapped-pre"></pre>
 				<!-- <ion-text>{{ message.date | date }}</ion-text> -->
 			</ion-label>
 		</ion-item>
@@ -92,6 +114,14 @@
 	</ion-list>
 </ion-content>
 <ion-footer>
+	<ion-chip (click)="summarizeActivePage()">
+		<ion-icon name="color-wand-outline"></ion-icon>
+		<ion-label>Summarize Active Page</ion-label>
+	</ion-chip>
+	<ion-chip (click)="messages.set([])">
+		<ion-label>Clear</ion-label>
+	</ion-chip>
+
 	@if (isProcessing()) {
 	<ion-progress-bar type="indeterminate"></ion-progress-bar>
 	}

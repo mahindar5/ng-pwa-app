@@ -1,0 +1,88 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>Settings</ion-title>
+		<ion-buttons slot="end">
+			<ion-button (click)="closeModal()">Save</ion-button>
+			<ion-button (click)="closeModal()">Cancel</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-row>
+			<ion-col>
+				<ion-item>
+					<ion-range labelPlacement="stacked" label="Temperature" [min]="0" [max]="1" [step]="0.01"
+						[value]="modalDataSignal().temperature" (ionChange)="updateTemperature($event)"></ion-range>
+				</ion-item>
+			</ion-col>
+			<ion-col>
+				<ion-item>
+					<ion-range labelPlacement="stacked" label="Top P" [min]="0" [max]="1" [step]="0.01"
+						[value]="modalDataSignal().topP" (ionChange)="updateTopP($event)"></ion-range>
+				</ion-item>
+			</ion-col>
+			<ion-col>
+				<ion-item>
+					<ion-range labelPlacement="stacked" label="N" [min]="1" [max]="100" [step]="1"
+						[value]="modalDataSignal().n" (ionChange)="updateN($event)"></ion-range>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-item>
+					<ion-select [value]="modalDataSignal().model" (ionChange)="updateModel($event)" label="Model"
+						labelPlacement="stacked">
+						@for (model of availableModels; track model) {
+						<ion-select-option [value]="model"> {{ model }}</ion-select-option>
+						}
+					</ion-select>
+				</ion-item>
+			</ion-col>
+			<ion-col>
+
+				<ion-item>
+					<ion-select label="File Extensions" labelPlacement="stacked" multiple="true"
+						[value]="modalDataSignal().fileExtensions"
+						(ionChange)="updateFileExtensions($event.detail.value)">
+						@for (ext of availableFileExtensions; track ext) {
+						<ion-select-option [value]="ext"> {{ ext }} </ion-select-option>
+						}
+					</ion-select>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-item>
+			<ion-input label="System Role" labelPlacement="stacked" [value]="modalDataSignal().systemRole"
+				(ionInput)="updateSystemRole($event)" placeholder="Enter system role"></ion-input>
+		</ion-item>
+		<ion-list>
+			@for (ext of modalDataSignal().fileExtensions; track ext) {
+			<ion-item-group>
+				<ion-item-divider sticky="true">
+					<ion-label>
+						{{ ext }} Prompts
+					</ion-label>
+					<ion-button title="Add" slot="end" size="medium" fill="clear" (click)="addPrompt(ext)">
+						<ion-icon name="add-circle"></ion-icon>
+					</ion-button>
+				</ion-item-divider>
+
+				@for (prompt of modalDataSignal().prompts[ext]; track prompt; let i = $index) {
+				<ion-item>
+					<ion-checkbox slot="start" [checked]="prompt.selected"
+						(ionChange)="updatePromptSelected(ext, i, $event)"></ion-checkbox>
+					<ion-input [value]="prompt.text" (ionInput)="updatePromptText(ext, i, $event)"
+						placeholder="Enter prompt"></ion-input>
+					<ion-button title="Remove" slot="end" color="danger" fill="clear" (click)="removePrompt(ext, i)">
+						<ion-icon name="remove-circle"></ion-icon>
+					</ion-button>
+				</ion-item>
+				}
+			</ion-item-group>
+			}
+		</ion-list>
+	</ion-list>
+</ion-content>
