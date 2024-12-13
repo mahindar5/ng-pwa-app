@@ -1,3 +1,40 @@
+## Tabs
+
+- **FileAgent**
+- **Chat/Summary**
+- **Settings**
+
+## Strategy
+
+### Individual Loop
+
+- In `selectedPrompt`, show the following options:
+  - `.ts`, `.cs`, `.js`, `.html`: If one of these is selected, only display files with matching extensions.
+  - General: If selected, display all files and allow multi-select for `fileSelected`, then loop through the chosen files. Fetch the prompt based on the file extension.
+
+### Combined Single Text
+
+- Enable selection by `contextInclusionSelected`, and process only the files that are checked.
+- In `selectedPrompt`, display the following options for different project types:
+  - `c#`
+  - `angular`
+  - `general`, etc.
+
+### Individual Loop with Combined Context
+
+- Enable multi-select for `contextInclusionSelected` and create a combined context using only the files that are checked for `contextInclusionSelected`.
+- In `selectedPrompt`, display "General" as an option. Allow multi-select for `fileSelected`, then loop through the chosen files for processing. Fetch the prompt based on the file extension.
+
+## Additional Actions
+
+- Reset multi-checkbox selections when necessary.
+- When selecting files or folders, filter certain extensions to ensure only relevant files are selected. add a comma seprated setting for extentions exclusion
+- Move the angular service to common lib
+- Make sure above drops are in sync wit settings tab
+- settings tab show as side pane when required
+
+---
+
 # **Response 1**
 
 Applying iterative instructions to the approaches adds another layer of granularity to your processing workflow. It allows for **focused and incremental improvements**, which could be beneficial for large or complex projects. Below is an updated evaluation of each approach when incorporating iterative instructions, followed by a comparison with the single-prompt strategy.
