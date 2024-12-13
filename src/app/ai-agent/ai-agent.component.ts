@@ -121,12 +121,6 @@ export class AIAgentComponent implements OnInit {
 			}
 			throw new Error('Rate limit exceeded. Please try again later.');
 		}
-		if (response.chat) {
-			this.messages.set(response.chat);
-		}
-		if (response.message) {
-			this.addUserMessage(response.message);
-		}
 	}
 
 	handleDrag(event: DragEvent, action: 'add' | 'remove'): void {
@@ -161,6 +155,10 @@ export class AIAgentComponent implements OnInit {
 
 			this.processResponse(response);
 			this.message.set('');
+
+			if (response.chat?.length > 0) {
+				this.messages.set(response.chat);
+			}
 			this.contentRef()?.scrollToBottom(400)
 		} catch (error) {
 			console.error(error);
