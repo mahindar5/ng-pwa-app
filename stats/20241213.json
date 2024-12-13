@@ -6613,24 +6613,24 @@
       "imports": [],
       "format": "esm"
     },
-    "node_modules/@mahindar5/common-lib/dist/chunk-LV576A5F.js": {
-      "bytes": 879,
+    "node_modules/@mahindar5/common-lib/dist/chunk-CAXKYQEA.js": {
+      "bytes": 1379,
       "imports": [],
       "format": "esm"
     },
-    "node_modules/@mahindar5/common-lib/dist/chunk-XP4RN3RW.js": {
+    "node_modules/@mahindar5/common-lib/dist/chunk-2WA3ILRQ.js": {
       "bytes": 955,
       "imports": [
         {
-          "path": "node_modules/@mahindar5/common-lib/dist/chunk-LV576A5F.js",
+          "path": "node_modules/@mahindar5/common-lib/dist/chunk-CAXKYQEA.js",
           "kind": "import-statement",
-          "original": "./chunk-LV576A5F.js"
+          "original": "./chunk-CAXKYQEA.js"
         }
       ],
       "format": "esm"
     },
     "node_modules/@mahindar5/common-lib/dist/index.js": {
-      "bytes": 1565,
+      "bytes": 1617,
       "imports": [
         {
           "path": "node_modules/@mahindar5/common-lib/dist/chunk-ZXDJ22ZB.js",
@@ -6753,14 +6753,14 @@
           "original": "./chunk-WHP2MSAW.js"
         },
         {
-          "path": "node_modules/@mahindar5/common-lib/dist/chunk-XP4RN3RW.js",
+          "path": "node_modules/@mahindar5/common-lib/dist/chunk-2WA3ILRQ.js",
           "kind": "import-statement",
-          "original": "./chunk-XP4RN3RW.js"
+          "original": "./chunk-2WA3ILRQ.js"
         },
         {
-          "path": "node_modules/@mahindar5/common-lib/dist/chunk-LV576A5F.js",
+          "path": "node_modules/@mahindar5/common-lib/dist/chunk-CAXKYQEA.js",
           "kind": "import-statement",
-          "original": "./chunk-LV576A5F.js"
+          "original": "./chunk-CAXKYQEA.js"
         },
         {
           "path": "node_modules/@mahindar5/common-lib/dist/chunk-JFKSI6I7.js",
@@ -11699,8 +11699,24 @@
       ],
       "format": "esm"
     },
+    "src/app/ai-agent/ai-processing.service.ts": {
+      "bytes": 6483,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@mahindar5/common-lib/dist/index.js",
+          "kind": "import-statement",
+          "original": "@mahindar5/common-lib"
+        }
+      ],
+      "format": "esm"
+    },
     "src/app/ai-agent/ai-agent.component.ts": {
-      "bytes": 29848,
+      "bytes": 26822,
       "imports": [
         {
           "path": "@angular/common",
@@ -11736,6 +11752,11 @@
           "path": "node_modules/ionicons/icons/index.mjs",
           "kind": "import-statement",
           "original": "ionicons/icons"
+        },
+        {
+          "path": "src/app/ai-agent/ai-processing.service.ts",
+          "kind": "import-statement",
+          "original": "./ai-processing.service"
         },
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -11865,7 +11886,7 @@
       "format": "esm"
     },
     "src/app/ai-agent/ai-agent.component.scss": {
-      "bytes": 322,
+      "bytes": 491,
       "imports": []
     },
     "node_modules/@ionic/angular/css/core.css": {
@@ -12100,10 +12121,10 @@
       },
       "bytes": 952
     },
-    "chunk-XQL7KW2X.js": {
+    "chunk-PGBESFOF.js": {
       "imports": [
         {
-          "path": "chunk-WOCOWZ2S.js",
+          "path": "chunk-GCCKBYYP.js",
           "kind": "import-statement"
         },
         {
@@ -12172,16 +12193,19 @@
       ],
       "entryPoint": "src/app/ai-agent/ai-agent.component.ts",
       "inputs": {
+        "src/app/ai-agent/ai-processing.service.ts": {
+          "bytesInOutput": 2414
+        },
         "src/app/ai-agent/ai-agent.component.ts": {
-          "bytesInOutput": 13270
+          "bytesInOutput": 12326
         }
       },
-      "bytes": 14406
+      "bytes": 15836
     },
-    "main-KX7I7LXF.js": {
+    "main-EQKYXTBG.js": {
       "imports": [
         {
-          "path": "chunk-WOCOWZ2S.js",
+          "path": "chunk-GCCKBYYP.js",
           "kind": "import-statement"
         },
         {
@@ -12245,7 +12269,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XQL7KW2X.js",
+          "path": "chunk-PGBESFOF.js",
           "kind": "dynamic-import"
         }
       ],
@@ -12270,7 +12294,7 @@
       },
       "bytes": 8562
     },
-    "chunk-WOCOWZ2S.js": {
+    "chunk-GCCKBYYP.js": {
       "imports": [
         {
           "path": "chunk-E3MPQ4CP.js",
@@ -12368,19 +12392,14 @@
         "Bb",
         "C",
         "Ca",
-        "Cb",
         "D",
         "Da",
-        "Db",
         "E",
         "Ea",
-        "Eb",
         "F",
         "Fa",
-        "Fb",
         "G",
         "Ga",
-        "Gb",
         "H",
         "Ha",
         "I",
@@ -12502,7 +12521,7 @@
       ],
       "inputs": {
         "node_modules/@angular/core/fesm2022/primitives/signals.mjs": {
-          "bytesInOutput": 4215
+          "bytesInOutput": 4212
         },
         "node_modules/rxjs/dist/esm/internal/util/isFunction.js": {
           "bytesInOutput": 42
@@ -12685,10 +12704,10 @@
           "bytesInOutput": 51
         },
         "node_modules/rxjs/dist/esm/internal/operators/map.js": {
-          "bytesInOutput": 91
+          "bytesInOutput": 90
         },
         "node_modules/rxjs/dist/esm/internal/util/mapOneOrManyArgs.js": {
-          "bytesInOutput": 102
+          "bytesInOutput": 101
         },
         "node_modules/rxjs/dist/esm/internal/util/argsArgArrayOrObject.js": {
           "bytesInOutput": 286
@@ -12703,7 +12722,7 @@
           "bytesInOutput": 381
         },
         "node_modules/rxjs/dist/esm/internal/operators/mergeMap.js": {
-          "bytesInOutput": 132
+          "bytesInOutput": 131
         },
         "node_modules/rxjs/dist/esm/internal/operators/mergeAll.js": {
           "bytesInOutput": 35
@@ -12760,7 +12779,7 @@
           "bytesInOutput": 54
         },
         "node_modules/rxjs/dist/esm/internal/operators/mapTo.js": {
-          "bytesInOutput": 32
+          "bytesInOutput": 31
         },
         "node_modules/rxjs/dist/esm/internal/operators/delayWhen.js": {
           "bytesInOutput": 106
@@ -12811,7 +12830,7 @@
           "bytesInOutput": 0
         },
         "node_modules/@angular/core/fesm2022/core.mjs": {
-          "bytesInOutput": 112162
+          "bytesInOutput": 111636
         },
         "node_modules/@angular/common/fesm2022/common.mjs": {
           "bytesInOutput": 5711
@@ -12834,17 +12853,17 @@
         "node_modules/@mahindar5/common-lib/dist/chunk-DW6UJETQ.js": {
           "bytesInOutput": 1387
         },
-        "node_modules/@mahindar5/common-lib/dist/chunk-LV576A5F.js": {
-          "bytesInOutput": 615
+        "node_modules/@mahindar5/common-lib/dist/chunk-CAXKYQEA.js": {
+          "bytesInOutput": 860
         },
-        "node_modules/@mahindar5/common-lib/dist/chunk-XP4RN3RW.js": {
+        "node_modules/@mahindar5/common-lib/dist/chunk-2WA3ILRQ.js": {
           "bytesInOutput": 661
         },
         "node_modules/@angular/forms/fesm2022/forms.mjs": {
-          "bytesInOutput": 22538
+          "bytesInOutput": 22537
         },
         "node_modules/@angular/router/fesm2022/router.mjs": {
-          "bytesInOutput": 68247
+          "bytesInOutput": 68222
         },
         "node_modules/@ionic/core/components/index.js": {
           "bytesInOutput": 0
@@ -12871,10 +12890,10 @@
           "bytesInOutput": 21645
         },
         "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs": {
-          "bytesInOutput": 19189
+          "bytesInOutput": 17219
         },
         "node_modules/@ionic/core/components/index7.js": {
-          "bytesInOutput": 1791
+          "bytesInOutput": 1117
         },
         "node_modules/@ionic/core/components/icon.js": {
           "bytesInOutput": 6428
@@ -13041,9 +13060,6 @@
         "node_modules/@ionic/core/components/input.utils.js": {
           "bytesInOutput": 825
         },
-        "node_modules/@ionic/core/components/ion-input.js": {
-          "bytesInOutput": 41374
-        },
         "node_modules/@ionic/core/components/select-popover.js": {
           "bytesInOutput": 4613
         },
@@ -13063,7 +13079,7 @@
           "bytesInOutput": 23258
         }
       },
-      "bytes": 827556
+      "bytes": 783178
     },
     "chunk-E3MPQ4CP.js": {
       "imports": [
@@ -13630,14 +13646,14 @@
       "inputs": {},
       "bytes": 716
     },
-    "ai-agent.component-NYDSVC7K.css": {
+    "ai-agent.component-T3BSSAW6.css": {
       "imports": [],
       "inputs": {
         "src/app/ai-agent/ai-agent.component.scss": {
-          "bytesInOutput": 252
+          "bytesInOutput": 392
         }
       },
-      "bytes": 253,
+      "bytes": 393,
       "ng-component": true
     },
     "styles-ZPOY3CVS.css": {
