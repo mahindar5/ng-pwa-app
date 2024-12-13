@@ -5,7 +5,6 @@ import { AlertController, IonAvatar, IonButton, IonButtons, IonCheckbox, IonChip
 import { AIModel, AIResponse, AIService, DeviceResponse, FileItem, FileService, prompts, sendExtBackgroundMessage, UserRoleText } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
-import { SettingsComponent } from './settings/settings/settings.component';
 @Component({
 	selector: 'ai-agent-component',
 	templateUrl: 'ai-agent.component.html',
@@ -296,15 +295,5 @@ Text:${tabContent.output?.replace(/\n/g, ' ')}`;
 
 	private addUserMessage(text: string): void {
 		this.messages.set([...this.messages(), { role: 'user', text, date: new Date() }]);
-	}
-	async openAiConfigModal() {
-		const modal = await this.modalController.create({
-			component: SettingsComponent,
-			cssClass: 'full-screen-modal',
-		});
-
-		await modal.present();
-		const { data } = await modal.onWillDismiss();
-		console.log(data);
 	}
 }
