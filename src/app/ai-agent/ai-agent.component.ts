@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, computed, ElementRef, inject, OnInit, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AlertController, IonAvatar, IonButton, IonButtons, IonCheckbox, IonChip, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonText, IonTextarea, IonTitle, IonToolbar, ModalController } from '@ionic/angular/standalone';
-import { AIModel, AIResponse, AIService, DeviceResponse, FileItem, FileService, prompts, sendExtBackgroundMessageCallback, UserRoleText } from '@mahindar5/common-lib';
+import { AIModel, AIResponse, AIService, DeviceResponse, FileItem, FileService, prompts, sendExtBackgroundMessage, UserRoleText } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
 import { AiProcessingService, ProcessingStrategy } from './ai-processing.service';
@@ -170,7 +170,7 @@ export class AIAgentComponent implements OnInit {
 		}
 	}
 	async summarizeActivePage(): Promise<void> {
-		const getActiveTabs = await sendExtBackgroundMessageCallback('ChromeTabHelper', 'getAllTabs', {});
+		const getActiveTabs = await sendExtBackgroundMessage('ChromeTabHelper', 'getAllTabs', {});
 		const tabs = getActiveTabs.output?.map((tab: any) => ({
 			name: tab.id,
 			value: { id: tab.id, url: tab.url, title: tab.title },
@@ -203,7 +203,7 @@ export class AIAgentComponent implements OnInit {
 
 	async processTab(selectedVal: any): Promise<void> {
 		this.messages.set([]);
-		const tabContent = await sendExtBackgroundMessageCallback('ChromeTabHelper', 'getTabContent', { tabId: selectedVal.id })
+		const tabContent = await sendExtBackgroundMessage('ChromeTabHelper', 'getTabContent', { tabId: selectedVal.id })
 		const content = `Analyze the text below and provide:
 
 A detailed summary of the main ideas and supporting points.
