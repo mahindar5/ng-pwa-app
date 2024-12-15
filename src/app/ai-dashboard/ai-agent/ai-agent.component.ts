@@ -27,7 +27,7 @@ export class AiAgentComponent extends BaseAiComponent {
 	prompts = signal(prompts);
 	selectedPrompt = signal(prompts.find(p => p.name === 'ng') || prompts[0]);
 	allFileHandles = signal<FileItem[]>([]);
-	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
+	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt(), this.allFileHandles()));
 	processingStrategies = Object.values(ProcessingStrategy);
 	selectedStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Combined);
 	multiSelectMode = computed(() => this.selectedStrategy() === ProcessingStrategy.Combined);

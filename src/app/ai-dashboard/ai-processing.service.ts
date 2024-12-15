@@ -10,7 +10,7 @@ export enum ProcessingStrategy {
 export class AiProcessingService {
 	private readonly fileService = inject(FileService);
 	private readonly aiservice = inject(AIService);
-	processingStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Individual);
+	processingStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Combined);
 
 	setProcessingStrategy(strategy: ProcessingStrategy): void {
 		this.processingStrategy.set(strategy);

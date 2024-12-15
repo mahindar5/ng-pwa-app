@@ -1,110 +1,86 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      <div class="display-flex ion-justify-content-between ion-align-items-center ion-width-100">
-        <div class="m-10">AI Agent</div>
-        <span>
-          <ion-select [(ngModel)]="selectedModel" interface="modal">
-            @for(model of models(); track model) {
-            <ion-select-option [disabled]="model.disabled" [value]="model">
-              {{ model.name }}
-              @if(model.retryAfter && model.disabled) {
-              <small class="m-l-10">({{ model.retryAfterDate }})</small>
-              }
-            </ion-select-option>
-            }
-          </ion-select>
-        </span>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>
+			<div class="display-flex ion-justify-content-between ion-align-items-center ion-width-100">
+				<div class="m-10">AI Agent</div>
+				<span>
+					<ion-select [(ngModel)]="selectedModel" interface="modal">
+						@for(model of models(); track model) {
+						<ion-select-option [disabled]="model.disabled" [value]="model">
+							{{ model.name }}
+							@if(model.retryAfter && model.disabled) {
+							<small class="m-l-10">({{ model.retryAfterDate }})</small>
+							}
+						</ion-select-option>
+						}
+					</ion-select>
+				</span>
 
-        <span>
-          <ion-select
-            [(ngModel)]="selectedStrategy"
-            (ionChange)="onStrategyChange($event)"
-            interface="popover"
-          >
-            @for(strategy of processingStrategies; track strategy) {
-            <ion-select-option [value]="strategy">
-              {{ strategy }}
-            </ion-select-option>
-            }
-          </ion-select>
-        </span>
-        <span>
-          <ion-select [(ngModel)]="selectedPrompt" interface="popover">
-            @for(prompt of prompts(); track prompt) {
-            <ion-select-option [value]="prompt">{{ prompt.name }}</ion-select-option>
-            }
-          </ion-select>
-        </span>
-      </div>
-    </ion-title>
-    <ion-buttons slot="end">
-      @if (multiSelectMode()){
-      <ion-button fill="clear" (click)="selectAll()">
-        <ion-icon slot="icon-only" name="checkmark-done-circle"></ion-icon>
-      </ion-button>
-      }
-      <ion-button title="Select Files" fill="clear" (click)="selectFiles()">
-        <ion-icon name="document-outline"></ion-icon>
-      </ion-button>
-      <ion-button title="Select Folder" fill="clear" (click)="selectFolder()">
-        <ion-icon name="folder-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+				<span>
+					<ion-select [(ngModel)]="selectedStrategy" (ionChange)="onStrategyChange($event)"
+						interface="popover">
+						@for(strategy of processingStrategies; track strategy) {
+						<ion-select-option [value]="strategy">
+							{{ strategy }}
+						</ion-select-option>
+						}
+					</ion-select>
+				</span>
+				<span>
+					<ion-select [(ngModel)]="selectedPrompt" interface="popover">
+						@for(prompt of prompts(); track prompt) {
+						<ion-select-option [value]="prompt">{{ prompt.name }}</ion-select-option>
+						}
+					</ion-select>
+				</span>
+			</div>
+		</ion-title>
+		<ion-buttons slot="end">
+			@if (multiSelectMode()){
+			<ion-button fill="clear" (click)="selectAll()">
+				<ion-icon slot="icon-only" name="checkmark-done-circle"></ion-icon>
+			</ion-button>
+			}
+			<ion-button title="Select Files" fill="clear" (click)="selectFiles()">
+				<ion-icon name="document-outline"></ion-icon>
+			</ion-button>
+			<ion-button title="Select Folder" fill="clear" (click)="selectFolder()">
+				<ion-icon name="folder-outline"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
 </ion-header>
 <ion-content #myContent scrollEvents="true" scrollbarThemeDirective>
-  <div
-    #dropZone
-    class="drop-zone"
-    (dragover)="handleDrag($event, 'add')"
-    (dragleave)="handleDrag($event, 'remove')"
-    (drop)="onDrop($event)"
-  >
-    <div class="drop-message">Drag and drop a file here</div>
-  </div>
-  <div class="m-20">
-    <ion-textarea
-      rows="10"
-      label="Prompt"
-      [counter]="true"
-      maxlength="20000"
-      color="primary"
-      labelPlacement="stacked"
-      [(ngModel)]="selectedPrompt().prompt"
-      (keyup.enter)="processFiles()"
-      placeholder="Type your prompt"
-      fill="solid"
-    >
-      <ion-button
-        fill="clear"
-        slot="end"
-        aria-label="Show/hide"
-        [disabled]="!selectedPrompt().prompt || fileList().length < 1 || isProcessing()"
-        (click)="processFiles()"
-      >
-        <ion-icon slot="icon-only" name="send" aria-hidden="true"></ion-icon>
-      </ion-button>
-    </ion-textarea>
-  </div>
-  <ion-list>
-    @for (file of fileList(); track file.path) {
-    <ion-progress-bar
-      [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
-      [value]="file.status === 'done' ? 1 : file.status === 'error' ? 0.5 : 0"
-      [color]="file.status === 'error' ? 'danger' : 'primary'"
-    >
-    </ion-progress-bar>
-    <ion-item [title]="file.res">
-      @if(multiSelectMode()) {
-      <ion-checkbox slot="start" [(ngModel)]="file.selected"></ion-checkbox>
-      }
-      <ion-label>{{ file.path }}</ion-label>
-    </ion-item>
-    }
-  </ion-list>
+	<div #dropZone class="drop-zone" (dragover)="handleDrag($event, 'add')" (dragleave)="handleDrag($event, 'remove')"
+		(drop)="onDrop($event)">
+		<div class="drop-message">Drag and drop a file here</div>
+	</div>
+	<div class="m-20">
+		<ion-textarea rows="10" label="Prompt" [counter]="true" maxlength="20000" color="primary"
+			labelPlacement="stacked" [(ngModel)]="selectedPrompt().prompt" (keyup.enter)="processFiles()"
+			placeholder="Type your prompt" fill="solid">
+			<ion-button fill="clear" slot="end" aria-label="Show/hide"
+				[disabled]="!selectedPrompt().prompt || fileList().length < 1 || isProcessing()"
+				(click)="processFiles()">
+				<ion-icon slot="icon-only" name="send" aria-hidden="true"></ion-icon>
+			</ion-button>
+		</ion-textarea>
+	</div>
+	<ion-list>
+		@for (file of fileList(); track file.path) {
+		<ion-progress-bar [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
+			[value]="file.status === 'done' ? 1 : file.status === 'error' ? 0.5 : 0"
+			[color]="file.status === 'error' ? 'danger' : 'primary'">
+		</ion-progress-bar>
+		<ion-item [title]="file.res">
+			@if(multiSelectMode()) {
+			<ion-checkbox slot="start" [(ngModel)]="file.selected"></ion-checkbox>
+			}
+			<ion-label>{{ file.path }}</ion-label>
+		</ion-item>
+		}
+	</ion-list>
 </ion-content>
-
