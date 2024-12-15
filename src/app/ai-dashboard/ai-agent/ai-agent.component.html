@@ -7,14 +7,14 @@
 	</ion-toolbar>
 </ion-header>
 
-<ion-content [scrollEvents]="true">
+<ion-content [scrollEvents]="true" class="ion-padding">
 	<div #dropZone class="drop-zone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
 		(drop)="onFileDrop($event)">
 		<div class="drop-message">Drag and drop a file here</div>
 	</div>
 
-	<div class="prompt-container">
-		<ion-textarea [rows]="10" label="Prompt" counter="true" [maxlength]="20000" color="primary"
+	<div>
+		<ion-textarea [rows]="7" label="Prompt" counter="true" [maxlength]="20000" color="primary"
 			labelPlacement="stacked" [(ngModel)]="currentPrompt().prompt" (keyup.enter)="onProcessFiles()"
 			placeholder="Type your prompt" fill="solid">
 		</ion-textarea>
