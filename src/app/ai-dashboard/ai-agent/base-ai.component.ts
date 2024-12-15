@@ -54,6 +54,6 @@ export abstract class BaseAiComponent {
 	protected initializeModels(): void {
 		const loadedModels = this.aiservice.loadModels();
 		this.models.set(loadedModels);
-		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
+		this.selectedModel.set(loadedModels.find(m => !m.disabled && m.name == "gemini-exp-1206") || loadedModels[0]);
 	}
 }

@@ -29,7 +29,7 @@ export class AiAgentComponent extends BaseAiComponent {
 	allFileHandles = signal<FileItem[]>([]);
 	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
 	processingStrategies = Object.values(ProcessingStrategy);
-	selectedStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Individual);
+	selectedStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Combined);
 	multiSelectMode = computed(() => this.selectedStrategy() === ProcessingStrategy.Combined);
 
 	constructor() {
