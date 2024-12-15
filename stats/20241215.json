@@ -11747,7 +11747,7 @@
       "format": "esm"
     },
     "src/app/ai-dashboard/ai-agent/base-ai.component.ts": {
-      "bytes": 2958,
+      "bytes": 2989,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -11778,7 +11778,7 @@
       "format": "esm"
     },
     "src/app/ai-dashboard/ai-agent/ai-agent.component.ts": {
-      "bytes": 16066,
+      "bytes": 16064,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -12386,14 +12386,14 @@
       },
       "bytes": 1455
     },
-    "chunk-ET4FHUT5.js": {
+    "chunk-BBHLU3H5.js": {
       "imports": [
         {
           "path": "chunk-NUVZW6EZ.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-IQEPD3EJ.js",
+          "path": "chunk-SVZWAFHA.js",
           "kind": "import-statement"
         },
         {
@@ -12471,10 +12471,10 @@
       "entryPoint": "src/app/ai-dashboard/ai-agent/ai-agent.component.ts",
       "inputs": {
         "src/app/ai-dashboard/ai-agent/ai-agent.component.ts": {
-          "bytesInOutput": 6928
+          "bytesInOutput": 6926
         }
       },
-      "bytes": 8050
+      "bytes": 8048
     },
     "chunk-NUVZW6EZ.js": {
       "imports": [
@@ -12494,10 +12494,10 @@
       },
       "bytes": 2496
     },
-    "chunk-AWKKYCHJ.js": {
+    "chunk-VG2FTD3K.js": {
       "imports": [
         {
-          "path": "chunk-IQEPD3EJ.js",
+          "path": "chunk-SVZWAFHA.js",
           "kind": "import-statement"
         },
         {
@@ -12580,7 +12580,7 @@
       },
       "bytes": 5171
     },
-    "chunk-IQEPD3EJ.js": {
+    "chunk-SVZWAFHA.js": {
       "imports": [
         {
           "path": "chunk-EQCSVKP6.js",
@@ -12592,10 +12592,10 @@
       ],
       "inputs": {
         "src/app/ai-dashboard/ai-agent/base-ai.component.ts": {
-          "bytesInOutput": 1304
+          "bytesInOutput": 1331
         }
       },
-      "bytes": 1390
+      "bytes": 1417
     },
     "chunk-CPNBBLN3.js": {
       "imports": [
@@ -12679,7 +12679,7 @@
       },
       "bytes": 6238
     },
-    "main-GOTQBYC5.js": {
+    "main-L5NWNGJ7.js": {
       "imports": [
         {
           "path": "chunk-KNME3SUQ.js",
@@ -12754,11 +12754,11 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-ET4FHUT5.js",
+          "path": "chunk-BBHLU3H5.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-AWKKYCHJ.js",
+          "path": "chunk-VG2FTD3K.js",
           "kind": "dynamic-import"
         },
         {
