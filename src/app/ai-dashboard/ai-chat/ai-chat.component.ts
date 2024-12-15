@@ -1,7 +1,6 @@
-import { DatePipe } from '@angular/common';
 import { Component, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonAvatar, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonText, IonTextarea, IonToolbar } from '@ionic/angular/standalone';
+import { IonAvatar, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonIcon, IonItem, IonLabel, IonList, IonProgressBar, IonTextarea, IonToolbar } from '@ionic/angular/standalone';
 import { sendExtBackgroundMessage, UserRoleText } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
@@ -13,7 +12,6 @@ import { BaseAiComponent } from '../base-ai.component';
 		FormsModule,
 		IonChip, IonFooter, IonAvatar, IonButtons, IonItem, IonList, IonContent,
 		IonLabel, IonIcon, IonProgressBar, IonToolbar, IonTextarea, IonButton,
-		IonMenuButton, DatePipe, IonInput, IonText, IonSelect, IonSelectOption
 	],
 	templateUrl: './ai-chat.component.html',
 	styleUrl: './ai-chat.component.scss',

@@ -6,8 +6,8 @@
 				<img [src]="message.role === 'user' ? 'https://i2.wp.com/cdn.auth0.com/avatars/ma.png' : 'https://i2.wp.com/cdn.auth0.com/avatars/as.png'"
 					[alt]="message.role === 'user' ? 'User Avatar' : 'AI Avatar'" />
 			</ion-avatar>
-			<ion-label style="white-space: pre-line">
-				<pre [innerHTML]="message.text" class="wrapped-pre"></pre>
+			<ion-label class="ion-text-wrap">
+				<pre class="wrapped-pre">{{ message.text }}</pre>
 			</ion-label>
 		</ion-item>
 		}
@@ -30,9 +30,8 @@
 			placeholder="Type your message" rows="1"></ion-textarea>
 		<ion-buttons slot="end">
 			<ion-button [disabled]="isProcessing() || !message()" (click)="sendMessage()">
-				<ion-icon name="send"></ion-icon>
+				<ion-icon slot="icon-only" name="send"></ion-icon>
 			</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
 </ion-footer>
-

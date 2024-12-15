@@ -1,6 +1,6 @@
 import { Component, computed, ElementRef, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonRow, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonMenuButton, IonProgressBar, IonRow, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { FileItem, FileService, ProcessingStrategy, PromptModal } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
@@ -17,7 +17,7 @@ import { SettingsService } from '../settings/settings.service';
 	imports: [
 		FormsModule, IonHeader, IonCheckbox, IonProgressBar, IonToolbar,
 		IonTitle, IonButton, IonIcon, IonContent, IonRow, IonCol,
-		IonList, IonItem, IonLabel, IonTextarea,
+		IonItem, IonLabel, IonTextarea,
 		IonButtons, IonMenuButton, IonSelect, IonSelectOption
 	],
 })
@@ -108,6 +108,7 @@ export class AiAgentComponent extends BaseAiComponent implements OnInit {
 	private initializePrompt(): void {
 		this.onPromptChange();
 	}
+
 	onPromptChange(): void {
 		const selectedPrompt = this.settings().prompts.find(p => p.name === this.selectedPromptName) || this.settings().prompts[0];
 		this.currentPrompt.set({

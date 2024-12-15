@@ -3,9 +3,7 @@
 		<ion-buttons slot="start">
 			<ion-menu-button></ion-menu-button>
 		</ion-buttons>
-		<ion-title>
-			<div>AI Agent</div>
-		</ion-title>
+		<ion-title>AI Agent</ion-title>
 	</ion-toolbar>
 </ion-header>
 
@@ -16,7 +14,7 @@
 	</div>
 
 	<div class="prompt-container">
-		<ion-textarea [rows]="10" label="Prompt" [counter]="true" [maxlength]="20000" color="primary"
+		<ion-textarea [rows]="10" label="Prompt" counter="true" [maxlength]="20000" color="primary"
 			labelPlacement="stacked" [(ngModel)]="currentPrompt().prompt" (keyup.enter)="onProcessFiles()"
 			placeholder="Type your prompt" fill="solid">
 		</ion-textarea>
@@ -40,10 +38,10 @@
 						</ion-button>
 						}
 						<ion-button fill="clear" (click)="onSelectFiles()" title="Select Files">
-							<ion-icon name="document-outline"></ion-icon>
+							<ion-icon slot="icon-only" name="document-outline"></ion-icon>
 						</ion-button>
 						<ion-button fill="clear" (click)="onSelectFolder()" title="Select Folder">
-							<ion-icon name="folder-outline"></ion-icon>
+							<ion-icon slot="icon-only" name="folder-outline"></ion-icon>
 						</ion-button>
 
 						<ion-button expand="full" fill="clear" [disabled]="isProcessButtonDisabled()"
@@ -55,21 +53,17 @@
 			</ion-col>
 		</ion-row>
 	</div>
-	@let currentFileListSignal = currentFileList();
-	@if(currentFileListSignal.length > 0) {
-	<ion-list>
-		@for (file of currentFileListSignal; track file.path) {
-		<ion-progress-bar [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
-			[value]="file.status === 'done' ? 1 : file.status === 'error' ? 0.5 : 0"
-			[color]="file.status === 'error' ? 'danger' : 'primary'">
-		</ion-progress-bar>
-		<ion-item [title]="file.res">
-			@if (isMultiSelectMode()) {
-			<ion-checkbox slot="start" [(ngModel)]="file.selected"></ion-checkbox>
-			}
-			<ion-label>{{ file.path }}</ion-label>
-		</ion-item>
+
+	@for (file of currentFileList(); track file.path) {
+	<ion-progress-bar [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
+		[value]="file.status === 'done' ? 1 : file.status === 'error' ? 0.5 : 0"
+		[color]="file.status === 'error' ? 'danger' : 'primary'">
+	</ion-progress-bar>
+	<ion-item [title]="file.res">
+		@if (isMultiSelectMode()) {
+		<ion-checkbox slot="start" [(ngModel)]="file.selected"></ion-checkbox>
 		}
-	</ion-list>
+		<ion-label>{{ file.path }}</ion-label>
+	</ion-item>
 	}
 </ion-content>
