@@ -25,7 +25,7 @@ export class AiAgentComponent extends BaseAiComponent {
 	private readonly dropZoneRef = viewChild<ElementRef>('dropZone');
 
 	prompts = signal(prompts);
-	selectedPrompt = signal(prompts.find(p => p.name === 'all') || prompts[0]);
+	selectedPrompt = signal(prompts.find(p => p.name === 'ng') || prompts[0]);
 	allFileHandles = signal<FileItem[]>([]);
 	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
 	processingStrategies = Object.values(ProcessingStrategy);
