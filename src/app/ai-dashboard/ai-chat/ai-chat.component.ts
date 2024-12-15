@@ -1,62 +1,36 @@
 import { DatePipe } from '@angular/common';
-import { Component, computed, ElementRef, inject, OnInit, signal, viewChild } from '@angular/core';
+import { Component, inject, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AlertController, IonAvatar, IonButton, IonButtons, IonCheckbox, IonChip, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonText, IonTextarea, IonTitle, IonToolbar, ModalController } from '@ionic/angular/standalone';
-import { AIModel, AIResponse, AIService, DeviceResponse, FileItem, FileService, prompts, sendExtBackgroundMessage, UserRoleText } from '@mahindar5/common-lib';
+import { AlertController, IonAvatar, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonText, IonTextarea, IonToolbar } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
-import { AiProcessingService, ProcessingStrategy } from './ai-processing.service';
+import { AIModel, AIResponse, AIService, DeviceResponse, sendExtBackgroundMessage, UserRoleText } from '../../../../../common-lib/dist';
 
 @Component({
-	selector: 'ai-agent-component',
-	templateUrl: 'ai-agent.component.html',
-	styleUrls: ['ai-agent.component.scss'],
-	standalone: true,
-	providers: [AIService, FileService, AiProcessingService],
+	selector: 'app-ai-chat',
 	imports: [
-		FormsModule, IonHeader, IonCheckbox, IonProgressBar, IonToolbar, IonButtons, DatePipe, IonInput, IonChip,
-		IonMenuButton, IonTitle, IonButton, IonIcon, IonContent, IonFooter, IonAvatar, IonText,
-		IonList, IonItem, IonLabel, IonTextarea, IonSelect, IonSelectOption
+		FormsModule,
+		IonChip, IonFooter, IonAvatar, IonButtons, IonItem, IonList, IonContent,
+		IonLabel, IonIcon, IonProgressBar, IonToolbar, IonTextarea, IonButton,
+		IonMenuButton, DatePipe, IonInput, IonText, IonSelect, IonSelectOption
 	],
+	templateUrl: './ai-chat.component.html',
+	styleUrl: './ai-chat.component.scss'
 })
-export class AIAgentComponent implements OnInit {
-	private readonly aiservice = inject(AIService);
-	private readonly fileService = inject(FileService);
-	private readonly alertController = inject(AlertController);
-	private readonly modalController = inject(ModalController);
-	private readonly aiProcessingService = inject(AiProcessingService);
-	private readonly contentRef = viewChild<IonContent>('myContent');
-	private readonly dropZoneRef = viewChild<ElementRef>('dropZone');
-	prompts = signal(prompts);
-	selectedPrompt = signal(prompts.find(p => p.name === 'all') || prompts[0]);
-	models = signal<AIModel[]>([]);
-	selectedModel = signal<AIModel>({} as AIModel);
-	allFileHandles = signal<FileItem[]>([]);
-	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
-	isProcessing = signal(false);
+export class AiChatComponent {
 
+	private readonly aiservice = inject(AIService);
+	private readonly contentRef = viewChild<IonContent>('myContent');
+	private readonly alertController = inject(AlertController);
 	message = signal('');
 	messages = signal<UserRoleText[]>([]);
-	toggleChat = signal(false);
-
-	processingStrategies = Object.values(ProcessingStrategy);
-	selectedStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Individual);
-	multiSelectMode = computed(() => this.selectedStrategy() === ProcessingStrategy.Combined);
+	isProcessing = signal(false);
+	selectedModel = signal<AIModel>({} as AIModel);
+	models = signal<AIModel[]>([]);
 
 	constructor() {
 		addIcons({ checkmark, checkmarkDoneCircle, close, colorWandOutline, createOutline, settingsOutline, cloudDoneOutline, documentOutline, folderOutline, send, chatbubblesOutline, clipboardOutline });
 	}
-
-	ngOnInit(): void {
-		this.initializeModels();
-	}
-
-	private initializeModels(): void {
-		const loadedModels = this.aiservice.loadModels();
-		this.models.set(loadedModels);
-		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
-	}
-
 	private async showAuthenticationAlert(response: DeviceResponse): Promise<boolean> {
 		const { user_code, verification_uri, expires_in } = response;
 		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
@@ -75,41 +49,6 @@ export class AIAgentComponent implements OnInit {
 		const { role } = await alert.onDidDismiss();
 		return role === 'ok';
 	}
-
-	onStrategyChange(event: CustomEvent): void {
-		this.selectedStrategy.set(event.detail.value);
-		this.aiProcessingService.setProcessingStrategy(this.selectedStrategy());
-	}
-
-	async processFiles(): Promise<void> {
-		this.isProcessing.set(true);
-		try {
-			const fileItemsToProcess = this.selectedStrategy() === ProcessingStrategy.Combined
-				? this.fileList().filter(item => item.selected)
-				: this.fileList();
-
-			if (fileItemsToProcess.length === 0) {
-				this.addUserMessage('No files selected');
-				return;
-			}
-
-			await this.aiProcessingService.processFiles(
-				fileItemsToProcess,
-				this.selectedPrompt().prompt,
-				this.selectedModel(),
-				this.showAuthenticationAlert.bind(this),
-				this.updateFileItemObject.bind(this),
-				this.processResponse.bind(this)
-			);
-		} finally {
-			this.isProcessing.set(false);
-		}
-	}
-
-	selectAll() {
-		this.allFileHandles.update((items) => items.map(item => ({ ...item, selected: true })));
-	}
-
 	private processResponse(response: AIResponse): void {
 		if (response.retryAfter) {
 			const model = this.models().find(m => m.name === this.selectedModel().name);
@@ -123,25 +62,11 @@ export class AIAgentComponent implements OnInit {
 		}
 	}
 
-	handleDrag(event: DragEvent, action: 'add' | 'remove'): void {
-		event.preventDefault();
-		this.dropZoneRef()?.nativeElement.classList[action]('drag-over');
+	private initializeModels(): void {
+		const loadedModels = this.aiservice.loadModels();
+		this.models.set(loadedModels);
+		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
 	}
-
-	async onDrop(event: DragEvent): Promise<void> {
-		event.preventDefault();
-		this.handleDrag(event, 'remove');
-		this.allFileHandles.set(await this.fileService.handleDrop(event));
-	}
-
-	async selectFolder(): Promise<void> {
-		this.allFileHandles.set(await this.fileService.selectFolder());
-	}
-
-	async selectFiles(): Promise<void> {
-		this.allFileHandles.set(await this.fileService.selectFiles());
-	}
-
 	async sendMessage(): Promise<void> {
 		try {
 			this.addUserMessage(this.message());
@@ -222,12 +147,7 @@ Text:${tabContent.output?.replace(/\n/g, ' ')}`;
 	clearMessages(): void {
 		this.messages.set([]);
 	}
-
 	private addUserMessage(text: string): void {
 		this.messages.set([...this.messages(), { role: 'user', text, date: new Date() }]);
-	}
-
-	private updateFileItemObject(fileItem: FileItem, status: 'inprogress' | 'done' | 'error', res: string): void {
-		this.allFileHandles.update((items) => items.map(item => item.path === fileItem.path ? { ...item, status, res } : item));
 	}
 }

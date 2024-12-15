@@ -50,13 +50,9 @@
 			<ion-button title="Select Folder" fill="clear" (click)="selectFolder()">
 				<ion-icon name="folder-outline"></ion-icon>
 			</ion-button>
-			<ion-button title="Chat" fill="clear" (click)="toggleChat.set(!toggleChat())">
-				<ion-icon name="chatbubbles-outline"></ion-icon>
-			</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
-@if(!toggleChat()) {
 <ion-content #myContent scrollEvents="true" scrollbarThemeDirective>
 	<div #dropZone class="drop-zone" (dragover)="handleDrag($event, 'add')" (dragleave)="handleDrag($event, 'remove')"
 		(drop)="onDrop($event)">
@@ -89,44 +85,3 @@
 	</ion-list>
 
 </ion-content>
-}
-@if(toggleChat()) {
-<ion-content #myContent>
-
-	<ion-list>
-		@for (message of messages(); track message) {
-		<ion-item>
-			<ion-avatar slot="start">
-				<img [src]="message.role === 'user' ? 'https://i2.wp.com/cdn.auth0.com/avatars/ma.png' : 'https://i2.wp.com/cdn.auth0.com/avatars/as.png'"
-					[alt]="message.role === 'user' ? 'User Avatar' : 'AI Avatar'" />
-			</ion-avatar>
-			<ion-label style="white-space: pre-line">
-				<pre [innerHTML]="message.text" class="wrapped-pre"></pre>
-			</ion-label>
-		</ion-item>
-		}
-	</ion-list>
-</ion-content>
-<ion-footer>
-	<ion-chip (click)="summarizeActivePage()">
-		<ion-icon name="color-wand-outline"></ion-icon>
-		<ion-label>Summarize Active Page</ion-label>
-	</ion-chip>
-	<ion-chip (click)="clearMessages()">
-		<ion-label>Clear</ion-label>
-	</ion-chip>
-
-	@if (isProcessing()) {
-	<ion-progress-bar type="indeterminate"></ion-progress-bar>
-	}
-	<ion-toolbar>
-		<ion-textarea [autoGrow]="true" [(ngModel)]="message" (keyup.enter)="sendMessage()"
-			placeholder="Type your message" rows="1"></ion-textarea>
-		<ion-buttons slot="end">
-			<ion-button [disabled]="isProcessing() || !message()" (click)="sendMessage()">
-				<ion-icon name="send"></ion-icon>
-			</ion-button>
-		</ion-buttons>
-	</ion-toolbar>
-</ion-footer>
-}
