@@ -1,16 +1,16 @@
 import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AlertController, IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { AIModel, AIResponse, AIService, DeviceResponse, FileItem, FileService, prompts } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
-import { AIModel, AIResponse, AIService, DeviceResponse, FileItem, FileService, prompts, UserRoleText } from '../../../../../common-lib/dist';
 import { AiProcessingService, ProcessingStrategy } from '../ai-processing.service';
 
 @Component({
 	selector: 'app-ai-agent',
 	templateUrl: './ai-agent.component.html',
 	styleUrl: './ai-agent.component.scss',
-	providers: [AIService, FileService, AiProcessingService],
+	providers: [FileService, AiProcessingService],
 	imports: [
 		FormsModule, IonHeader, IonCheckbox, IonProgressBar, IonToolbar,
 		IonTitle, IonButton, IonIcon, IonContent,
@@ -19,11 +19,11 @@ import { AiProcessingService, ProcessingStrategy } from '../ai-processing.servic
 	],
 })
 export class AiAgentComponent {
-
 	private readonly aiservice = inject(AIService);
 	private readonly fileService = inject(FileService);
 	private readonly alertController = inject(AlertController);
 	private readonly aiProcessingService = inject(AiProcessingService);
+
 	private readonly dropZoneRef = viewChild<ElementRef>('dropZone');
 	prompts = signal(prompts);
 	selectedPrompt = signal(prompts.find(p => p.name === 'all') || prompts[0]);
@@ -32,11 +32,6 @@ export class AiAgentComponent {
 	allFileHandles = signal<FileItem[]>([]);
 	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
 	isProcessing = signal(false);
-
-	message = signal('');
-	messages = signal<UserRoleText[]>([]);
-	toggleChat = signal(false);
-
 	processingStrategies = Object.values(ProcessingStrategy);
 	selectedStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Individual);
 	multiSelectMode = computed(() => this.selectedStrategy() === ProcessingStrategy.Combined);
@@ -48,6 +43,7 @@ export class AiAgentComponent {
 	ngOnInit(): void {
 		this.initializeModels();
 	}
+
 	private async showAuthenticationAlert(response: DeviceResponse): Promise<boolean> {
 		const { user_code, verification_uri, expires_in } = response;
 		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
@@ -66,6 +62,7 @@ export class AiAgentComponent {
 		const { role } = await alert.onDidDismiss();
 		return role === 'ok';
 	}
+
 	private processResponse(response: AIResponse): void {
 		if (response.retryAfter) {
 			const model = this.models().find(m => m.name === this.selectedModel().name);
@@ -93,7 +90,6 @@ export class AiAgentComponent {
 				: this.fileList();
 
 			if (fileItemsToProcess.length === 0) {
-				this.addUserMessage('No files selected');
 				return;
 			}
 
@@ -110,11 +106,11 @@ export class AiAgentComponent {
 		}
 	}
 
-
 	onStrategyChange(event: CustomEvent): void {
 		this.selectedStrategy.set(event.detail.value);
 		this.aiProcessingService.setProcessingStrategy(this.selectedStrategy());
 	}
+
 	selectAll() {
 		this.allFileHandles.update((items) => items.map(item => ({ ...item, selected: true })));
 	}
@@ -138,9 +134,6 @@ export class AiAgentComponent {
 		this.allFileHandles.set(await this.fileService.selectFiles());
 	}
 
-	private addUserMessage(text: string): void {
-		this.messages.set([...this.messages(), { role: 'user', text, date: new Date() }]);
-	}
 	private updateFileItemObject(fileItem: FileItem, status: 'inprogress' | 'done' | 'error', res: string): void {
 		this.allFileHandles.update((items) => items.map(item => item.path === fileItem.path ? { ...item, status, res } : item));
 	}

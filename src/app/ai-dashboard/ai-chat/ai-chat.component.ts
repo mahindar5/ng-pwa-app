@@ -15,7 +15,7 @@ import { AIModel, AIResponse, AIService, DeviceResponse, sendExtBackgroundMessag
 		IonMenuButton, DatePipe, IonInput, IonText, IonSelect, IonSelectOption
 	],
 	templateUrl: './ai-chat.component.html',
-	styleUrl: './ai-chat.component.scss'
+	styleUrl: './ai-chat.component.scss',
 })
 export class AiChatComponent {
 
@@ -30,7 +30,9 @@ export class AiChatComponent {
 
 	constructor() {
 		addIcons({ checkmark, checkmarkDoneCircle, close, colorWandOutline, createOutline, settingsOutline, cloudDoneOutline, documentOutline, folderOutline, send, chatbubblesOutline, clipboardOutline });
+		this.initializeModels();
 	}
+
 	private async showAuthenticationAlert(response: DeviceResponse): Promise<boolean> {
 		const { user_code, verification_uri, expires_in } = response;
 		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
@@ -49,6 +51,7 @@ export class AiChatComponent {
 		const { role } = await alert.onDidDismiss();
 		return role === 'ok';
 	}
+
 	private processResponse(response: AIResponse): void {
 		if (response.retryAfter) {
 			const model = this.models().find(m => m.name === this.selectedModel().name);
@@ -67,6 +70,7 @@ export class AiChatComponent {
 		this.models.set(loadedModels);
 		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
 	}
+
 	async sendMessage(): Promise<void> {
 		try {
 			this.addUserMessage(this.message());
@@ -92,6 +96,7 @@ export class AiChatComponent {
 			this.isProcessing.set(false);
 		}
 	}
+
 	async summarizeActivePage(): Promise<void> {
 		const getActiveTabs = await sendExtBackgroundMessage('ChromeTabHelper', 'getAllTabs', {});
 		const tabs = getActiveTabs.output?.map((tab: any) => ({
@@ -147,6 +152,7 @@ Text:${tabContent.output?.replace(/\n/g, ' ')}`;
 	clearMessages(): void {
 		this.messages.set([]);
 	}
+
 	private addUserMessage(text: string): void {
 		this.messages.set([...this.messages(), { role: 'user', text, date: new Date() }]);
 	}
