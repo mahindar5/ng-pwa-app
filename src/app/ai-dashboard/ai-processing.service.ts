@@ -110,10 +110,10 @@ export class AiProcessingService {
 
 		while ((match = fileRegex.exec(message)) !== null) {
 			const filename = match[1].trim();
-			const content = match[2].trim();
 			const fileItem = fileItems.find(item => item.path === filename);
+			const code = this.fileService.extractCode(match[2].trim());
 			if (fileItem) {
-				fileItem.res = this.fileService.extractCode(content);
+				fileItem.res = code;
 				updateFileItemObject(fileItem, 'done', fileItem.res);
 				this.fileService.writeToFile(fileItem);
 			} else {
@@ -123,7 +123,7 @@ export class AiProcessingService {
 				if (directoryHandle) {
 					const newFileHandle = await directoryHandle.getFileHandle(filename.split('/').pop()!, { create: true });
 					const writable = await newFileHandle.createWritable();
-					await writable.write(content);
+					await writable.write(code);
 					await writable.close();
 					console.log(`File created for ${filename}`);
 				} else {
