@@ -11778,7 +11778,7 @@
       "format": "esm"
     },
     "src/app/ai-dashboard/ai-agent/ai-agent.component.ts": {
-      "bytes": 16067,
+      "bytes": 16066,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -12386,7 +12386,7 @@
       },
       "bytes": 1455
     },
-    "chunk-PGMU5TAX.js": {
+    "chunk-ET4FHUT5.js": {
       "imports": [
         {
           "path": "chunk-NUVZW6EZ.js",
@@ -12471,10 +12471,10 @@
       "entryPoint": "src/app/ai-dashboard/ai-agent/ai-agent.component.ts",
       "inputs": {
         "src/app/ai-dashboard/ai-agent/ai-agent.component.ts": {
-          "bytesInOutput": 6929
+          "bytesInOutput": 6928
         }
       },
-      "bytes": 8051
+      "bytes": 8050
     },
     "chunk-NUVZW6EZ.js": {
       "imports": [
@@ -12679,7 +12679,7 @@
       },
       "bytes": 6238
     },
-    "main-ORBW4RIJ.js": {
+    "main-GOTQBYC5.js": {
       "imports": [
         {
           "path": "chunk-KNME3SUQ.js",
@@ -12754,7 +12754,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-PGMU5TAX.js",
+          "path": "chunk-ET4FHUT5.js",
           "kind": "dynamic-import"
         },
         {
