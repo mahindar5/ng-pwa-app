@@ -1,10 +1,10 @@
 import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { FileItem, FileService, prompts } from '@mahindar5/common-lib';
+import { FileItem, FileService, ProcessingStrategy, prompts } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
-import { AiProcessingService, ProcessingStrategy } from '../ai-processing.service';
+import { AiProcessingService } from '../ai-processing.service';
 import { BaseAiComponent } from './base-ai.component';
 
 @Component({

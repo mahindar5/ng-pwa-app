@@ -1,11 +1,6 @@
 import { inject, signal } from '@angular/core';
-import { AIModel, AIResponse, AIService, FileItem, FileService } from '@mahindar5/common-lib';
+import { AIModel, AIResponse, AIService, FileItem, FileService, ProcessingStrategy } from '@mahindar5/common-lib';
 
-export enum ProcessingStrategy {
-	'Individual' = 'Individual',
-	'Combined' = 'Combined',
-	'Chat' = 'Chat',
-}
 
 export class AiProcessingService {
 	private readonly fileService = inject(FileService);
