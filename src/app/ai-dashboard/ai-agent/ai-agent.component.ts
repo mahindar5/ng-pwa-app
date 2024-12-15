@@ -1,7 +1,7 @@
 import { Component, computed, ElementRef, inject, OnInit, signal, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonMenuButton, IonProgressBar, IonRow, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { FileItem, FileService, ProcessingStrategy, PromptModal } from '@mahindar5/common-lib';
+import { COMMON_INSTRUCTIONS, FileItem, FileService, ProcessingStrategy, PromptModal } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
 import { AiProcessingService } from '../ai-processing.service';
@@ -117,6 +117,7 @@ export class AiAgentComponent extends BaseAiComponent implements OnInit {
 ${selectedPrompt?.role}
 
 #INSTRUCTIONS:
+${COMMON_INSTRUCTIONS.join('\n')}
 ${selectedPrompt?.promptTextList.map(p => p.text).join('\n')}
 
 #OUTPUT FORMAT:
