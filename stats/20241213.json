@@ -11716,7 +11716,7 @@
       "format": "esm"
     },
     "src/app/ai-agent/ai-agent.component.ts": {
-      "bytes": 26798,
+      "bytes": 26779,
       "imports": [
         {
           "path": "@angular/common",
@@ -12121,7 +12121,7 @@
       },
       "bytes": 952
     },
-    "chunk-T6RWKIPU.js": {
+    "chunk-GVVHLE6D.js": {
       "imports": [
         {
           "path": "chunk-R5Q6NOLG.js",
@@ -12197,12 +12197,12 @@
           "bytesInOutput": 2414
         },
         "src/app/ai-agent/ai-agent.component.ts": {
-          "bytesInOutput": 12326
+          "bytesInOutput": 12345
         }
       },
-      "bytes": 15836
+      "bytes": 15855
     },
-    "main-KI77NHXS.js": {
+    "main-WHKCIMKU.js": {
       "imports": [
         {
           "path": "chunk-R5Q6NOLG.js",
@@ -12269,7 +12269,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-T6RWKIPU.js",
+          "path": "chunk-GVVHLE6D.js",
           "kind": "dynamic-import"
         }
       ],
