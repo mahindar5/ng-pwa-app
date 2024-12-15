@@ -1,10 +1,11 @@
 import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AlertController, IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { AIModel, AIResponse, AIService, DeviceResponse, FileItem, FileService, prompts } from '@mahindar5/common-lib';
+import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { FileItem, FileService, prompts } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
 import { AiProcessingService, ProcessingStrategy } from '../ai-processing.service';
+import { BaseAiComponent } from './base-ai.component';
 
 @Component({
 	selector: 'app-ai-agent',
@@ -18,68 +19,26 @@ import { AiProcessingService, ProcessingStrategy } from '../ai-processing.servic
 		IonButtons, IonSelectOption, IonSelect, IonMenuButton
 	],
 })
-export class AiAgentComponent {
-	private readonly aiservice = inject(AIService);
+export class AiAgentComponent extends BaseAiComponent {
 	private readonly fileService = inject(FileService);
-	private readonly alertController = inject(AlertController);
 	private readonly aiProcessingService = inject(AiProcessingService);
-
 	private readonly dropZoneRef = viewChild<ElementRef>('dropZone');
+
 	prompts = signal(prompts);
 	selectedPrompt = signal(prompts.find(p => p.name === 'all') || prompts[0]);
-	models = signal<AIModel[]>([]);
-	selectedModel = signal<AIModel>({} as AIModel);
 	allFileHandles = signal<FileItem[]>([]);
 	fileList = computed(() => this.fileService.updateFileList(this.selectedPrompt().name, this.allFileHandles()));
-	isProcessing = signal(false);
 	processingStrategies = Object.values(ProcessingStrategy);
 	selectedStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Individual);
 	multiSelectMode = computed(() => this.selectedStrategy() === ProcessingStrategy.Combined);
 
 	constructor() {
+		super();
 		addIcons({ checkmark, checkmarkDoneCircle, close, colorWandOutline, createOutline, settingsOutline, cloudDoneOutline, documentOutline, folderOutline, send, chatbubblesOutline, clipboardOutline });
 	}
 
-	ngOnInit(): void {
-		this.initializeModels();
-	}
-
-	private async showAuthenticationAlert(response: DeviceResponse): Promise<boolean> {
-		const { user_code, verification_uri, expires_in } = response;
-		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
-		const message = `Please visit ${verification_uri} and enter code ${user_code} to authenticate. Code expires at ${expirationTime}.`;
-
-		const alert = await this.alertController.create({
-			header: 'Authentication',
-			message,
-			buttons: [
-				{ text: `Copy (${user_code}) & Authenticate`, handler: () => { navigator.clipboard.writeText(user_code).then(() => window.open(verification_uri, '_blank')); return false; } },
-				{ text: 'Cancel', role: 'cancel' },
-				{ text: 'Completed', role: 'ok' },
-			]
-		});
-		await alert.present();
-		const { role } = await alert.onDidDismiss();
-		return role === 'ok';
-	}
-
-	private processResponse(response: AIResponse): void {
-		if (response.retryAfter) {
-			const model = this.models().find(m => m.name === this.selectedModel().name);
-			if (model) {
-				model.retryAfter = response.retryAfter.retryAfter;
-				model.retryAfterCreatedAt = new Date().toISOString();
-				localStorage.setItem('models', JSON.stringify(this.models()));
-				this.initializeModels();
-			}
-			throw new Error('Rate limit exceeded. Please try again later.');
-		}
-	}
-
-	private initializeModels(): void {
-		const loadedModels = this.aiservice.loadModels();
-		this.models.set(loadedModels);
-		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
+	override ngOnInit(): void {
+		super.ngOnInit();
 	}
 
 	async processFiles(): Promise<void> {

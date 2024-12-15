@@ -1,10 +1,11 @@
 import { DatePipe } from '@angular/common';
-import { Component, inject, signal, viewChild } from '@angular/core';
+import { Component, signal, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AlertController, IonAvatar, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonText, IonTextarea, IonToolbar } from '@ionic/angular/standalone';
+import { IonAvatar, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonProgressBar, IonSelect, IonSelectOption, IonText, IonTextarea, IonToolbar } from '@ionic/angular/standalone';
+import { sendExtBackgroundMessage, UserRoleText } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
-import { AIModel, AIResponse, AIService, DeviceResponse, sendExtBackgroundMessage, UserRoleText } from '../../../../../common-lib/dist';
+import { BaseAiComponent } from '../ai-agent/base-ai.component';
 
 @Component({
 	selector: 'app-ai-chat',
@@ -17,58 +18,18 @@ import { AIModel, AIResponse, AIService, DeviceResponse, sendExtBackgroundMessag
 	templateUrl: './ai-chat.component.html',
 	styleUrl: './ai-chat.component.scss',
 })
-export class AiChatComponent {
-
-	private readonly aiservice = inject(AIService);
+export class AiChatComponent extends BaseAiComponent {
 	private readonly contentRef = viewChild<IonContent>('myContent');
-	private readonly alertController = inject(AlertController);
 	message = signal('');
 	messages = signal<UserRoleText[]>([]);
-	isProcessing = signal(false);
-	selectedModel = signal<AIModel>({} as AIModel);
-	models = signal<AIModel[]>([]);
 
 	constructor() {
+		super();
 		addIcons({ checkmark, checkmarkDoneCircle, close, colorWandOutline, createOutline, settingsOutline, cloudDoneOutline, documentOutline, folderOutline, send, chatbubblesOutline, clipboardOutline });
-		this.initializeModels();
 	}
 
-	private async showAuthenticationAlert(response: DeviceResponse): Promise<boolean> {
-		const { user_code, verification_uri, expires_in } = response;
-		const expirationTime = new Date(Date.now() + expires_in * 1000).toLocaleString();
-		const message = `Please visit ${verification_uri} and enter code ${user_code} to authenticate. Code expires at ${expirationTime}.`;
-
-		const alert = await this.alertController.create({
-			header: 'Authentication',
-			message,
-			buttons: [
-				{ text: `Copy (${user_code}) & Authenticate`, handler: () => { navigator.clipboard.writeText(user_code).then(() => window.open(verification_uri, '_blank')); return false; } },
-				{ text: 'Cancel', role: 'cancel' },
-				{ text: 'Completed', role: 'ok' },
-			]
-		});
-		await alert.present();
-		const { role } = await alert.onDidDismiss();
-		return role === 'ok';
-	}
-
-	private processResponse(response: AIResponse): void {
-		if (response.retryAfter) {
-			const model = this.models().find(m => m.name === this.selectedModel().name);
-			if (model) {
-				model.retryAfter = response.retryAfter.retryAfter;
-				model.retryAfterCreatedAt = new Date().toISOString();
-				localStorage.setItem('models', JSON.stringify(this.models()));
-				this.initializeModels();
-			}
-			throw new Error('Rate limit exceeded. Please try again later.');
-		}
-	}
-
-	private initializeModels(): void {
-		const loadedModels = this.aiservice.loadModels();
-		this.models.set(loadedModels);
-		this.selectedModel.set(loadedModels.find(m => !m.disabled) || loadedModels[0]);
+	override ngOnInit(): void {
+		super.ngOnInit();
 	}
 
 	async sendMessage(): Promise<void> {
