@@ -1,21 +1,23 @@
 .drop-zone {
-  border: 2px dashed #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-  text-align: center;
-  border-color: #444;
-  color: #444;
+	border: 2px dashed #ccc;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 20px;
+	text-align: center;
+	transition: border-color 0.3s ease, color 0.3s ease;
+
+	&.drag-over {
+		border-color: #777;
+		color: #777;
+	}
 }
 
 .drop-message {
-  font-size: 20px;
-  color: #aaa;
-  padding: 10px;
+	font-size: 20px;
+	color: #aaa;
+	padding: 10px;
 }
 
-.drag-over {
-  border-color: #777;
-  color: #777;
+.prompt-container {
+	margin: 0 20px;
 }
-

@@ -1,9 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, OnInit, Signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonListHeader, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar, ModalController } from '@ionic/angular/standalone';
-import { promptsArray } from '@mahindar5/common-lib';
+import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonListHeader, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { ProcessingStrategy, PromptItem, promptsArray, Settings } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { addCircle, removeCircle } from 'ionicons/icons';
+import { SettingsService } from './settings.service';
 
 @Component({
 	selector: 'app-settings',
@@ -15,121 +16,38 @@ import { addCircle, removeCircle } from 'ionicons/icons';
 		IonCheckbox, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonSelect, IonSelectOption, IonTitle, IonToolbar
 	],
 })
-export class SettingsComponent {
-	readonly availableModels: string[] = ['gpt-3', 'gpt-4', 'davinci', 'curie'];
+export class SettingsComponent implements OnInit {
 	readonly availableFileExtensions: string[] = Object.keys(promptsArray);
+	readonly processingStrategies = Object.values(ProcessingStrategy);
+	private readonly settingsService = inject(SettingsService);
 
-	private readonly modalController = inject(ModalController);
-
-	modalDataSignal = signal<ModalData>({
-		temperature: 0,
-		topP: 1,
-		n: 1,
-		model: 'gpt-3',
-		fileExtensions: ['ts', 'html'],
-		prompts: promptsArray,
-		systemRole: 'assistant',
-	});
+	settings: Signal<Settings> = this.settingsService.settings;
 
 	constructor() {
 		addIcons({ addCircle, removeCircle });
 	}
 
-	updateTemperature(event: CustomEvent): void {
-		this.modalDataSignal.update(state => ({ ...state, temperature: event.detail }));
+	ngOnInit(): void {
 	}
 
-	updateTopP(event: CustomEvent): void {
-		this.modalDataSignal.update(state => ({ ...state, topP: event.detail }));
+	addPrompt(prompt: PromptItem): void {
+		this.settingsService.addPrompt(prompt);
+		this.saveSettings();
 	}
 
-	updateN(event: Event): void {
-		const value = Number((event.target as HTMLInputElement).value);
-		this.modalDataSignal.update(state => ({ ...state, n: value }));
+	removePrompt(prompt: PromptItem, index: number): void {
+		this.settingsService.removePrompt(prompt, index);
+		this.saveSettings();
 	}
 
-	updateModel(event: CustomEvent): void {
-		this.modalDataSignal.update(state => ({ ...state, model: event.detail }));
+	//   updateFileExtensions(event: any): void {
+	//     const selectedExtensions: string[] = event.detail.value;
+	//     this.settingsService.updateFileExtensions(selectedExtensions);
+	//     this.saveSettings();
+	//   }
+
+	saveSettings(): void {
+		this.settingsService.saveSettings();
 	}
 
-	updatePromptSelected(extension: string, index: number, event: CustomEvent): void {
-		this.modalDataSignal.update(state => ({
-			...state,
-			prompts: {
-				...state.prompts,
-				[extension]: state.prompts[extension].map((prompt, idx) =>
-					idx === index ? { ...prompt, selected: event.detail } : prompt
-				),
-			},
-		}));
-	}
-
-	updatePromptText(extension: string, index: number, event: Event): void {
-		const text = (event.target as HTMLInputElement).value;
-		this.modalDataSignal.update(state => ({
-			...state,
-			prompts: {
-				...state.prompts,
-				[extension]: state.prompts[extension].map((prompt, idx) =>
-					idx === index ? { ...prompt, text } : prompt
-				),
-			},
-		}));
-	}
-
-	updateSystemRole(event: Event): void {
-		const role = (event.target as HTMLInputElement).value;
-		this.modalDataSignal.update(state => ({ ...state, systemRole: role }));
-	}
-
-	addPrompt(extension: string): void {
-		this.modalDataSignal.update(state => ({
-			...state,
-			prompts: {
-				...state.prompts,
-				[extension]: [...state.prompts[extension], { text: '', selected: false }],
-			},
-		}));
-	}
-
-	removePrompt(extension: string, index: number): void {
-		this.modalDataSignal.update(state => ({
-			...state,
-			prompts: {
-				...state.prompts,
-				[extension]: state.prompts[extension].filter((_, idx) => idx !== index),
-			},
-		}));
-	}
-
-	updateFileExtensions(selectedExtensions: string[]): void {
-		const newPrompts = selectedExtensions.reduce<Record<string, Prompt[]>>((acc, ext) => {
-			acc[ext] = acc[ext] || this.modalDataSignal().prompts[ext] || [];
-			return acc;
-		}, {});
-		this.modalDataSignal.update(state => ({
-			...state,
-			fileExtensions: selectedExtensions,
-			prompts: newPrompts,
-		}));
-	}
-
-	closeModal(): void {
-		this.modalController.dismiss(this.modalDataSignal());
-	}
-}
-
-interface ModalData {
-	temperature: number;
-	topP: number;
-	n: number;
-	model: string;
-	fileExtensions: string[];
-	prompts: Record<string, Prompt[]>;
-	systemRole: string;
-}
-
-interface Prompt {
-	text: string;
-	selected: boolean;
 }

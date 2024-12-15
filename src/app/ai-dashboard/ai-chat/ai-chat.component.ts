@@ -5,7 +5,7 @@ import { IonAvatar, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonIc
 import { sendExtBackgroundMessage, UserRoleText } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
-import { BaseAiComponent } from '../ai-agent/base-ai.component';
+import { BaseAiComponent } from '../base-ai.component';
 
 @Component({
 	selector: 'app-ai-chat',

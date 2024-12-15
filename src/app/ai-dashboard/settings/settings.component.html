@@ -2,8 +2,7 @@
 	<ion-toolbar>
 		<ion-title>Settings</ion-title>
 		<ion-buttons slot="end">
-			<ion-button (click)="closeModal()">Save</ion-button>
-			<ion-button (click)="closeModal()">Cancel</ion-button>
+			<ion-button (click)="saveSettings()">Save</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
@@ -14,69 +13,74 @@
 			<ion-col>
 				<ion-item>
 					<ion-range labelPlacement="stacked" label="Temperature" [min]="0" [max]="1" [step]="0.01"
-						[value]="modalDataSignal().temperature" (ionChange)="updateTemperature($event)"></ion-range>
+						[(ngModel)]="settings().temperature" (ionChange)="saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item>
 					<ion-range labelPlacement="stacked" label="Top P" [min]="0" [max]="1" [step]="0.01"
-						[value]="modalDataSignal().topP" (ionChange)="updateTopP($event)"></ion-range>
+						[(ngModel)]="settings().topP" (ionChange)="saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item>
 					<ion-range labelPlacement="stacked" label="N" [min]="1" [max]="100" [step]="1"
-						[value]="modalDataSignal().n" (ionChange)="updateN($event)"></ion-range>
+						[(ngModel)]="settings().n" (ionChange)="saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col>
 				<ion-item>
-					<ion-select [value]="modalDataSignal().model" (ionChange)="updateModel($event)" label="Model"
+					<ion-select [(ngModel)]="settings().model" (ionChange)="saveSettings()" label="Model"
 						labelPlacement="stacked">
-						@for (model of availableModels; track model) {
-						<ion-select-option [value]="model"> {{ model }}</ion-select-option>
+						@for (model of settings().models; track model) {
+						<ion-select-option [value]="model.name" [disabled]="model.disabled">
+							{{ model.name }}
+							@if(model.retryAfter && model.disabled) {
+							<small class="m-l-10">({{ model.retryAfterDate }})</small>
+							}
+						</ion-select-option>
 						}
 					</ion-select>
 				</ion-item>
 			</ion-col>
 			<ion-col>
-
 				<ion-item>
-					<ion-select label="File Extensions" labelPlacement="stacked" multiple="true"
-						[value]="modalDataSignal().fileExtensions"
-						(ionChange)="updateFileExtensions($event.detail.value)">
-						@for (ext of availableFileExtensions; track ext) {
-						<ion-select-option [value]="ext"> {{ ext }} </ion-select-option>
+					<ion-select [(ngModel)]="settings().processingStrategy" (ionChange)="saveSettings()"
+						label="Processing Strategy" labelPlacement="stacked">
+						@for (strategy of processingStrategies; track strategy) {
+						<ion-select-option [value]="strategy"> {{ strategy }}</ion-select-option>
 						}
 					</ion-select>
 				</ion-item>
 			</ion-col>
 		</ion-row>
+		<ion-row>
+		</ion-row>
 		<ion-item>
-			<ion-input label="System Role" labelPlacement="stacked" [value]="modalDataSignal().systemRole"
-				(ionInput)="updateSystemRole($event)" placeholder="Enter system role"></ion-input>
+			<ion-input label="System Role" labelPlacement="stacked" [(ngModel)]="settings().systemRole"
+				(ionInput)="saveSettings()" placeholder="Enter system role"></ion-input>
 		</ion-item>
 		<ion-list>
-			@for (ext of modalDataSignal().fileExtensions; track ext) {
+			@for (prompt of settings().prompts; track prompt) {
 			<ion-item-group>
 				<ion-item-divider sticky="true">
 					<ion-label>
-						{{ ext }} Prompts
+						{{ prompt.name }} Prompts
 					</ion-label>
-					<ion-button title="Add" slot="end" size="medium" fill="clear" (click)="addPrompt(ext)">
+					<ion-button title="Add" slot="end" size="medium" fill="clear" (click)="addPrompt(prompt)">
 						<ion-icon name="add-circle"></ion-icon>
 					</ion-button>
 				</ion-item-divider>
 
-				@for (prompt of modalDataSignal().prompts[ext]; track prompt; let i = $index) {
+				@for (prompttext of prompt.promptTextList; track prompttext; let i = $index) {
 				<ion-item>
-					<ion-checkbox slot="start" [checked]="prompt.selected"
-						(ionChange)="updatePromptSelected(ext, i, $event)"></ion-checkbox>
-					<ion-input [value]="prompt.text" (ionInput)="updatePromptText(ext, i, $event)"
+					<ion-checkbox slot="start" [(ngModel)]="prompttext.selected"
+						(ionChange)="saveSettings()"></ion-checkbox>
+					<ion-input [(ngModel)]="prompttext.text" (ionInput)="saveSettings()"
 						placeholder="Enter prompt"></ion-input>
-					<ion-button title="Remove" slot="end" color="danger" fill="clear" (click)="removePrompt(ext, i)">
+					<ion-button title="Remove" slot="end" color="danger" fill="clear" (click)="removePrompt(prompt, i)">
 						<ion-icon name="remove-circle"></ion-icon>
 					</ion-button>
 				</ion-item>

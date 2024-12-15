@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular/standalone';
 import { AIModel, AIResponse, AIService, DeviceResponse } from '@mahindar5/common-lib';
 
 import { Component } from '@angular/core';
+import { SettingsService } from './settings/settings.service';
 
 @Component({
 	selector: 'app-base-ai',
@@ -11,11 +12,20 @@ import { Component } from '@angular/core';
 export abstract class BaseAiComponent {
 	protected readonly aiservice = inject(AIService);
 	protected readonly alertController = inject(AlertController);
+	protected readonly settingsService = inject(SettingsService);
 	isProcessing = signal(false);
 	selectedModel = signal<AIModel>({} as AIModel);
 	models = signal<AIModel[]>([]);
 
 	ngOnInit(): void {
+		const settings = this.settingsService.settings();
+		// this.settingsService.settings$.subscribe(settings => {
+		// 	this.models.set(settings.models);
+		// 	this.selectedModel.set(settings.models.find(m => m.name === settings.model) || settings.models[0]);
+		// });
+		this.models.set(settings.models);
+		this.selectedModel.set(settings.models.find(m => m.name === settings.model) || settings.models[0]);
+
 		this.initializeModels();
 	}
 
@@ -44,8 +54,8 @@ export abstract class BaseAiComponent {
 			if (model) {
 				model.retryAfter = response.retryAfter.retryAfter;
 				model.retryAfterCreatedAt = new Date().toISOString();
-				localStorage.setItem('models', JSON.stringify(this.models()));
-				this.initializeModels();
+				this.settingsService.settings.set({ ...this.settingsService.settings(), models: this.models() });
+				this.settingsService.saveSettings();
 			}
 			throw new Error('Rate limit exceeded. Please try again later.');
 		}
@@ -53,7 +63,7 @@ export abstract class BaseAiComponent {
 
 	protected initializeModels(): void {
 		const loadedModels = this.aiservice.loadModels();
-		this.models.set(loadedModels);
-		this.selectedModel.set(loadedModels.find(m => !m.disabled && m.name == "gemini-exp-1206") || loadedModels[0]);
+		this.settingsService.settings.set({ ...this.settingsService.settings(), models: loadedModels });
+		this.settingsService.saveSettings();
 	}
 }
