@@ -12432,7 +12432,7 @@
       },
       "bytes": 1376
     },
-    "chunk-YVX6SLBA.js": {
+    "chunk-5GK3K5FD.js": {
       "imports": [
         {
           "path": "chunk-Q3H5ZIMW.js",
@@ -12749,7 +12749,7 @@
       },
       "bytes": 1278
     },
-    "main-QBMVSLMS.js": {
+    "main-KCS3RF4V.js": {
       "imports": [
         {
           "path": "chunk-TKDVVXBS.js",
@@ -12820,7 +12820,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-YVX6SLBA.js",
+          "path": "chunk-5GK3K5FD.js",
           "kind": "dynamic-import"
         },
         {
