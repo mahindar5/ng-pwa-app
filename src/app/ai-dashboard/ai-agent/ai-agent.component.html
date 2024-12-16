@@ -14,7 +14,7 @@
 	</div>
 
 	<div>
-		<ion-textarea [rows]="7" label="Prompt" counter="true" [maxlength]="20000" color="primary"
+		<ion-textarea [rows]="7" label="Prompt" counter="true" [maxlength]="50000" color="primary"
 			labelPlacement="stacked" [(ngModel)]="currentPrompt().prompt" (keyup.enter)="onProcessFiles()"
 			placeholder="Type your prompt" fill="solid">
 		</ion-textarea>
