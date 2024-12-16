@@ -12,32 +12,32 @@
 		<ion-row>
 			<ion-col>
 				<ion-item>
-					<ion-range labelPlacement="stacked" label="Temperature" [min]="0" [max]="1" [step]="0.01"
+					<ion-range label="Temperature" label-placement="stacked" min="0" max="1" step="0.01"
 						[(ngModel)]="settings().temperature" (ionChange)="saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item>
-					<ion-range labelPlacement="stacked" label="Top P" [min]="0" [max]="1" [step]="0.01"
+					<ion-range label="Top P" label-placement="stacked" min="0" max="1" step="0.01"
 						[(ngModel)]="settings().topP" (ionChange)="saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item>
-					<ion-range labelPlacement="stacked" label="N" [min]="1" [max]="100" [step]="1"
-						[(ngModel)]="settings().n" (ionChange)="saveSettings()"></ion-range>
+					<ion-range label="N" label-placement="stacked" min="1" max="100" step="1" [(ngModel)]="settings().n"
+						(ionChange)="saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col>
 				<ion-item>
-					<ion-select [(ngModel)]="settings().model" (ionChange)="saveSettings()" label="Model"
-						labelPlacement="stacked">
+					<ion-select label="Model" label-placement="stacked" [(ngModel)]="settings().model"
+						(ionChange)="saveSettings()">
 						@for (model of settings().models; track model) {
 						<ion-select-option [value]="model.name" [disabled]="model.disabled">
 							{{ model.name }}
-							@if(model.retryAfter && model.disabled) {
+							@if (model.retryAfter && model.disabled) {
 							<small class="m-l-10">({{ model.retryAfterDate }})</small>
 							}
 						</ion-select-option>
@@ -47,8 +47,8 @@
 			</ion-col>
 			<ion-col>
 				<ion-item>
-					<ion-select [(ngModel)]="settings().processingStrategy" (ionChange)="saveSettings()"
-						label="Processing Strategy" labelPlacement="stacked">
+					<ion-select label="Processing Strategy" label-placement="stacked"
+						[(ngModel)]="settings().processingStrategy" (ionChange)="saveSettings()">
 						@for (strategy of processingStrategies; track strategy) {
 						<ion-select-option [value]="strategy"> {{ strategy }}</ion-select-option>
 						}
@@ -56,24 +56,19 @@
 				</ion-item>
 			</ion-col>
 		</ion-row>
-		<ion-row>
-		</ion-row>
 		<ion-item>
-			<ion-input label="System Role" labelPlacement="stacked" [(ngModel)]="settings().systemRole"
+			<ion-input label="System Role" label-placement="stacked" [(ngModel)]="settings().systemRole"
 				(ionInput)="saveSettings()" placeholder="Enter system role"></ion-input>
 		</ion-item>
 		<ion-list>
 			@for (prompt of settings().prompts; track prompt) {
 			<ion-item-group>
 				<ion-item-divider sticky="true">
-					<ion-label>
-						{{ prompt.name }} Prompts
-					</ion-label>
+					<ion-label>{{ prompt.name }} Prompts</ion-label>
 					<ion-button title="Add" slot="end" size="medium" fill="clear" (click)="addPrompt(prompt)">
 						<ion-icon name="add-circle"></ion-icon>
 					</ion-button>
 				</ion-item-divider>
-
 				@for (prompttext of prompt.promptTextList; track prompttext; let i = $index) {
 				<ion-item>
 					<ion-checkbox slot="start" [(ngModel)]="prompttext.selected"

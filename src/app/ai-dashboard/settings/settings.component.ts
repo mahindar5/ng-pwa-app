@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, Signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonListHeader, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { ProcessingStrategy, PromptItem, promptsArray, Settings } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { addCircle, removeCircle } from 'ionicons/icons';
@@ -12,8 +12,8 @@ import { SettingsService } from './settings.service';
 	styleUrls: ['./settings.component.scss'],
 	standalone: true,
 	imports: [
-		FormsModule, IonButton, IonButtons, IonFooter, IonRow, IonCol, IonItemDivider, IonItemGroup, IonIcon,
-		IonCheckbox, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonSelect, IonSelectOption, IonTitle, IonToolbar
+		FormsModule, IonButton, IonButtons, IonRow, IonCol, IonItemDivider, IonItemGroup, IonIcon,
+		IonCheckbox, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonRange, IonSelect, IonSelectOption, IonTitle, IonToolbar
 	],
 })
 export class SettingsComponent implements OnInit {
@@ -28,6 +28,7 @@ export class SettingsComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		// No initialization logic needed
 	}
 
 	addPrompt(prompt: PromptItem): void {
@@ -40,14 +41,7 @@ export class SettingsComponent implements OnInit {
 		this.saveSettings();
 	}
 
-	//   updateFileExtensions(event: any): void {
-	//     const selectedExtensions: string[] = event.detail.value;
-	//     this.settingsService.updateFileExtensions(selectedExtensions);
-	//     this.saveSettings();
-	//   }
-
 	saveSettings(): void {
 		this.settingsService.saveSettings();
 	}
-
 }
