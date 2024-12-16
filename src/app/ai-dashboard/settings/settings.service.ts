@@ -14,6 +14,7 @@ export class SettingsService {
 		systemRole: 'assistant',
 		models: [],
 		apiKeys: {},
+		maxOutputTokens: 8192 * 4,
 		processingStrategy: ProcessingStrategy.Combined
 	};
 	settings = signal<Settings>(this.defaultSettings);

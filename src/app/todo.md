@@ -1,4 +1,82 @@
-## Tabs
+## TODO:3
+
+1. Add newly created files to the file handles list.
+2. Display a limited set of settings in the side pane, with an option to expand to the full settings tab. This reduces the number of functions managing different elements.
+3. Enable backup for all settings and the prompts JSON file.
+4. Fix the chat functionality.
+5. Automate the process of fetching models.
+6. Capture the Gemini API key and display an authentication alert with instructions to retrieve it. Provide similar instructions for GitHub Copilot. Explore removing the callback for GitHub authentication by directly passing the token as a callback in AI responses. Once completed, recall the API.
+7. Implement iterative instructions with a configurable batch size.
+8. Add a fallback mechanism for `chrome.sendMessage` in Kiwi, waiting for a callback based on the user agent.
+9. Always display two checkboxes: "Select All" and "Intermediate." Disable "Combined Context" when using an individual strategy.
+10. For combined context, enable selection with a few files and replace the second option with this approach. This may evolve into a user chat feature.
+11. Introduce a folder tree view with options to "Expand All" and "Collapse All."
+12. Trigger single-file processing when the play button is clicked on a file.
+13. Save previously selected file handles to IndexedDB.
+14. Add a cache service type for Chrome extension storage. Explore sync storage to prevent data loss and investigate other storage options like IndexedDB and local storage.
+15. Integrate a vanilla JavaScript singleton instance with Angular using a provider.
+16. Add a delay to settings loops to rate-limit API calls.
+17. Implement parallel processing using different models.
+18. Remove individual service exports for cache services.
+19. For unprocessed files, send an additional request for only those files or mark them as errors and allow reprocessing.
+20. Add a retry mechanism for failures, especially for HTTP 429 responses. Retry with a fallback model in such cases.
+21. Pass a "Summarize" flag instead of resetting it during a `Summarize` method call.
+22. Display the last update time for each file.
+23. In the chat interface, allow attachments that can either be parsed to text or utilized by the agent without updating the files.
+24. Show incremental progress for GitHub authentication by displaying elapsed seconds on the button.
+25. Add a tab for creating and downloading a JSON file.
+26. Pass a context tree JSON file so that individual strategies can use it. This could also become a new strategy.
+27. Allow users to add file references and specific instructions in the UI.
+28. Auto-detect references for TypeScript files by analyzing import paths, then cross-reference these with related HTML, SCSS, and test files.
+29. Show the reference file count and display file names in a popover.
+
+---
+
+New file creation.. add them to file handles list
+In side pane show limited settings . Expand to go to settings tab. This should decrease the functions for holding sdifferent things
+Allow backup for all settings. And promps json file. Allow backup
+Fix chat thing
+Automate getting models
+Capture gemini api key thow show auth alert. Give instructions to get. Give instructions for github copilot as well. Explore removing callback for github pass gettoken as callback in ai response. Once done recall the api
+Iterative instructions with batch size
+
+Kiwi fallback await to callbackfor chromesendmessage. Based on user agent
+
+Show 2 check boxes always. With selected all or intermediate. Disable combinedcontext for individual strategy
+
+Combined context with few selected files. Replace second option with this. Could become user chat
+Bring folder tree. Expand all collapse all
+Single file process trigger from play click on the file
+
+Save previously selected file handles to indexdb
+Add cache service type for chrome extension storage. (Explore sync so you don't loose data) explore other storage support in chrome extension like indexdb local storage
+
+Plug vanilla js single ton instance with angular provider
+
+Add delay to the loop in settings to ratelimit calls.
+
+Parallel processing using different model
+
+Remove cache service individual service from exports
+
+For un processed files send one more request with only unprocessed files. Or mark them as error and allow reprocessing
+Add retry for failure... in case 429 retry with with fallback model for 429
+
+Send Summarize flag instead resetting in Summarize method call
+Show last update time for files
+In chat add attachments and parse to text or utilize agent only but don't update files
+
+Github auth run completed check incrementally by showing seconds on the button
+
+Probably a tab to create this json and download
+Pass context tree json. So for individual strategy it can use the context tree json. This can be a new strategy as well
+In this ui we add file references and specfic instructions.
+Auto detect references for ts files by utilizing import file paths. Then cross reference them to html file scss test files
+Show reference file count and in popover show filenames
+
+---
+
+## TODO:2 Tabs
 
 - **FileAgent**
 - **Chat/Summary**
@@ -35,7 +113,7 @@
 
 ---
 
-# **Response 1**
+# **TODO:1 Response 1**
 
 Applying iterative instructions to the approaches adds another layer of granularity to your processing workflow. It allows for **focused and incremental improvements**, which could be beneficial for large or complex projects. Below is an updated evaluation of each approach when incorporating iterative instructions, followed by a comparison with the single-prompt strategy.
 

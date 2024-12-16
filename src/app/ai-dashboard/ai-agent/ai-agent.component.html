@@ -13,46 +13,44 @@
 		<div class="drop-message">Drag and drop a file here</div>
 	</div>
 
-	<div>
-		<ion-textarea [rows]="7" label="Prompt" counter="true" [maxlength]="50000" color="primary"
-			labelPlacement="stacked" [(ngModel)]="currentPrompt().prompt" (keyup.enter)="onProcessFiles()"
-			placeholder="Type your prompt" fill="solid">
-		</ion-textarea>
-		<ion-row>
-			<ion-col>
-				<ion-item>
-					<ion-label>Role</ion-label>
-					<ion-select [(ngModel)]="selectedPromptName" (ionChange)="onPromptChange()">
-						@for (prompt of settings().prompts; track prompt.name) {
-						<ion-select-option [value]="prompt.name">{{ prompt.name }}</ion-select-option>
-						}
-					</ion-select>
-				</ion-item>
-			</ion-col>
-			<ion-col>
-				<ion-item>
-					<ion-buttons slot="end">
-						@if (isMultiSelectMode()) {
-						<ion-button fill="clear" (click)="onSelectAllFiles()" title="Select All">
-							<ion-icon slot="icon-only" name="checkmark-done-circle"></ion-icon>
-						</ion-button>
-						}
-						<ion-button fill="clear" (click)="onSelectFiles()" title="Select Files">
-							<ion-icon slot="icon-only" name="document-outline"></ion-icon>
-						</ion-button>
-						<ion-button fill="clear" (click)="onSelectFolder()" title="Select Folder">
-							<ion-icon slot="icon-only" name="folder-outline"></ion-icon>
-						</ion-button>
+	<ion-textarea [rows]="7" label="Prompt" counter="true" [maxlength]="50000" color="primary" labelPlacement="stacked"
+		[(ngModel)]="currentPrompt().prompt" (keyup.enter)="onProcessFiles()" placeholder="Type your prompt"
+		fill="solid">
+	</ion-textarea>
+	<ion-row>
+		<ion-col>
+			<ion-item>
+				<ion-label>Role</ion-label>
+				<ion-select [(ngModel)]="selectedPromptName" (ionChange)="onPromptChange()">
+					@for (prompt of settings().prompts; track prompt.name) {
+					<ion-select-option [value]="prompt.name">{{ prompt.name }}</ion-select-option>
+					}
+				</ion-select>
+			</ion-item>
+		</ion-col>
+		<ion-col>
+			<ion-item>
+				<ion-buttons slot="end">
+					@if (isMultiSelectMode()) {
+					<ion-button fill="clear" (click)="onSelectAllFiles()" title="Select All">
+						<ion-icon slot="icon-only" name="checkmark-done-circle"></ion-icon>
+					</ion-button>
+					}
+					<ion-button fill="clear" (click)="onSelectFiles()" title="Select Files">
+						<ion-icon slot="icon-only" name="document-outline"></ion-icon>
+					</ion-button>
+					<ion-button fill="clear" (click)="onSelectFolder()" title="Select Folder">
+						<ion-icon slot="icon-only" name="folder-outline"></ion-icon>
+					</ion-button>
 
-						<ion-button expand="full" fill="clear" [disabled]="isProcessButtonDisabled()"
-							(click)="onProcessFiles()">
-							<ion-icon slot="icon-only" name="send"></ion-icon>
-						</ion-button>
-					</ion-buttons>
-				</ion-item>
-			</ion-col>
-		</ion-row>
-	</div>
+					<ion-button expand="full" fill="clear" [disabled]="isProcessButtonDisabled()"
+						(click)="onProcessFiles()">
+						<ion-icon slot="icon-only" name="send"></ion-icon>
+					</ion-button>
+				</ion-buttons>
+			</ion-item>
+		</ion-col>
+	</ion-row>
 
 	@for (file of currentFileList(); track file.path) {
 	<ion-progress-bar [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
