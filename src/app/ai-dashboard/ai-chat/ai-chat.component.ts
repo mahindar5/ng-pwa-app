@@ -37,7 +37,7 @@ export class AiChatComponent extends BaseAiComponent {
 
 			const response = await this.aiservice.chat(
 				this.messages(),
-				this.selectedModel(),
+				this.settingsService.settings(),
 				this.showAuthenticationAlert.bind(this)
 			);
 

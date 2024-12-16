@@ -59,7 +59,7 @@ export class AiAgentComponent extends BaseAiComponent implements OnInit {
 			await this.aiProcessingService.processFiles(
 				filesToProcess,
 				this.currentPrompt().prompt,
-				this.selectedModel(),
+				this.settings(),
 				this.showAuthenticationAlert.bind(this),
 				this.updateFileItemStatus.bind(this),
 				this.processResponse.bind(this)

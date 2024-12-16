@@ -13,6 +13,7 @@ export class SettingsService {
 		prompts: promptsArray,
 		systemRole: 'assistant',
 		models: [],
+		apiKeys: {},
 		processingStrategy: ProcessingStrategy.Combined
 	};
 	settings = signal<Settings>(this.defaultSettings);

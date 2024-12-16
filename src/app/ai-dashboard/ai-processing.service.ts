@@ -1,5 +1,5 @@
 import { inject, signal } from '@angular/core';
-import { AIModel, AIResponse, AIService, FileItem, FileService, ProcessingStrategy } from '@mahindar5/common-lib';
+import { AIResponse, AIService, FileItem, FileService, ProcessingStrategy, Settings } from '@mahindar5/common-lib';
 
 
 export class AiProcessingService {
@@ -14,7 +14,7 @@ export class AiProcessingService {
 	async processFiles(
 		fileItems: FileItem[],
 		prompt: string,
-		model: AIModel,
+		settings: Settings,
 		showAuthenticationAlert: (response: any) => Promise<boolean>,
 		updateFileItemObject: (fileItem: FileItem, status: 'inprogress' | 'done' | 'error', res: string) => void,
 		processResponse: (response: AIResponse) => void
@@ -23,13 +23,13 @@ export class AiProcessingService {
 
 		switch (strategy) {
 			case ProcessingStrategy.Individual:
-				await this.processFilesIndividually(fileItems, prompt, model, showAuthenticationAlert, updateFileItemObject, processResponse);
+				await this.processFilesIndividually(fileItems, prompt, settings, showAuthenticationAlert, updateFileItemObject, processResponse);
 				break;
 			case ProcessingStrategy.Combined:
-				await this.processFilesCombined(fileItems, prompt, model, showAuthenticationAlert, updateFileItemObject, processResponse);
+				await this.processFilesCombined(fileItems, prompt, settings, showAuthenticationAlert, updateFileItemObject, processResponse);
 				break;
 			case ProcessingStrategy.Chat:
-				await this.processFilesChat(fileItems, prompt, model, showAuthenticationAlert, updateFileItemObject, processResponse);
+				await this.processFilesChat(fileItems, prompt, settings, showAuthenticationAlert, updateFileItemObject, processResponse);
 				break;
 		}
 	}
@@ -37,7 +37,7 @@ export class AiProcessingService {
 	private async processFilesIndividually(
 		fileItems: FileItem[],
 		prompt: string,
-		model: AIModel,
+		settings: Settings,
 		showAuthenticationAlert: (response: any) => Promise<boolean>,
 		updateFileItemObject: (fileItem: FileItem, status: 'inprogress' | 'done' | 'error', res: string) => void,
 		processResponse: (response: AIResponse) => void
@@ -51,7 +51,7 @@ export class AiProcessingService {
 				updateFileItemObject(fileItem, 'inprogress', '');
 				const response = await this.aiservice.message(
 					finalPrompt,
-					model,
+					settings,
 					showAuthenticationAlert
 				);
 
@@ -70,7 +70,7 @@ export class AiProcessingService {
 	private async processFilesCombined(
 		fileItems: FileItem[],
 		prompt: string,
-		model: AIModel,
+		settings: Settings,
 		showAuthenticationAlert: (response: any) => Promise<boolean>,
 		updateFileItemObject: (fileItem: FileItem, status: 'inprogress' | 'done' | 'error', res: string) => void,
 		processResponse: (response: AIResponse) => void
@@ -87,7 +87,7 @@ export class AiProcessingService {
 			const combinedPrompt = `${prompt}\n\n${filesText}`;
 			const response = await this.aiservice.message(
 				combinedPrompt,
-				model,
+				settings,
 				showAuthenticationAlert
 			);
 
@@ -136,7 +136,7 @@ export class AiProcessingService {
 	private async processFilesChat(
 		fileItems: FileItem[],
 		prompt: string,
-		model: AIModel,
+		settings: Settings,
 		showAuthenticationAlert: (response: any) => Promise<boolean>,
 		updateFileItemObject: (fileItem: FileItem, status: 'inprogress' | 'done' | 'error', res: string) => void,
 		processResponse: (response: AIResponse) => void
@@ -161,7 +161,7 @@ export class AiProcessingService {
 						{ role: 'user', text: filesText, date: new Date() },
 						{ role: 'user', text: filePrompt, date: new Date() }
 					],
-					model,
+					settings,
 					showAuthenticationAlert
 				);
 
