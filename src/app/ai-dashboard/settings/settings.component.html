@@ -3,6 +3,7 @@
 		<ion-title>Settings</ion-title>
 		<ion-buttons slot="end">
 			<ion-button (click)="saveSettings()">Save</ion-button>
+			<ion-button (click)="resetSettings()">Reset</ion-button>
 		</ion-buttons>
 	</ion-toolbar>
 </ion-header>
@@ -55,11 +56,29 @@
 					</ion-select>
 				</ion-item>
 			</ion-col>
+			<ion-col>
+				<ion-item>
+					<ion-input label="System Role" label-placement="stacked" [(ngModel)]="settings().systemRole"
+						(ionInput)="saveSettings()" placeholder="Enter system role"></ion-input>
+				</ion-item>
+			</ion-col>
 		</ion-row>
-		<ion-item>
-			<ion-input label="System Role" label-placement="stacked" [(ngModel)]="settings().systemRole"
-				(ionInput)="saveSettings()" placeholder="Enter system role"></ion-input>
-		</ion-item>
+		<ion-row>
+			<ion-col>
+				<ion-item>
+					<ion-input label="Google API Key" label-placement="stacked"
+						[(ngModel)]="settings().apiKeys['google']" (ionInput)="saveSettings()"
+						placeholder="Enter Google API Key"></ion-input>
+				</ion-item>
+			</ion-col>
+			<ion-col>
+				<ion-item>
+					<ion-input label="Github PAT Token" label-placement="stacked"
+						[(ngModel)]="settings().apiKeys['github']" (ionInput)="saveSettings()"
+						placeholder="Enter Github PAT Token"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
 		<ion-list>
 			@for (prompt of settings().prompts; track prompt) {
 			<ion-item-group>

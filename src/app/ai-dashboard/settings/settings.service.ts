@@ -13,7 +13,10 @@ export class SettingsService {
 		prompts: promptsArray,
 		systemRole: 'assistant',
 		models: [],
-		apiKeys: {},
+		apiKeys: {
+			github: '',
+			google: '',
+		},
 		maxOutputTokens: 8192 * 4,
 		processingStrategy: ProcessingStrategy.Combined
 	};
@@ -46,6 +49,10 @@ export class SettingsService {
 		const updatedSettings = this.settings();
 		localStorage.setItem('settings', JSON.stringify(updatedSettings));
 		localStorage.setItem('models', JSON.stringify(updatedSettings.models));
+	}
+	resetSettings(): void {
+		this.settings.set(this.defaultSettings);
+		this.saveSettings();
 	}
 
 	addPrompt(prompt: PromptItem) {

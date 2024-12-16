@@ -44,4 +44,8 @@ export class SettingsComponent implements OnInit {
 	saveSettings(): void {
 		this.settingsService.saveSettings();
 	}
+	resetSettings(): void {
+		this.settingsService.resetSettings();
+		this.saveSettings();
+	}
 }
