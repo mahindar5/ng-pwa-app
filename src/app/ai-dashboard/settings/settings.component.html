@@ -1,38 +1,35 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-title>Settings</ion-title>
-		@if (isCompactView()) {
 		<ion-buttons slot="end">
+			@if (isCompactView()) {
 			<ion-button (click)="resetSettings()">Reset</ion-button>
-			<ion-button (click)="openFullSettings()">
+			<ion-button (click)="router.navigate(['ai-dashboard/settings'])">
 				Expand
 				<ion-icon slot="end" name="open-outline"></ion-icon>
 			</ion-button>
-		</ion-buttons>
-		}
-		@else {
-		<ion-buttons slot="end">
-			<ion-button (click)="downloadSettings()">
+			} @else {
+			<ion-button (click)="settingsService.downloadSettings()">
 				<ion-icon slot="start" name="download-outline"></ion-icon>
 				Download
 			</ion-button>
-			<ion-button (click)="uploadSettings()">
+			<ion-button (click)="settingsService.selectAndValidateSettingsJsonFile()">
 				<ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
 				Upload
 			</ion-button>
-			<ion-button (click)="saveSettings()">Save</ion-button>
+			<ion-button (click)="settingsService.saveSettings()">Save</ion-button>
 			<ion-button (click)="resetSettings()">Reset</ion-button>
+			}
 		</ion-buttons>
-		}
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
-	@if (isCompactView()) {
 	<ion-list>
+		@if (isCompactView()) {
 		<ion-item>
 			<ion-select label="Model" label-placement="stacked" [(ngModel)]="settings().model"
-				(ionChange)="saveSettings()" interface="popover" [compareWith]="compareModels">
+				(ionChange)="settingsService.saveSettings()" interface="popover" [compareWith]="compareModels">
 				@for (model of settings().models; track model) {
 				<ion-select-option [value]="model" [disabled]="model.disabled">
 					{{ model.org }} -- {{ model.name }}
@@ -45,7 +42,7 @@
 		</ion-item>
 		<ion-item>
 			<ion-select label="Processing Strategy" label-placement="stacked" interface="popover"
-				[(ngModel)]="settings().processingStrategy" (ionChange)="saveSettings()">
+				[(ngModel)]="settings().processingStrategy" (ionChange)="settingsService.saveSettings()">
 				@for (strategy of processingStrategies; track strategy) {
 				<ion-select-option [value]="strategy"> {{ strategy }}</ion-select-option>
 				}
@@ -53,9 +50,8 @@
 		</ion-item>
 		<ion-item>
 			<ion-input label="Max Output Tokens" type="number" label-placement="stacked"
-				[(ngModel)]="settings().maxOutputTokens" (ionChange)="saveSettings()"></ion-input>
+				[(ngModel)]="settings().maxOutputTokens" (ionChange)="settingsService.saveSettings()"></ion-input>
 		</ion-item>
-
 		<ion-item>
 			<ion-select label="Role" label-placement="stacked" interface="popover"
 				[(ngModel)]="settings().selectedPrompt" [compareWith]="comparePrompts" (ionChange)="onPromptChange()">
@@ -64,27 +60,25 @@
 				}
 			</ion-select>
 		</ion-item>
-	</ion-list>
-	}
-	@else {
-	<ion-list>
+		}
+		@if (!isCompactView()) {
 		<ion-row>
 			<ion-col>
 				<ion-item>
 					<ion-range label="Temperature" label-placement="stacked" min="0" max="1" step="0.01"
-						[(ngModel)]="settings().temperature" (ionChange)="saveSettings()"></ion-range>
+						[(ngModel)]="settings().temperature" (ionChange)="settingsService.saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item>
 					<ion-range label="Top P" label-placement="stacked" min="0" max="1" step="0.01"
-						[(ngModel)]="settings().topP" (ionChange)="saveSettings()"></ion-range>
+						[(ngModel)]="settings().topP" (ionChange)="settingsService.saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item>
 					<ion-range label="N" label-placement="stacked" min="1" max="100" step="1" [(ngModel)]="settings().n"
-						(ionChange)="saveSettings()"></ion-range>
+						(ionChange)="settingsService.saveSettings()"></ion-range>
 				</ion-item>
 			</ion-col>
 		</ion-row>
@@ -92,7 +86,7 @@
 			<ion-col>
 				<ion-item>
 					<ion-select label="Model" label-placement="stacked" [(ngModel)]="settings().model"
-						(ionChange)="saveSettings()" interface="popover" [compareWith]="compareModels">
+						(ionChange)="settingsService.saveSettings()" interface="popover" [compareWith]="compareModels">
 						@for (model of settings().models; track model) {
 						<ion-select-option [value]="model" [disabled]="model.disabled">
 							{{ model.org }} -- {{ model.name }}
@@ -107,7 +101,7 @@
 			<ion-col>
 				<ion-item>
 					<ion-select label="Processing Strategy" label-placement="stacked" interface="popover"
-						[(ngModel)]="settings().processingStrategy" (ionChange)="saveSettings()">
+						[(ngModel)]="settings().processingStrategy" (ionChange)="settingsService.saveSettings()">
 						@for (strategy of processingStrategies; track strategy) {
 						<ion-select-option [value]="strategy"> {{ strategy }}</ion-select-option>
 						}
@@ -117,15 +111,17 @@
 			<ion-col>
 				<ion-item>
 					<ion-input label="Max Output Tokens" type="number" label-placement="stacked"
-						[(ngModel)]="settings().maxOutputTokens" (ionChange)="saveSettings()"></ion-input>
+						[(ngModel)]="settings().maxOutputTokens"
+						(ionChange)="settingsService.saveSettings()"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
 			<ion-col>
 				<ion-item>
-					<ion-select label="Role" interface="popover" [(ngModel)]="settings().selectedPrompt"
-						[compareWith]="comparePrompts" (ionChange)="onPromptChange()">
+					<ion-select label="Role" label-placement="stacked" interface="popover"
+						[(ngModel)]="settings().selectedPrompt" [compareWith]="comparePrompts"
+						(ionChange)="onPromptChange()">
 						@for (prompt of settings().prompts; track prompt.name) {
 						<ion-select-option [value]="prompt">{{ prompt.name }}</ion-select-option>
 						}
@@ -135,53 +131,51 @@
 			<ion-col>
 				<ion-item>
 					<ion-input label="Google API Key" label-placement="stacked"
-						[(ngModel)]="settings().apiKeys['google']" (ionInput)="saveSettings()"
+						[(ngModel)]="settings().apiKeys['google']" (ionInput)="settingsService.saveSettings()"
 						placeholder="Enter Google API Key"></ion-input>
 				</ion-item>
 			</ion-col>
 			<ion-col>
 				<ion-item>
 					<ion-input label="Github PAT Token" label-placement="stacked"
-						[(ngModel)]="settings().apiKeys['github']" (ionInput)="saveSettings()"
+						[(ngModel)]="settings().apiKeys['github']" (ionInput)="settingsService.saveSettings()"
 						placeholder="Enter Github PAT Token"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
-		<ion-list>
-			<ion-accordion-group (ionChange)="expandedAccordion = $event.detail.value;">
-				@for (prompt of settings().prompts; track prompt) {
-				<ion-accordion [value]="prompt.name">
-					<ion-item slot="header">
-						<ion-label>{{ prompt.name }} Prompts</ion-label>
-					</ion-item>
-					@if (expandedAccordion == prompt.name) {
-					<div class="ion-padding" slot="content">
-						<ion-list>
-							@for (prompttext of prompt.promptTextList; track prompttext; let i = $index) {
-							<ion-item>
-								<ion-checkbox slot="start" [(ngModel)]="prompttext.selected"
-									(ionChange)="saveSettings()"></ion-checkbox>
-								<ion-input [(ngModel)]="prompttext.text" (ionInput)="saveSettings()"
-									placeholder="Enter prompt"></ion-input>
-								<ion-button title="Remove" slot="end" color="danger" fill="clear"
-									(click)="removePrompt(prompt, i)">
-									<ion-icon name="remove-circle"></ion-icon>
-								</ion-button>
-							</ion-item>
-							}
-							<ion-item>
-								<ion-button title="Add" slot="end" size="medium" fill="clear"
-									(click)="addPrompt(prompt)">
-									<ion-icon name="add-circle"></ion-icon>
-								</ion-button>
-							</ion-item>
-						</ion-list>
-					</div>
-					}
-				</ion-accordion>
+		<ion-accordion-group (ionChange)="expandedAccordion = $event.detail.value;">
+			@for (prompt of settings().prompts; track prompt) {
+			<ion-accordion [value]="prompt.name">
+				<ion-item slot="header">
+					<ion-label>{{ prompt.name }} Prompts</ion-label>
+				</ion-item>
+				@if (expandedAccordion == prompt.name) {
+				<div class="ion-padding" slot="content">
+					<ion-list>
+						@for (prompttext of prompt.promptTextList; track prompttext; let i = $index) {
+						<ion-item>
+							<ion-checkbox slot="start" [(ngModel)]="prompttext.selected"
+								(ionChange)="settingsService.saveSettings()"></ion-checkbox>
+							<ion-input [(ngModel)]="prompttext.text" (ionInput)="settingsService.saveSettings()"
+								placeholder="Enter prompt"></ion-input>
+							<ion-button title="Remove" slot="end" color="danger" fill="clear"
+								(click)="settingsService.removePrompt(prompt, i)">
+								<ion-icon name="remove-circle"></ion-icon>
+							</ion-button>
+						</ion-item>
+						}
+						<ion-item>
+							<ion-button title="Add" slot="end" size="medium" fill="clear"
+								(click)="settingsService.addPrompt(prompt)">
+								<ion-icon name="add-circle"></ion-icon>
+							</ion-button>
+						</ion-item>
+					</ion-list>
+				</div>
 				}
-			</ion-accordion-group>
-		</ion-list>
+			</ion-accordion>
+			}
+		</ion-accordion-group>
+		}
 	</ion-list>
-	}
 </ion-content>

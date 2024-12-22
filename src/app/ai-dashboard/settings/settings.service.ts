@@ -14,16 +14,10 @@ export class SettingsService {
 		selectedPrompt: promptsArray.find(a => a.name == DEFAULT_PROMPT) || promptsArray[0],
 		prompts: promptsArray,
 		models: [],
-		apiKeys: {
-			github: '',
-			google: '',
-		},
+		apiKeys: { github: '', google: '' },
 		maxOutputTokens: 8192 * 4,
 		processingStrategy: ProcessingStrategy.Combined,
-		sideBarOpen: {
-			aiAgent: true,
-			aiChat: true,
-		}
+		sideBarOpen: { aiAgent: true, aiChat: true }
 	};
 	settings = signal<Settings>(this.defaultSettings);
 	private readonly aiservice = inject(AIService);
@@ -46,21 +40,21 @@ export class SettingsService {
 		} else {
 			this.settings.set(this.defaultSettings);
 		}
+		this.initializeModels();
 	}
 
 	saveSettings(settings?: Settings): void {
-		// if (settings)
-		// 	this.settings.update(() => ({ ...settings, datenow: Date.now() }));
-		this.settings.set({ ...this.settings() });
-		const updatedSettings = this.settings();
-		localStorage.setItem('settings', JSON.stringify(updatedSettings));
+		settings = settings ?? this.settings();
+		this.settings.update(() => ({ ...settings }));
+		localStorage.setItem('settings', JSON.stringify(settings));
 	}
+
 	resetSettings(): void {
 		this.settings.set(this.defaultSettings);
 		this.initializeModels();
 	}
 
-	addPrompt(prompt: PromptItem) {
+	addPrompt(prompt: PromptItem): void {
 		const updatedSettings = this.settings();
 		const promptItem = updatedSettings.prompts.find(p => p.name === prompt.name);
 		if (!promptItem) {
@@ -70,7 +64,7 @@ export class SettingsService {
 		this.saveSettings(updatedSettings);
 	}
 
-	removePrompt(prompt: PromptItem, index: number) {
+	removePrompt(prompt: PromptItem, index: number): void {
 		const updatedSettings = this.settings();
 		const promptItem = updatedSettings.prompts.find(p => p.name === prompt.name);
 		if (!promptItem) {
@@ -99,27 +93,20 @@ export class SettingsService {
 
 		window.URL.revokeObjectURL(url);
 	}
-	async selectAndValidateSettingsJsonFile() {
-		const requiredKeys = ["temperature", "topP", "topK", "n", "model", "selectedPrompt", "prompts", "models", "apiKeys", "maxOutputTokens", "processingStrategy"];
+
+	async selectAndValidateSettingsJsonFile(): Promise<void> {
+		const requiredKeys: (keyof Settings)[] = ["temperature", "topP", "topK", "n", "model", "selectedPrompt", "prompts", "models", "apiKeys", "maxOutputTokens", "processingStrategy"];
 		const [fileHandle] = await window.showOpenFilePicker({
 			multiple: false,
 			id: 'settingsjson',
-			types: [
-				{
-					description: 'JSON Files',
-					accept: { 'application/json': ['.json'] },
-				},
-			],
+			types: [{ description: 'JSON Files', accept: { 'application/json': ['.json'] } }],
 		});
 
 		const file = await fileHandle.getFile();
-
 		const fileContent = await file.text();
 		const jsonData = JSON.parse(fileContent);
 
-		// Validate keys
 		const missingKeys = requiredKeys.filter(key => !(key in jsonData));
-
 		if (missingKeys.length > 0) {
 			console.error('File content is missing required keys:' + missingKeys.join(', '));
 			return;

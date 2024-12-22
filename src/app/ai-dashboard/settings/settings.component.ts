@@ -1,8 +1,8 @@
 import { Component, inject, input, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonLabel, IonList, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { AIService, AIServiceType, FileService, ProcessingStrategy, PromptItem, promptsArray, Settings } from '@mahindar5/common-lib';
+import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { AIServiceType, ProcessingStrategy, PromptItem, Settings } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { addCircle, cloudUploadOutline, downloadOutline, openOutline, removeCircle } from 'ionicons/icons';
 import { SettingsService } from './settings.service';
@@ -11,17 +11,15 @@ import { SettingsService } from './settings.service';
 	selector: 'app-settings',
 	templateUrl: './settings.component.html',
 	styleUrls: ['./settings.component.scss'],
-	providers: [AIService, FileService],
 	imports: [
-		FormsModule, IonButton, IonButtons, IonRow, IonCol, IonItemDivider, IonList, IonIcon, IonAccordion, IonAccordionGroup,
+		FormsModule, IonButton, IonButtons, IonRow, IonCol, IonList, IonIcon, IonAccordion, IonAccordionGroup,
 		IonCheckbox, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonRange, IonSelect, IonSelectOption, IonTitle, IonToolbar
 	],
 })
 export class SettingsComponent {
-	readonly availableFileExtensions: string[] = Object.keys(promptsArray);
 	readonly processingStrategies = Object.values(ProcessingStrategy);
-	private readonly settingsService = inject(SettingsService);
-	private readonly router = inject(Router);
+	readonly settingsService = inject(SettingsService);
+	readonly router = inject(Router);
 
 	isCompactView = input<boolean>(false);
 
@@ -36,26 +34,6 @@ export class SettingsComponent {
 		return a.name === b.name && a.org === b.org;
 	}
 
-	addPrompt(prompt: PromptItem): void {
-		this.settingsService.addPrompt(prompt);
-	}
-
-	removePrompt(prompt: PromptItem, index: number): void {
-		this.settingsService.removePrompt(prompt, index);
-	}
-
-	saveSettings(): void {
-		this.settingsService.saveSettings();
-	}
-
-	resetSettings(): void {
-		this.settingsService.resetSettings();
-	}
-
-	openFullSettings(): void {
-		this.router.navigate(['ai-dashboard/settings']);
-	}
-
 	comparePrompts(a: PromptItem, b: PromptItem): boolean {
 		return a.name === b.name;
 	}
@@ -65,11 +43,7 @@ export class SettingsComponent {
 		this.settingsService.saveSettings({ ...settings, selectedPrompt: settings.selectedPrompt });
 	}
 
-	downloadSettings(): void {
-		this.settingsService.downloadSettings();
-	}
-
-	async uploadSettings(): Promise<void> {
-		await this.settingsService.selectAndValidateSettingsJsonFile();
+	resetSettings(): void {
+		this.settingsService.resetSettings();
 	}
 }
