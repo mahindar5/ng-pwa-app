@@ -1,8 +1,9 @@
 import { inject, signal } from '@angular/core';
 import { AlertController } from '@ionic/angular/standalone';
-import { AIModel, AIResponse, AIService, DeviceResponse } from '@mahindar5/common-lib';
+import { DeviceResponse } from '@mahindar5/common-lib';
 
 import { Component } from '@angular/core';
+import { AiProcessingService } from './ai-processing.service';
 import { SettingsService } from './settings/settings.service';
 
 @Component({
@@ -10,23 +11,14 @@ import { SettingsService } from './settings/settings.service';
 	template: ''
 })
 export abstract class BaseAiComponent {
-	protected readonly aiservice = inject(AIService);
 	protected readonly alertController = inject(AlertController);
 	protected readonly settingsService = inject(SettingsService);
+	protected readonly aiProcessingService = inject(AiProcessingService);
+
 	isProcessing = signal(false);
-	selectedModel = signal<AIModel>({} as AIModel);
-	models = signal<AIModel[]>([]);
 
 	ngOnInit(): void {
-		const settings = this.settingsService.settings();
-		// this.settingsService.settings$.subscribe(settings => {
-		// 	this.models.set(settings.models);
-		// 	this.selectedModel.set(settings.models.find(m => m.name === settings.model) || settings.models[0]);
-		// });
-		this.models.set(settings.models);
-		this.selectedModel.set(settings.models.find(m => m.name === settings.model) || settings.models[0]);
-
-		this.initializeModels();
+		this.settingsService.initializeModels();
 	}
 
 	protected async showAuthenticationAlert(response: DeviceResponse): Promise<boolean> {
@@ -48,22 +40,9 @@ export abstract class BaseAiComponent {
 		return role === 'ok';
 	}
 
-	protected processResponse(response: AIResponse): void {
-		if (response.retryAfter) {
-			const model = this.models().find(m => m.name === this.selectedModel().name);
-			if (model) {
-				model.retryAfter = response.retryAfter.retryAfter;
-				model.retryAfterCreatedAt = new Date().toISOString();
-				this.settingsService.settings.set({ ...this.settingsService.settings(), models: this.models() });
-				this.settingsService.saveSettings();
-			}
-			throw new Error('Rate limit exceeded. Please try again later.');
-		}
-	}
-
-	protected initializeModels(): void {
-		const loadedModels = this.aiservice.loadModels();
-		this.settingsService.settings.set({ ...this.settingsService.settings(), models: loadedModels });
-		this.settingsService.saveSettings();
+	protected async toggleSideBarOpen(sideBar: string): Promise<void> {
+		const settings = this.settingsService.settings();
+		settings.sideBarOpen = { ...settings.sideBarOpen, [sideBar]: !settings.sideBarOpen?.[sideBar] };
+		this.settingsService.saveSettings(settings);
 	}
 }

@@ -5,6 +5,7 @@
 	margin-bottom: 20px;
 	text-align: center;
 	transition: border-color 0.3s ease, color 0.3s ease;
+	position: relative;
 
 	&.drag-over {
 		border-color: #777;
@@ -16,4 +17,22 @@
 	font-size: 20px;
 	color: #aaa;
 	padding: 10px;
+}
+
+#main-content {
+	padding-bottom: 60px;
+}
+
+.button-container {
+	position: absolute;
+	right: 20px;
+	display: flex;
+	z-index: 10;
+	gap: 4px;
+}
+
+.send-button-container {
+	position: absolute;
+	bottom: 20px;
+	right: 0px;
 }

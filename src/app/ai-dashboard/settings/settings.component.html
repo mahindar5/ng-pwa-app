@@ -1,14 +1,72 @@
 <ion-header>
 	<ion-toolbar>
 		<ion-title>Settings</ion-title>
+		@if (isCompactView()) {
 		<ion-buttons slot="end">
+			<ion-button (click)="resetSettings()">Reset</ion-button>
+			<ion-button (click)="openFullSettings()">
+				Expand
+				<ion-icon slot="end" name="open-outline"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+		}
+		@else {
+		<ion-buttons slot="end">
+			<ion-button (click)="downloadSettings()">
+				<ion-icon slot="start" name="download-outline"></ion-icon>
+				Download
+			</ion-button>
+			<ion-button (click)="uploadSettings()">
+				<ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
+				Upload
+			</ion-button>
 			<ion-button (click)="saveSettings()">Save</ion-button>
 			<ion-button (click)="resetSettings()">Reset</ion-button>
 		</ion-buttons>
+		}
 	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+	@if (isCompactView()) {
+	<ion-list>
+		<ion-item>
+			<ion-select label="Model" label-placement="stacked" [(ngModel)]="settings().model"
+				(ionChange)="saveSettings()" interface="popover" [compareWith]="compareModels">
+				@for (model of settings().models; track model) {
+				<ion-select-option [value]="model" [disabled]="model.disabled">
+					{{ model.org }} -- {{ model.name }}
+					@if (model.retryAfter && model.disabled) {
+					<small class="m-l-10">({{ model.retryAfterDate }})</small>
+					}
+				</ion-select-option>
+				}
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-select label="Processing Strategy" label-placement="stacked" interface="popover"
+				[(ngModel)]="settings().processingStrategy" (ionChange)="saveSettings()">
+				@for (strategy of processingStrategies; track strategy) {
+				<ion-select-option [value]="strategy"> {{ strategy }}</ion-select-option>
+				}
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-input label="Max Output Tokens" type="number" label-placement="stacked"
+				[(ngModel)]="settings().maxOutputTokens" (ionChange)="saveSettings()"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-select label="Role" label-placement="stacked" interface="popover"
+				[(ngModel)]="settings().selectedPrompt" [compareWith]="comparePrompts" (ionChange)="onPromptChange()">
+				@for (prompt of settings().prompts; track prompt.name) {
+				<ion-select-option [value]="prompt">{{ prompt.name }}</ion-select-option>
+				}
+			</ion-select>
+		</ion-item>
+	</ion-list>
+	}
+	@else {
 	<ion-list>
 		<ion-row>
 			<ion-col>
@@ -34,10 +92,10 @@
 			<ion-col>
 				<ion-item>
 					<ion-select label="Model" label-placement="stacked" [(ngModel)]="settings().model"
-						(ionChange)="saveSettings()">
+						(ionChange)="saveSettings()" interface="popover" [compareWith]="compareModels">
 						@for (model of settings().models; track model) {
-						<ion-select-option [value]="model.name" [disabled]="model.disabled">
-							{{ model.name }}
+						<ion-select-option [value]="model" [disabled]="model.disabled">
+							{{ model.org }} -- {{ model.name }}
 							@if (model.retryAfter && model.disabled) {
 							<small class="m-l-10">({{ model.retryAfterDate }})</small>
 							}
@@ -48,7 +106,7 @@
 			</ion-col>
 			<ion-col>
 				<ion-item>
-					<ion-select label="Processing Strategy" label-placement="stacked"
+					<ion-select label="Processing Strategy" label-placement="stacked" interface="popover"
 						[(ngModel)]="settings().processingStrategy" (ionChange)="saveSettings()">
 						@for (strategy of processingStrategies; track strategy) {
 						<ion-select-option [value]="strategy"> {{ strategy }}</ion-select-option>
@@ -58,12 +116,22 @@
 			</ion-col>
 			<ion-col>
 				<ion-item>
-					<ion-input label="System Role" label-placement="stacked" [(ngModel)]="settings().systemRole"
-						(ionInput)="saveSettings()" placeholder="Enter system role"></ion-input>
+					<ion-input label="Max Output Tokens" type="number" label-placement="stacked"
+						[(ngModel)]="settings().maxOutputTokens" (ionChange)="saveSettings()"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		<ion-row>
+			<ion-col>
+				<ion-item>
+					<ion-select label="Role" interface="popover" [(ngModel)]="settings().selectedPrompt"
+						[compareWith]="comparePrompts" (ionChange)="onPromptChange()">
+						@for (prompt of settings().prompts; track prompt.name) {
+						<ion-select-option [value]="prompt">{{ prompt.name }}</ion-select-option>
+						}
+					</ion-select>
+				</ion-item>
+			</ion-col>
 			<ion-col>
 				<ion-item>
 					<ion-input label="Google API Key" label-placement="stacked"
@@ -103,4 +171,5 @@
 			}
 		</ion-list>
 	</ion-list>
+	}
 </ion-content>

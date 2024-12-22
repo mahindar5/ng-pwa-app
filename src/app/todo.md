@@ -1,34 +1,114 @@
+## TODO:4
+
+1. Make settings complex signal.. that is every property as signal. so you don't have trigger the settings.update always to trigger reactivity.
+2. Also refactor and organize the settings in common-lib into one place. most use a json to hold all the default settings there.
+3. Settings: Add an bool option to send project structure string to ai.
+4. Settings: Configure the prompt format.
+5. Enable a file search feature.
+6. For individual strategies, avoid creating a files string in the prompt; ensure the prompt works solely on the given file.
+7. Include hidden user role parameters for specific use cases like summarization or file scraping summaries to keep context hidden in conversations.
+8. Send instructions, role, files, and indentation as separate messages in the chat array.
+9. Create dropdown options for empty instructions and "plus" instructions.
+10. Make common instructions editable.
+11. Display the top models in a top order list.
+12. Adjust all request limits (max tokens out, topP, topK) for every model to meet their specific requirements. have list array to allow only get displayed
+13. Add a toggle with animation for the settings side pane collapse and expand.
+14. Save settings pane toggle selection in settings object
+15. Stream real-time examples, such as Day 9 with OpenAI.
+16. Learn and implement grounding techniques, functions, code execution, and structured output generation.
+
+[Completed]
+
+4.  Add a maximum token input field.
+5.  Implement a solution for handling indentation effectively.
+6.  Provide the ability to append files and folders to an existing list with a toggle to enable/disable the feature, or show an alert to override or append when a list already exists.
+7.  Fix the issue of double code placeholders.
+8.  Fix the status of file items from "in progress" to "unmodified" where applicable.
+9.  Address performance degradation issues.
+10. Move the role configuration to the settings section.
+11. Add folder icons to the drop zone overlay.
+12. Place a send icon on top of the text area.
+
+---
+
+Settings :Send project structure.. have a setting for this
+Settings: prompt format
+Search files
+cdk collapse for files section and prompt section
+not saved file progress stop
+append files and folders to existing list with toggle enable and disable this feature. or show an alert to override or append if there is a list already
+if its idnividual stratergy do not create files string in the prompt. tell it solely work on the given file
+send hidden userrole parms so that they dont appear in conversation.. likely useful for summarize , filescrapping summary etc.. where context can be sent in hidden param
+send instructions, role, files, indentation in separate message in chat array
+figure out indentation thing
+create empty and plus instructions for dropdown
+common instructions editable
+top models list
+
+fix double code placers
+[done]add max token input
+all request limits for maxtokenout, topp, topk change for every model they need to be adjusted for each model
+fix fileitems status inprogress to unmodified
+performance degraded
+settings side pane toggle with animation
+move role to settings
+folder icons to drop zone overlay
+send icon on top of text area
+
+Gemini
+Stream real time with example day 9 openai
+Learn grounding, functions, code execution structure output
+
 ## TODO:3
+
+---
+
+0. Pass a "Summarize" flag instead of resetting it during a `Summarize` method call.
+1. Add a delay to settings loops to rate-limit API calls.
+2. Implement iterative instructions with a configurable batch size.
+3. Implement parallel processing using different models.
+4. For unprocessed files, send an additional request for only those files or mark them as errors and allow reprocessing. Add a retry mechanism for failures, especially for HTTP 429 responses. Retry with a fallback model in such cases.
+5. Always display two checkboxes: "Select All" and "Intermediate." Disable "Combined Context" when using an individual strategy.
+6. For combined context, enable selection with a few files and replace the second option with this approach. This may evolve into a user chat feature.
+7. Provide steps/instructions to get key or vs code login for GitHub Copilot & Gemini
+8. Explore removing the callback for GitHub authentication by directly passing the token as a callback in AI responses. Once completed, recall the API.
+9. Show incremental progress for GitHub authentication by displaying elapsed seconds on the button.
+10. Trigger single-file processing when the play button is clicked on a file.
+11. Save previously selected file handles to IndexedDB.
+12. Remove individual service exports for cache services.
+13. Add a cache service type for Chrome extension storage. Explore sync storage to prevent data loss and investigate other storage options like IndexedDB and local storage in chrome extension.
+14. Integrate a vanilla JavaScript singleton instance with Angular using a provider.
+15. In the chat interface, allow attachments that can either be parsed to text or utilized by the agent without updating the files.
+
+---
+
+FileRef
+
+1. Pass a context tree JSON file so that individual strategies can use it. This could also become a new strategy.
+2. Allow users to add file references and specific instructions in the UI.
+3. Auto-detect references for TypeScript files by analyzing import paths, then cross-reference these with related HTML, SCSS, and test files.
+4. Show the reference file count and display file names in a popover.
+5. Add a tab for creating and downloading references in a JSON file .
+
+---
+
+Difficult
+
+1. Introduce a folder tree view with options to "Expand All" and "Collapse All."
+2. Automate the process of fetching models.
+3. Display the last update time for each file.
+4. Add CDK collapse functionality for the files section and the prompt section.
+
+---
+
+Completed
 
 1. Add newly created files to the file handles list.
 2. Display a limited set of settings in the side pane, with an option to expand to the full settings tab. This reduces the number of functions managing different elements.
 3. Enable backup for all settings and the prompts JSON file.
 4. Fix the chat functionality.
-5. Automate the process of fetching models.
-6. Capture the Gemini API key and display an authentication alert with instructions to retrieve it. Provide similar instructions for GitHub Copilot. Explore removing the callback for GitHub authentication by directly passing the token as a callback in AI responses. Once completed, recall the API.
-7. Implement iterative instructions with a configurable batch size.
-8. Add a fallback mechanism for `chrome.sendMessage` in Kiwi, waiting for a callback based on the user agent.
-9. Always display two checkboxes: "Select All" and "Intermediate." Disable "Combined Context" when using an individual strategy.
-10. For combined context, enable selection with a few files and replace the second option with this approach. This may evolve into a user chat feature.
-11. Introduce a folder tree view with options to "Expand All" and "Collapse All."
-12. Trigger single-file processing when the play button is clicked on a file.
-13. Save previously selected file handles to IndexedDB.
-14. Add a cache service type for Chrome extension storage. Explore sync storage to prevent data loss and investigate other storage options like IndexedDB and local storage.
-15. Integrate a vanilla JavaScript singleton instance with Angular using a provider.
-16. Add a delay to settings loops to rate-limit API calls.
-17. Implement parallel processing using different models.
-18. Remove individual service exports for cache services.
-19. For unprocessed files, send an additional request for only those files or mark them as errors and allow reprocessing.
-20. Add a retry mechanism for failures, especially for HTTP 429 responses. Retry with a fallback model in such cases.
-21. Pass a "Summarize" flag instead of resetting it during a `Summarize` method call.
-22. Display the last update time for each file.
-23. In the chat interface, allow attachments that can either be parsed to text or utilized by the agent without updating the files.
-24. Show incremental progress for GitHub authentication by displaying elapsed seconds on the button.
-25. Add a tab for creating and downloading a JSON file.
-26. Pass a context tree JSON file so that individual strategies can use it. This could also become a new strategy.
-27. Allow users to add file references and specific instructions in the UI.
-28. Auto-detect references for TypeScript files by analyzing import paths, then cross-reference these with related HTML, SCSS, and test files.
-29. Show the reference file count and display file names in a popover.
+5. Capture the Gemini API key and display an authentication alert with instructions to retrieve it.
+6. Add a fallback mechanism for `chrome.sendMessage` in Kiwi, waiting for a callback based on the user agent.
 
 ---
 

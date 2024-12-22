@@ -1,7 +1,7 @@
 import { AsyncPipe, DatePipe, DOCUMENT } from '@angular/common';
-import { Component, inject, NgZone, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonCard, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenu, IonMenuToggle, IonRouterLink, IonRouterOutlet, IonSplitPane, IonTitle, IonToggle, IonToolbar, ModalController, Platform, ToastController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { barChart, basket, bug, chatboxEllipses, chatbubble, close, gift, layers, list, logoAmazon, logoReddit, logOut, moon, musicalNotes, people, playCircle, recording, refreshCircle, settings, wifi } from 'ionicons/icons';
@@ -18,8 +18,8 @@ const DARK_THEME_STORAGE_KEY = 'DarkThemeStorageKey';
 })
 export class AppComponent implements OnInit {
 	private readonly platform = inject(Platform);
-	private readonly zone = inject(NgZone);
-	private readonly router = inject(Router);
+	// private readonly zone = inject(NgZone);
+	// private readonly router = inject(Router);
 	// private readonly userRolesService = inject(UserRolesService);
 	// private readonly customElementsService = inject(CustomElementsService);
 	private readonly toastController = inject(ToastController);

@@ -1,26 +1,32 @@
-import { Injectable, signal } from '@angular/core';
-import { AIModel, ProcessingStrategy, PromptItem, promptsArray, Settings } from '@mahindar5/common-lib';
+import { inject, Injectable, signal } from '@angular/core';
+import { AIService, AIServiceType, DEFAULT_PROMPT, ProcessingStrategy, PromptItem, promptsArray, Settings } from '@mahindar5/common-lib';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class SettingsService {
 	private defaultSettings: Settings = {
-		temperature: 0,
-		topP: 1,
+		temperature: 1,
+		topP: 0.95,
+		topK: 64,
 		n: 1,
-		model: 'gpt-3',
+		model: { name: 'gemini-exp-1206', org: AIServiceType.Gemini },
+		selectedPrompt: promptsArray.find(a => a.name == DEFAULT_PROMPT) || promptsArray[0],
 		prompts: promptsArray,
-		systemRole: 'assistant',
 		models: [],
 		apiKeys: {
 			github: '',
 			google: '',
 		},
 		maxOutputTokens: 8192 * 4,
-		processingStrategy: ProcessingStrategy.Combined
+		processingStrategy: ProcessingStrategy.Combined,
+		sideBarOpen: {
+			aiAgent: true,
+			aiChat: true,
+		}
 	};
 	settings = signal<Settings>(this.defaultSettings);
+	private readonly aiservice = inject(AIService);
 
 	constructor() {
 		this.loadSettings();
@@ -28,10 +34,6 @@ export class SettingsService {
 
 	private loadSettings(): void {
 		const savedSettings = localStorage.getItem('settings');
-		const loadedModels = JSON.parse(localStorage.getItem('models') || '[]');
-		this.defaultSettings.models = loadedModels;
-		this.defaultSettings.model = loadedModels.find((m: AIModel) => !m.disabled)?.name || 'gpt-3';
-
 		if (savedSettings) {
 			const settings = JSON.parse(savedSettings);
 			for (const key of Object.keys(this.defaultSettings) as (keyof Settings)[]) {
@@ -39,20 +41,23 @@ export class SettingsService {
 					settings[key] = this.defaultSettings[key];
 				}
 			}
+			this.defaultSettings.apiKeys = { ...this.defaultSettings.apiKeys, ...settings.apiKeys };
 			this.settings.set(settings);
 		} else {
 			this.settings.set(this.defaultSettings);
 		}
 	}
 
-	saveSettings(): void {
+	saveSettings(settings?: Settings): void {
+		// if (settings)
+		// 	this.settings.update(() => ({ ...settings, datenow: Date.now() }));
+		this.settings.set({ ...this.settings() });
 		const updatedSettings = this.settings();
 		localStorage.setItem('settings', JSON.stringify(updatedSettings));
-		localStorage.setItem('models', JSON.stringify(updatedSettings.models));
 	}
 	resetSettings(): void {
 		this.settings.set(this.defaultSettings);
-		this.saveSettings();
+		this.initializeModels();
 	}
 
 	addPrompt(prompt: PromptItem) {
@@ -62,7 +67,7 @@ export class SettingsService {
 			throw new Error('Prompt not found');
 		}
 		promptItem.promptTextList.push({ text: '', selected: false });
-		this.settings.set(updatedSettings);
+		this.saveSettings(updatedSettings);
 	}
 
 	removePrompt(prompt: PromptItem, index: number) {
@@ -72,6 +77,54 @@ export class SettingsService {
 			throw new Error('Prompt not found');
 		}
 		promptItem.promptTextList.splice(index, 1);
-		this.settings.set(updatedSettings);
+		this.saveSettings(updatedSettings);
+	}
+
+	initializeModels(): void {
+		const currentSettings = this.settings();
+		const loadedModels = this.aiservice.loadModels(currentSettings);
+		this.saveSettings({ ...currentSettings, models: loadedModels });
+	}
+
+	downloadSettings(): void {
+		const settings = this.settings();
+		const json = JSON.stringify(settings, null, 2);
+		const blob = new Blob([json], { type: 'application/json' });
+		const url = window.URL.createObjectURL(blob);
+
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = 'settings.json';
+		a.click();
+
+		window.URL.revokeObjectURL(url);
+	}
+	async selectAndValidateSettingsJsonFile() {
+		const requiredKeys = ["temperature", "topP", "topK", "n", "model", "selectedPrompt", "prompts", "models", "apiKeys", "maxOutputTokens", "processingStrategy"];
+		const [fileHandle] = await window.showOpenFilePicker({
+			multiple: false,
+			id: 'settingsjson',
+			types: [
+				{
+					description: 'JSON Files',
+					accept: { 'application/json': ['.json'] },
+				},
+			],
+		});
+
+		const file = await fileHandle.getFile();
+
+		const fileContent = await file.text();
+		const jsonData = JSON.parse(fileContent);
+
+		// Validate keys
+		const missingKeys = requiredKeys.filter(key => !(key in jsonData));
+
+		if (missingKeys.length > 0) {
+			console.error('File content is missing required keys:' + missingKeys.join(', '));
+			return;
+		}
+
+		this.saveSettings(jsonData);
 	}
 }
