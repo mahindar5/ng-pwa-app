@@ -1,7 +1,7 @@
 import { Component, inject, input, WritableSignal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonItemDivider, IonLabel, IonList, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { AIService, AIServiceType, FileService, ProcessingStrategy, PromptItem, promptsArray, Settings } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { addCircle, cloudUploadOutline, downloadOutline, openOutline, removeCircle } from 'ionicons/icons';
@@ -13,7 +13,7 @@ import { SettingsService } from './settings.service';
 	styleUrls: ['./settings.component.scss'],
 	providers: [AIService, FileService],
 	imports: [
-		FormsModule, IonButton, IonButtons, IonRow, IonCol, IonItemDivider, IonItemGroup, IonIcon,
+		FormsModule, IonButton, IonButtons, IonRow, IonCol, IonItemDivider, IonList, IonIcon, IonAccordion, IonAccordionGroup,
 		IonCheckbox, IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonRange, IonSelect, IonSelectOption, IonTitle, IonToolbar
 	],
 })
@@ -26,6 +26,7 @@ export class SettingsComponent {
 	isCompactView = input<boolean>(false);
 
 	settings: WritableSignal<Settings> = this.settingsService.settings;
+	expandedAccordion: string = '';
 
 	constructor() {
 		addIcons({ addCircle, removeCircle, openOutline, downloadOutline, cloudUploadOutline });

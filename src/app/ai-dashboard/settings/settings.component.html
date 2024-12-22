@@ -148,27 +148,39 @@
 			</ion-col>
 		</ion-row>
 		<ion-list>
-			@for (prompt of settings().prompts; track prompt) {
-			<ion-item-group>
-				<ion-item-divider sticky="true">
-					<ion-label>{{ prompt.name }} Prompts</ion-label>
-					<ion-button title="Add" slot="end" size="medium" fill="clear" (click)="addPrompt(prompt)">
-						<ion-icon name="add-circle"></ion-icon>
-					</ion-button>
-				</ion-item-divider>
-				@for (prompttext of prompt.promptTextList; track prompttext; let i = $index) {
-				<ion-item>
-					<ion-checkbox slot="start" [(ngModel)]="prompttext.selected"
-						(ionChange)="saveSettings()"></ion-checkbox>
-					<ion-input [(ngModel)]="prompttext.text" (ionInput)="saveSettings()"
-						placeholder="Enter prompt"></ion-input>
-					<ion-button title="Remove" slot="end" color="danger" fill="clear" (click)="removePrompt(prompt, i)">
-						<ion-icon name="remove-circle"></ion-icon>
-					</ion-button>
-				</ion-item>
+			<ion-accordion-group (ionChange)="expandedAccordion = $event.detail.value;">
+				@for (prompt of settings().prompts; track prompt) {
+				<ion-accordion [value]="prompt.name">
+					<ion-item slot="header">
+						<ion-label>{{ prompt.name }} Prompts</ion-label>
+					</ion-item>
+					@if (expandedAccordion == prompt.name) {
+					<div class="ion-padding" slot="content">
+						<ion-list>
+							@for (prompttext of prompt.promptTextList; track prompttext; let i = $index) {
+							<ion-item>
+								<ion-checkbox slot="start" [(ngModel)]="prompttext.selected"
+									(ionChange)="saveSettings()"></ion-checkbox>
+								<ion-input [(ngModel)]="prompttext.text" (ionInput)="saveSettings()"
+									placeholder="Enter prompt"></ion-input>
+								<ion-button title="Remove" slot="end" color="danger" fill="clear"
+									(click)="removePrompt(prompt, i)">
+									<ion-icon name="remove-circle"></ion-icon>
+								</ion-button>
+							</ion-item>
+							}
+							<ion-item>
+								<ion-button title="Add" slot="end" size="medium" fill="clear"
+									(click)="addPrompt(prompt)">
+									<ion-icon name="add-circle"></ion-icon>
+								</ion-button>
+							</ion-item>
+						</ion-list>
+					</div>
+					}
+				</ion-accordion>
 				}
-			</ion-item-group>
-			}
+			</ion-accordion-group>
 		</ion-list>
 	</ion-list>
 	}
