@@ -12140,7 +12140,7 @@
       "format": "esm"
     },
     "src/app/ai-dashboard/settings/settings.service.ts": {
-      "bytes": 4786,
+      "bytes": 4578,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -12279,7 +12279,7 @@
       "format": "esm"
     },
     "src/app/ai-dashboard/settings/settings.component.ts": {
-      "bytes": 28460,
+      "bytes": 27925,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -12574,12 +12574,12 @@
       ],
       "format": "esm"
     },
-    "src/app/ai-dashboard/ai-chat/ai-chat.component.scss": {
-      "bytes": 85,
-      "imports": []
-    },
     "src/app/ai-dashboard/ai-agent/ai-agent.component.scss": {
       "bytes": 562,
+      "imports": []
+    },
+    "src/app/ai-dashboard/ai-chat/ai-chat.component.scss": {
+      "bytes": 85,
       "imports": []
     },
     "node_modules/@ionic/angular/css/core.css": {
@@ -12698,22 +12698,22 @@
     }
   },
   "outputs": {
-    "chunk-BCJZKJKH.js": {
+    "chunk-XGKABM6P.js": {
       "imports": [
         {
-          "path": "chunk-MDAGTZO3.js",
+          "path": "chunk-NZKWBHMV.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-MSL5X4R2.js",
+          "path": "chunk-UYQLZ6DL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-V2CT3I4G.js",
+          "path": "chunk-LMADEFQW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-2XXDB6FZ.js",
+          "path": "chunk-EB4UD4OS.js",
           "kind": "import-statement"
         },
         {
@@ -12994,14 +12994,14 @@
       },
       "bytes": 2569
     },
-    "chunk-KR6ZZMGE.js": {
+    "chunk-5FPJQYAV.js": {
       "imports": [
         {
-          "path": "chunk-MSL5X4R2.js",
+          "path": "chunk-UYQLZ6DL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-2XXDB6FZ.js",
+          "path": "chunk-EB4UD4OS.js",
           "kind": "import-statement"
         },
         {
@@ -13084,14 +13084,14 @@
       },
       "bytes": 1431
     },
-    "chunk-J7L2OFXK.js": {
+    "chunk-TVJWY24V.js": {
       "imports": [
         {
-          "path": "chunk-V2CT3I4G.js",
+          "path": "chunk-LMADEFQW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-2XXDB6FZ.js",
+          "path": "chunk-EB4UD4OS.js",
           "kind": "import-statement"
         },
         {
@@ -13170,22 +13170,22 @@
       "inputs": {},
       "bytes": 571
     },
-    "chunk-3BVXLAWZ.js": {
+    "chunk-Q4C6CCUT.js": {
       "imports": [
         {
-          "path": "chunk-MDAGTZO3.js",
+          "path": "chunk-NZKWBHMV.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-MSL5X4R2.js",
+          "path": "chunk-UYQLZ6DL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-V2CT3I4G.js",
+          "path": "chunk-LMADEFQW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-2XXDB6FZ.js",
+          "path": "chunk-EB4UD4OS.js",
           "kind": "import-statement"
         },
         {
@@ -13268,14 +13268,14 @@
       },
       "bytes": 10463
     },
-    "chunk-MDAGTZO3.js": {
+    "chunk-NZKWBHMV.js": {
       "imports": [
         {
-          "path": "chunk-MSL5X4R2.js",
+          "path": "chunk-UYQLZ6DL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-2XXDB6FZ.js",
+          "path": "chunk-EB4UD4OS.js",
           "kind": "import-statement"
         },
         {
@@ -13297,10 +13297,10 @@
       },
       "bytes": 1224
     },
-    "chunk-MSL5X4R2.js": {
+    "chunk-UYQLZ6DL.js": {
       "imports": [
         {
-          "path": "chunk-2XXDB6FZ.js",
+          "path": "chunk-EB4UD4OS.js",
           "kind": "import-statement"
         },
         {
@@ -13326,10 +13326,10 @@
       },
       "bytes": 3430
     },
-    "chunk-V2CT3I4G.js": {
+    "chunk-LMADEFQW.js": {
       "imports": [
         {
-          "path": "chunk-2XXDB6FZ.js",
+          "path": "chunk-EB4UD4OS.js",
           "kind": "import-statement"
         },
         {
@@ -13350,12 +13350,12 @@
       ],
       "inputs": {
         "src/app/ai-dashboard/settings/settings.component.ts": {
-          "bytesInOutput": 11038
+          "bytesInOutput": 10770
         }
       },
-      "bytes": 11660
+      "bytes": 11359
     },
-    "chunk-2XXDB6FZ.js": {
+    "chunk-EB4UD4OS.js": {
       "imports": [
         {
           "path": "chunk-ZV2ESR6D.js",
@@ -13375,12 +13375,12 @@
       ],
       "inputs": {
         "src/app/ai-dashboard/settings/settings.service.ts": {
-          "bytesInOutput": 2223
+          "bytesInOutput": 2239
         }
       },
-      "bytes": 2408
+      "bytes": 2424
     },
-    "main-QCLZFA3I.js": {
+    "main-7NJIIPBG.js": {
       "imports": [
         {
           "path": "chunk-INBLBVSH.js",
@@ -13459,19 +13459,19 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-KR6ZZMGE.js",
+          "path": "chunk-5FPJQYAV.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-3BVXLAWZ.js",
+          "path": "chunk-Q4C6CCUT.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-BCJZKJKH.js",
+          "path": "chunk-XGKABM6P.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-J7L2OFXK.js",
+          "path": "chunk-TVJWY24V.js",
           "kind": "dynamic-import"
         }
       ],
@@ -15031,16 +15031,6 @@
       "inputs": {},
       "bytes": 716
     },
-    "ai-chat.component-BRO7T3EH.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/ai-dashboard/ai-chat/ai-chat.component.scss": {
-          "bytesInOutput": 69
-        }
-      },
-      "bytes": 70,
-      "ng-component": true
-    },
     "ai-agent.component-DWAUO5PZ.css": {
       "imports": [],
       "inputs": {
@@ -15049,6 +15039,16 @@
         }
       },
       "bytes": 447,
+      "ng-component": true
+    },
+    "ai-chat.component-BRO7T3EH.css": {
+      "imports": [],
+      "inputs": {
+        "src/app/ai-dashboard/ai-chat/ai-chat.component.scss": {
+          "bytesInOutput": 69
+        }
+      },
+      "bytes": 70,
       "ng-component": true
     },
     "styles-ZPOY3CVS.css": {
