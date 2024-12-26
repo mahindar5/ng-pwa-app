@@ -143,20 +143,40 @@
 				</ion-item>
 			</ion-col>
 		</ion-row>
+		<ion-item>
+			<ion-button (click)="settingsService.addPromptItem()">Add Role</ion-button>
+		</ion-item>
 		<ion-accordion-group (ionChange)="expandedAccordion = $event.detail.value;">
 			@for (prompt of settings().prompts; track prompt) {
 			<ion-accordion [value]="prompt.name">
 				<ion-item slot="header">
-					<ion-label>{{ prompt.name }} Prompts</ion-label>
+					<ion-label>{{ prompt.name }}</ion-label>
+
+					@if (expandedAccordion == prompt.name) {
+					<ion-button title="Add" slot="end" fill="clear" (click)="settingsService.addPrompt(prompt,$event)">
+						<ion-icon name="add-circle"></ion-icon>
+					</ion-button>
+					}
+					<ion-button slot="end" fill="clear" (click)="settingsService.removePromptItem(prompt.name)">
+						<ion-icon slot="icon-only" name="trash"></ion-icon>
+					</ion-button>
 				</ion-item>
 				@if (expandedAccordion == prompt.name) {
 				<div class="ion-padding" slot="content">
 					<ion-list>
-						@for (prompttext of prompt.promptTextList; track prompttext; let i = $index) {
 						<ion-item>
-							<ion-checkbox slot="start" [(ngModel)]="prompttext.selected"
+							<ion-input label="Name" label-placement="stacked" [(ngModel)]="prompt.name"
+								(ionInput)="settingsService.saveSettings()" placeholder="Enter name"></ion-input>
+						</ion-item>
+						<ion-item>
+							<ion-input label="Role" label-placement="stacked" [(ngModel)]="prompt.role"
+								(ionInput)="settingsService.saveSettings()" placeholder="Enter role"></ion-input>
+						</ion-item>
+						@for (promptText of prompt.promptTextList; track promptText; let i = $index) {
+						<ion-item>
+							<ion-checkbox slot="start" [(ngModel)]="promptText.selected"
 								(ionChange)="settingsService.saveSettings()"></ion-checkbox>
-							<ion-input [(ngModel)]="prompttext.text" (ionInput)="settingsService.saveSettings()"
+							<ion-input [(ngModel)]="promptText.text" (ionInput)="settingsService.saveSettings()"
 								placeholder="Enter prompt"></ion-input>
 							<ion-button title="Remove" slot="end" color="danger" fill="clear"
 								(click)="settingsService.removePrompt(prompt, i)">
@@ -164,12 +184,6 @@
 							</ion-button>
 						</ion-item>
 						}
-						<ion-item>
-							<ion-button title="Add" slot="end" size="medium" fill="clear"
-								(click)="settingsService.addPrompt(prompt)">
-								<ion-icon name="add-circle"></ion-icon>
-							</ion-button>
-						</ion-item>
 					</ion-list>
 				</div>
 				}

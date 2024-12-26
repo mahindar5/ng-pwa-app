@@ -13,11 +13,6 @@
 				</ion-buttons>
 				<ion-title>AI Agent</ion-title>
 				<ion-buttons slot="end">
-					@if (isMultiSelectMode()) {
-					<ion-button fill="clear" (click)="onSelectAllFiles()" title="Select All">
-						<ion-icon slot="icon-only" name="checkmark-done-circle"></ion-icon>
-					</ion-button>
-					}
 					<ion-button (click)="toggleSideBarOpen('aiAgent')" title="Settings">
 						<ion-icon slot="icon-only" name="settings-outline"></ion-icon>
 					</ion-button>
@@ -26,64 +21,24 @@
 		</ion-header>
 
 		<ion-content [scrollEvents]="true" class="ion-padding">
-			<div class="button-container">
-				<ion-button fill="clear" (click)="onSelectFiles()" title="Select Files">
-					<ion-icon slot="icon-only" name="document-outline"></ion-icon>
-				</ion-button>
-				<ion-button fill="clear" (click)="onSelectFolder()" title="Select Folder">
-					<ion-icon slot="icon-only" name="folder-outline"></ion-icon>
-				</ion-button>
-				<ion-button fill="clear" (click)="onSaveAllFiles()" [disabled]="!canSaveAll()" title="Save All">
-					<ion-icon slot="icon-only" name="save"></ion-icon>
-				</ion-button>
-				<ion-button fill="clear" (click)="onClearFiles()" title="Clear Files">
-					<ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-				</ion-button>
-			</div>
-			<div #dropZone class="drop-zone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
-				(drop)="onFileDrop($event)">
-				<div class="drop-message">Drag and drop files here</div>
-			</div>
 
 			<ion-textarea [rows]="7" label="Prompt" counter="true" [maxlength]="50000" color="primary"
 				labelPlacement="stacked" [(ngModel)]="currentPrompt().prompt" placeholder="Type your prompt"
 				fill="solid">
 				<ion-buttons class="send-button-container">
+					@if(!isProcessing()) {
 					<ion-button fill="clear" [disabled]="isProcessButtonDisabled()" (click)="onProcessFiles()">
 						<ion-icon slot="icon-only" name="send"></ion-icon>
 					</ion-button>
-					<ion-button fill="clear" [disabled]="!isProcessing()" (click)="onStopProcessing()"
-						title="Stop Processing">
+					} @else {
+
+					<ion-button fill="clear" (click)="onStopProcessing()" title="Stop Processing">
 						<ion-icon slot="icon-only" name="stop-circle-outline"></ion-icon>
 					</ion-button>
+					}
 				</ion-buttons>
 			</ion-textarea>
-
-			@for (file of currentFileList(); track file.path) {
-			<ion-item-group>
-				<ion-progress-bar [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
-					[value]="file.status === 'done' ? 1 : (file.status === 'error' || file.status === 'unmodified') ? 0.5 : 0"
-					[color]="file.status === 'error' ? 'danger' : 'primary'"></ion-progress-bar>
-				<ion-item title="{{file.error}} &#10; &#10;{{file.code}}">
-					@if (isMultiSelectMode()) {
-					<ion-checkbox slot="start" [(ngModel)]="file.selected"></ion-checkbox>
-					}
-					<ion-label>{{ file.path }}</ion-label>
-					<ion-buttons slot="end">
-						@if (file.code?.trim()) {
-						@if(file.handle) {
-						<ion-button (click)="onSaveFile(file)" title="Save">
-							<ion-icon slot="icon-only" name="save-outline"></ion-icon>
-						</ion-button>
-						}
-						<ion-button (click)="onSaveFileAs(file)" title="Save As">
-							<ion-icon slot="icon-only" name="duplicate-outline"></ion-icon>
-						</ion-button>
-						}
-					</ion-buttons>
-				</ion-item>
-			</ion-item-group>
-			}
+			<app-file-manager [(allFiles)]="allFiles" [acceptReferences]="true"></app-file-manager>
 		</ion-content>
 	</div>
 </ion-split-pane>

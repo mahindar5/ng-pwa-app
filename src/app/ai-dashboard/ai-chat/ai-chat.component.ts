@@ -31,7 +31,8 @@ export class AiChatComponent extends BaseAiComponent {
 		addIcons({ checkmark, checkmarkDoneCircle, close, colorWandOutline, createOutline, settingsOutline, cloudDoneOutline, documentOutline, folderOutline, send, chatbubblesOutline, clipboardOutline });
 	}
 
-	async sendMessage(): Promise<void> {
+	async sendMessage(event?: any): Promise<void> {
+		event?.preventDefault();
 		try {
 			this.addUserMessage(this.message());
 			this.isProcessing.set(true);
@@ -49,7 +50,7 @@ export class AiChatComponent extends BaseAiComponent {
 			if (response.chat?.length > 0) {
 				this.messages.set(response.chat);
 			}
-			this.contentRef()?.scrollToBottom(400);
+			setTimeout(() => this.contentRef()?.scrollToBottom(400));
 		} catch (error) {
 			console.error(error);
 			this.addUserMessage((error as Error).message);

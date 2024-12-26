@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { IonAccordion, IonAccordionGroup, IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonRange, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { AIServiceType, ProcessingStrategy, PromptItem, Settings } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
-import { addCircle, cloudUploadOutline, downloadOutline, openOutline, removeCircle } from 'ionicons/icons';
+import { addCircle, cloudUploadOutline, downloadOutline, openOutline, removeCircle, trash } from 'ionicons/icons';
 import { SettingsService } from './settings.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class SettingsComponent {
 	expandedAccordion: string = '';
 
 	constructor() {
-		addIcons({ addCircle, removeCircle, openOutline, downloadOutline, cloudUploadOutline });
+		addIcons({ addCircle, removeCircle, openOutline, downloadOutline, cloudUploadOutline, trash });
 	}
 
 	compareModels(a: { name: string; org: AIServiceType }, b: { name: string; org: AIServiceType }): boolean {

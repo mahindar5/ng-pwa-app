@@ -1,0 +1,58 @@
+<div class="button-container">
+	@if(allFiles().length > 0) {
+	<ion-button fill="clear" (click)="toggleSelectAllFiles()" title="Select All">
+		<ion-icon slot="icon-only" name="checkmark-done-circle"></ion-icon>
+	</ion-button>
+	}
+	<ion-button fill="clear" (click)="selectFiles()" title="Select Files">
+		<ion-icon slot="icon-only" name="document-outline"></ion-icon>
+	</ion-button>
+	<ion-button fill="clear" (click)="selectFolder()" title="Select Folder">
+		<ion-icon slot="icon-only" name="folder-outline"></ion-icon>
+	</ion-button>
+	@if(hasUnsavedChanges()) {
+	<ion-button fill="clear" (click)="saveAllFiles()" title="Save All">
+		<ion-icon slot="icon-only" name="save"></ion-icon>
+	</ion-button>
+	}
+	@if(allFiles().length > 0) {
+	<ion-button fill="clear" (click)="clearFiles()" title="Clear Files">
+		<ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+	</ion-button>
+	}
+</div>
+<div #dropZone class="drop-zone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)"
+	(drop)="onFileDrop($event)">
+	<div class="drop-message">Drag and drop files here</div>
+</div>
+@for (file of allFiles(); track file.path) {
+<ion-item-group>
+	<ion-progress-bar [type]="file.status === 'inprogress' ? 'indeterminate' : 'determinate'"
+		[value]="file.status === 'done' ? 1 : (file.status === 'error' || file.status === 'unmodified') ? 0.5 : 0"
+		[color]="file.status === 'error' ? 'danger' : 'primary'"></ion-progress-bar>
+	<ion-item title="{{file.error}} &#10; &#10;{{file.code}}">
+		<ion-checkbox slot="start" [(ngModel)]="file.selected"></ion-checkbox>
+		<ion-label>{{ file.path }}</ion-label>
+		<ion-buttons slot="end">
+			@if (file.code?.trim()) {
+			@if(file.handle) {
+			<ion-button (click)="saveFile(file)" title="Save">
+				<ion-icon slot="icon-only" name="save-outline"></ion-icon>
+			</ion-button>
+			}
+			<ion-button (click)="saveFileAs(file)" title="Save As">
+				<ion-icon slot="icon-only" name="duplicate-outline"></ion-icon>
+			</ion-button>
+			}
+			@if(acceptReferences()){
+			<ion-button (click)="openReferenceModal(file)" title="Accept">
+				@if (file.referencesCount){
+				<ion-badge color="primary">{{file.referencesCount}}</ion-badge>
+				}
+				<ion-icon name="git-network"></ion-icon>
+			</ion-button>
+			}
+		</ion-buttons>
+	</ion-item>
+</ion-item-group>
+}

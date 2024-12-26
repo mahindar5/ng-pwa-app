@@ -1,4 +1,4 @@
-import { inject, signal } from '@angular/core';
+import { inject } from '@angular/core';
 import { AIResponse, AIService, FILE_MARKERS, FileItem, FileService, FileStatus, ProcessingStrategy, Settings } from '@mahindar5/common-lib';
 import { SettingsService } from './settings/settings.service';
 
@@ -7,12 +7,6 @@ export class AiProcessingService {
 	private readonly aiservice = inject(AIService);
 	private readonly settingsService = inject(SettingsService);
 
-	processingStrategy = signal<ProcessingStrategy>(ProcessingStrategy.Combined);
-
-	setProcessingStrategy(strategy: ProcessingStrategy): void {
-		this.processingStrategy.set(strategy);
-	}
-
 	async processFiles(
 		fileItems: FileItem[],
 		prompt: string,
@@ -20,7 +14,7 @@ export class AiProcessingService {
 		showAuthenticationAlert: (response: any) => Promise<boolean>,
 		updateFileItemStatus: (fileItem: FileItem, status: FileStatus, code: string, error: string) => void,
 	): Promise<void> {
-		const strategy = this.processingStrategy();
+		const strategy = settings.processingStrategy;
 
 		switch (strategy) {
 			case ProcessingStrategy.Individual:
@@ -190,8 +184,8 @@ export class AiProcessingService {
 		fileItems: FileItem[],
 		updateFileItemStatus: (fileItem: FileItem, status: FileStatus, code: string, error: string) => void
 	): Promise<void> {
-		const directory = filename.split('/').slice(0, -1).join('/');
-		const directoryHandle = fileItems.find(item => item.path.split('/').length === 2 && item.path.startsWith(directory + '/'))?.directoryHandle;
+		const directory = filename.split('/').slice(-2, -1)[0];
+		const directoryHandle = fileItems.find(item => item.directoryHandle?.name == directory)?.directoryHandle;
 		const newFileItem: FileItem = {
 			path: filename,
 			status: 'done',

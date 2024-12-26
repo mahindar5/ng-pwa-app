@@ -1,4 +1,4 @@
-<ion-split-pane content-id="chat-content">
+<ion-split-pane when="xs" content-id="chat-content">
 	<ion-menu side="end" content-id="chat-content" type="overlay">
 		<ion-content>
 			<app-settings [isCompactView]="true"></app-settings>
@@ -50,7 +50,7 @@
 			}
 
 			<ion-toolbar>
-				<ion-textarea [autoGrow]="true" [(ngModel)]="message" (keyup.enter)="sendMessage()"
+				<ion-textarea [autoGrow]="true" [(ngModel)]="message" (keydown.enter)="sendMessage($event)"
 					placeholder="Type your message" rows="1"></ion-textarea>
 				<ion-buttons slot="end">
 					<ion-button [disabled]="isProcessing() || !message()" (click)="sendMessage()">

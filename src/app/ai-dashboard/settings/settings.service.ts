@@ -1,5 +1,5 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { AIService, AIServiceType, DEFAULT_PROMPT, ProcessingStrategy, PromptItem, promptsArray, Settings } from '@mahindar5/common-lib';
+import { AIService, AIServiceType, DEFAULT_PROMPT, ProcessingStrategy, PromptItem, PromptName, promptsArray, Settings } from '@mahindar5/common-lib';
 
 @Injectable({
 	providedIn: 'root'
@@ -54,7 +54,8 @@ export class SettingsService {
 		this.initializeModels();
 	}
 
-	addPrompt(prompt: PromptItem): void {
+	addPrompt(prompt: PromptItem, event?: Event) {
+		event?.stopPropagation();
 		const updatedSettings = this.settings();
 		const promptItem = updatedSettings.prompts.find(p => p.name === prompt.name);
 		if (!promptItem) {
@@ -71,6 +72,27 @@ export class SettingsService {
 			throw new Error('Prompt not found');
 		}
 		promptItem.promptTextList.splice(index, 1);
+		this.saveSettings(updatedSettings);
+	}
+
+	addPromptItem(): void {
+		const updatedSettings = this.settings();
+		const newPromptName = `New Prompt ${updatedSettings.prompts.length + 1}`;
+		updatedSettings.prompts.push({
+			name: newPromptName as PromptName,
+			promptTextList: [],
+			role: ''
+		});
+		this.saveSettings(updatedSettings);
+	}
+
+	removePromptItem(name: string): void {
+		const updatedSettings = this.settings();
+		const index = updatedSettings.prompts.findIndex(p => p.name === name);
+		if (index === -1) {
+			throw new Error('Prompt not found');
+		}
+		updatedSettings.prompts.splice(index, 1);
 		this.saveSettings(updatedSettings);
 	}
 
