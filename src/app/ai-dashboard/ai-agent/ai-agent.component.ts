@@ -38,7 +38,6 @@ ${settings.selectedPrompt.role}`
 	}, {
 		equal: (a, b) => a.name === b.name
 	});
-	settings = this.settingsService.settings;
 
 	constructor() {
 		super();
@@ -51,6 +50,7 @@ ${settings.selectedPrompt.role}`
 
 	async onProcessFiles(): Promise<void> {
 		this.isProcessing.set(true);
+		this.allFiles.update((items) => items.map(item => ({ ...item, status: 'init' } as FileItem)));
 		try {
 			const filesToProcess = this.allFiles().filter(item => item.selected);
 

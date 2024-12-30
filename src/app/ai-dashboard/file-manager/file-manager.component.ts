@@ -9,7 +9,6 @@ import { checkmarkDoneCircle, documentOutline, duplicateOutline, folderOutline, 
 	selector: 'app-file-manager',
 	templateUrl: './file-manager.component.html',
 	styleUrls: ['./file-manager.component.scss'],
-	providers: [FileService],
 	imports: [
 		FormsModule, IonButton, IonButtons, IonCheckbox, IonIcon, IonItem, IonItemGroup,
 		IonLabel, IonProgressBar, IonBadge,
@@ -19,9 +18,9 @@ export class FileManagerComponent {
 	private readonly fileService = inject(FileService);
 	private readonly alertController = inject(AlertController);
 	private readonly modalController = inject(ModalController);
-	private readonly dropZoneRef = viewChild<ElementRef>('dropZone');
+	readonly dropZoneRef = viewChild<ElementRef>('dropZone');
 
-	allFiles = model<FileItem[]>([]);
+	allFiles = model.required<FileItem[]>();
 	acceptReferences = input<boolean>(false);
 
 	constructor() {
@@ -32,16 +31,14 @@ export class FileManagerComponent {
 		const { FileManagerModalComponent } = await import('./file-manager-modal.component');
 		const modal = await this.modalController.create({
 			component: FileManagerModalComponent,
-			componentProps: {
-				allFiles: file.references || []
-			}
+			componentProps: { allFiles: file.references || [] }
 		});
 
-		modal.onDidDismiss().then((result) => {
-			const updatedReferences = result.data?.allFiles as FileItem[];
+		modal.onDidDismiss().then((response) => {
+			const updatedReferences = response.data?.allFiles as FileItem[];
 			if (updatedReferences) {
 				file.references = updatedReferences;
-				file.referencesCount = updatedReferences.filter(f => f.selected).length;
+				file.referencesCount = updatedReferences.filter(reference => reference.selected).length;
 				this.allFiles.set([...this.allFiles()]);
 			}
 		});
@@ -50,8 +47,8 @@ export class FileManagerComponent {
 	}
 
 	toggleSelectAllFiles(): void {
-		const allSelected = this.allFiles().every(file => file.selected);
-		this.allFiles.set(this.allFiles().map(item => ({ ...item, selected: !allSelected })));
+		const isAllSelected = this.allFiles().every(file => file.selected);
+		this.allFiles.set(this.allFiles().map(file => ({ ...file, selected: !isAllSelected })));
 	}
 
 	onDragOver(event: DragEvent): void {
@@ -88,27 +85,14 @@ export class FileManagerComponent {
 
 	async saveFileAs(file: FileItem): Promise<void> {
 		const updatedFile = await this.fileService.saveFileAs(file);
-		if (!updatedFile) {
-			throw new Error('File not saved.');
+		if (updatedFile) {
+			this.allFiles.set(this.allFiles().map(item => item.path === file.path ? updatedFile : item));
 		}
-		this.allFiles.set(this.allFiles().map(item => item.path === file.path ? updatedFile : item));
 	}
 
 	async saveAllFiles(): Promise<void> {
-		const savedFiles = await Promise.all(this.allFiles().map(async (file) => {
-			if (file.status !== 'done') return null;
-			return file.handle ? this.fileService.writeToFile(file).then(() => file) : this.fileService.saveFileAs(file);
-		}));
-
-		const successCount = savedFiles.filter(file => file !== null).length;
-		const message = successCount > 0
-			? `${successCount} file(s) saved successfully.`
-			: 'No files were saved.';
-
-		this.allFiles.set(this.allFiles().map(item => {
-			const savedFile = savedFiles.find(sf => sf && sf.path === item.path);
-			return savedFile ? savedFile : item;
-		}));
+		const savePromises = this.allFiles().map(file => this.saveFile(file));
+		await Promise.all(savePromises);
 	}
 
 	hasUnsavedChanges(): boolean {
@@ -119,12 +103,18 @@ export class FileManagerComponent {
 		this.allFiles.set([]);
 	}
 
+	getProgressValue(file: FileItem): number {
+		if (file.status === 'done') return 1;
+		if (file.status === 'error' || file.status === 'unmodified') return 0.5;
+		return 0;
+	}
+
 	private async updateFiles(getFiles: () => Promise<FileItem[]>): Promise<void> {
 		const newFiles = await getFiles();
 		if (newFiles.length === 0) return;
 
-		const existingFiles = this.allFiles();
-		if (existingFiles.length === 0) {
+		const currentFiles = this.allFiles();
+		if (currentFiles.length === 0) {
 			this.allFiles.set(newFiles);
 			return;
 		}
@@ -137,9 +127,10 @@ export class FileManagerComponent {
 				{ text: 'Skip', role: 'cancel' },
 				{
 					text: 'Append', handler: () => {
-						this.allFiles.set([...existingFiles, ...newFiles.filter(newFile =>
-							!existingFiles.some(existingFile => existingFile.path === newFile.path)
+						this.allFiles.set([...currentFiles, ...newFiles.filter(newFile =>
+							!currentFiles.some(currentFile => currentFile.path === newFile.path)
 						)]);
+
 					}
 				},
 			]

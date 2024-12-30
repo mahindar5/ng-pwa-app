@@ -16,6 +16,7 @@ export abstract class BaseAiComponent {
 	protected readonly aiProcessingService = inject(AiProcessingService);
 
 	isProcessing = signal(false);
+	settings = this.settingsService.settings;
 
 	ngOnInit(): void {
 		this.settingsService.initializeModels();
