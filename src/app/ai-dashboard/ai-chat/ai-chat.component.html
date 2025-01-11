@@ -41,6 +41,11 @@
 				<ion-icon name="color-wand-outline"></ion-icon>
 				<ion-label>Summarize Active Page</ion-label>
 			</ion-chip>
+			@if(message()){
+			<ion-chip (click)="summarizeActivePage(true)">
+				<ion-icon name="color-wand-outline"></ion-icon>
+				<ion-label>Query Active Page</ion-label>
+			</ion-chip>}
 			<ion-chip (click)="clearMessages()">
 				<ion-label>Clear</ion-label>
 			</ion-chip>

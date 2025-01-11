@@ -59,7 +59,7 @@ export class AiChatComponent extends BaseAiComponent {
 		}
 	}
 
-	async summarizeActivePage(): Promise<void> {
+	async summarizeActivePage(isQueryActiveTab: boolean = false): Promise<void> {
 		const activeTabsResponse = await sendExtBackgroundMessage('ChromeTabHelper', 'getAllTabs', {});
 		const tabs = activeTabsResponse.output?.map((tab: any) => ({
 			name: tab.id,
@@ -70,7 +70,7 @@ export class AiChatComponent extends BaseAiComponent {
 		}));
 
 		if (tabs.length === 1) {
-			await this.processTab(tabs[0].value);
+			await this.processTab(tabs[0].value, isQueryActiveTab);
 		} else if (tabs.length > 1) {
 			const alert = await this.alertController.create({
 				header: 'Select Tab',
@@ -80,7 +80,7 @@ export class AiChatComponent extends BaseAiComponent {
 					{
 						text: 'Ok',
 						handler: (selectedVal) => {
-							this.processTab(selectedVal);
+							this.processTab(selectedVal, isQueryActiveTab);
 						},
 					},
 				],
@@ -91,11 +91,11 @@ export class AiChatComponent extends BaseAiComponent {
 		}
 	}
 
-	async processTab(selectedVal: any): Promise<void> {
+	async processTab(selectedVal: any, isQueryActiveTab: boolean): Promise<void> {
 		this.messages.set([]);
 		const tabContent = await sendExtBackgroundMessage('ChromeTabHelper', 'getTabContent', { tabId: selectedVal.id });
 		const message = this.message();
-		const content = `If there is any #Question, please provide the answer to the question and then summarize the text below.
+		let content = `If there is any #Question, please provide the answer to the question and then summarize the text below.
 Analyze the text below and provide:
 
 A detailed summary of the main ideas and supporting points.
@@ -105,7 +105,14 @@ Ensure the response uses plain text formatting compatible with Notepad for clear
 
 ${message?.trim() ? `#Question: ${message}` : ''}
 
+
 Text:${tabContent.output?.replace(/\n/g, ' ')}`;
+		if (isQueryActiveTab) {
+			content = `
+#Query: ${message}
+${tabContent.output?.replace(/\n/g, ' ')}
+			`
+		}
 		this.message.set(content);
 		setTimeout(() => {
 			this.message.set('');
