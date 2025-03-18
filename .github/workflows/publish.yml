@@ -1,6 +1,3 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and deploy to GitHub Pages
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: ng-pwa-app-deploy
 
 on:
@@ -10,55 +7,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write # This is necessary to checkout the repository and write the artifacts
-  id-token: write # This is necessary to deploy to GitHub Pages
-  pages: write # This is necessary to deploy to GitHub Pages
-  packages: read # This is necessary to install dependencies from GitHub Packages
+  contents: write
+  id-token: write
+  pages: write
+  packages: read
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@main
-      - name: Set up Node.js
-        uses: actions/setup-node@main
-        with:
-          node-version: "lts/*"
-          cache: "npm"
-      - name: Configure npm for publishing
-        run: |
-          echo "@mahindar5:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
-          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
-      - run: npm ci && npm install @mahindar5/common-lib@latest
-      - run: npm run build -- --output-path=dist --base-href=/ng-pwa-app/
-
-      - name: Copy stats.json to repo root
-        run: |
-          mkdir -p stats
-          DATE=$(date +'%Y%m%d')
-          cp dist/stats.json stats/${DATE}.json
-
-      - name: Commit stats file
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          DATE=$(date +'%Y%m%d')
-          git add stats/${DATE}.json  # Explicitly add only the stats file
-          git commit -m "Update ${DATE}.json [skip ci]" || echo "No changes to commit for stats/${DATE}.json"
-          git push
-
-      - name: Archive production artifacts
-        uses: actions/upload-pages-artifact@main
-        with:
-          path: dist/browser
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@main
+  deploy-app:
+    uses: mahindar5/common-lib/.github/workflows/common-deploy-app.yml@main
+    with:
+      base-href: "/ng-pwa-app/"
+      npm-packages: "@mahindar5/common-lib@latest"
