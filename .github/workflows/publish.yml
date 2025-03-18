@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   deploy-app:
-    uses: mahindar5/common-lib/.github/workflows/common-deploy-app.yml@main
+    uses: mahindar5/ng-pwa-app/.github/workflows/common-deploy-app.yml@main
     with:
       base-href: "/ng-pwa-app/"
       npm-packages: "@mahindar5/common-lib@latest"
