@@ -30,7 +30,7 @@ jobs:
           node-version: "lts/*"
           cache: "npm"
 
-      - name: Configure npm for publishing
+      - name: Configure npm for installing packages
         run: |
           echo "@mahindar5:registry=https://npm.pkg.github.com" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
