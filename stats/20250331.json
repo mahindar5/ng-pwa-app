@@ -12675,12 +12675,12 @@
       "bytes": 439,
       "imports": []
     },
-    "src/app/ai-dashboard/ai-agent/ai-agent.component.scss": {
-      "bytes": 121,
-      "imports": []
-    },
     "src/app/ai-dashboard/ai-chat/ai-chat.component.scss": {
       "bytes": 85,
+      "imports": []
+    },
+    "src/app/ai-dashboard/ai-agent/ai-agent.component.scss": {
+      "bytes": 121,
       "imports": []
     },
     "node_modules/@ionic/angular/css/core.css": {
@@ -15269,16 +15269,6 @@
       "bytes": 352,
       "ng-component": true
     },
-    "ai-agent.component-IRTLOMXZ.css": {
-      "imports": [],
-      "inputs": {
-        "src/app/ai-dashboard/ai-agent/ai-agent.component.scss": {
-          "bytesInOutput": 95
-        }
-      },
-      "bytes": 96,
-      "ng-component": true
-    },
     "ai-chat.component-BRO7T3EH.css": {
       "imports": [],
       "inputs": {
@@ -15287,6 +15277,16 @@
         }
       },
       "bytes": 70,
+      "ng-component": true
+    },
+    "ai-agent.component-IRTLOMXZ.css": {
+      "imports": [],
+      "inputs": {
+        "src/app/ai-dashboard/ai-agent/ai-agent.component.scss": {
+          "bytesInOutput": 95
+        }
+      },
+      "bytes": 96,
       "ng-component": true
     },
     "styles-ZPOY3CVS.css": {
