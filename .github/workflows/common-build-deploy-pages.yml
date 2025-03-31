@@ -45,17 +45,15 @@ jobs:
       # - name: Copy docs/index.html to docs/404.html
       #   run: cp docs/index.html docs/404.html
 
-      - name: Copy stats.json to repo root
+      - name: Copy stats.json and commit changes
         run: |
           mkdir -p stats
           DATE=$(date +'%Y%m%d')
           cp dist/stats.json stats/${DATE}.json
 
-      - name: Commit stats file
-        run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          DATE=$(date +'%Y%m%d')
+
           git add stats/${DATE}.json
           git commit -m "Update ${DATE}.json [skip ci]" || echo "No changes to commit"
           git push
