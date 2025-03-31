@@ -1,4 +1,4 @@
-name: reusable-deploy-app
+name: common-build-deploy-pages
 
 on:
   workflow_call:
