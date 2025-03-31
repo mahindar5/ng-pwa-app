@@ -1,4 +1,4 @@
-name: ng-pwa-app-build-deploy-pages
+name: build-deploy-pages
 
 on:
   push:
