@@ -6,6 +6,9 @@ on:
       base-href:
         required: true
         type: string
+      npm-packages:
+        required: true
+        type: string
 
 jobs:
   build:
@@ -28,7 +31,7 @@ jobs:
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci && npm install ${{ inputs.npm-packages }}
 
       - name: Build application
         run: npm run build -- --output-path=dist --base-href=${{ inputs.base-href }}
