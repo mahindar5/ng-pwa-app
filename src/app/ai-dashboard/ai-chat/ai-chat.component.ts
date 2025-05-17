@@ -4,7 +4,6 @@ import { IonAvatar, IonButton, IonButtons, IonChip, IonContent, IonFooter, IonHe
 import { AIService, sendExtBackgroundMessage, UserRoleText } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, checkmark, checkmarkDoneCircle, clipboardOutline, close, cloudDoneOutline, colorWandOutline, createOutline, documentOutline, folderOutline, send, settingsOutline } from 'ionicons/icons';
-import { AiProcessingService } from '../ai-processing.service';
 import { BaseAiComponent } from '../base-ai.component';
 import { SettingsComponent } from '../settings/settings.component';
 
@@ -15,7 +14,7 @@ import { SettingsComponent } from '../settings/settings.component';
 		IonChip, IonFooter, IonAvatar, IonButtons, IonItem, IonList, IonContent,
 		IonLabel, IonIcon, IonProgressBar, IonToolbar, IonTextarea, IonButton, IonSplitPane, IonMenu, IonHeader, IonTitle, SettingsComponent
 	],
-	providers: [AIService, AiProcessingService],
+	providers: [AIService],
 	templateUrl: './ai-chat.component.html',
 	styleUrl: './ai-chat.component.scss',
 })

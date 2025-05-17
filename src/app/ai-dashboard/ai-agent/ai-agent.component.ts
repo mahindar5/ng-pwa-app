@@ -1,10 +1,9 @@
 import { Component, linkedSignal, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonMenu, IonMenuButton, IonSplitPane, IonTextarea, IonTitle, IonToolbar } from '@ionic/angular/standalone';
-import { AIService, COMMON_INSTRUCTIONS, FileItem, FileStatus, INDENTATION, OUTPUT_FORMAT, PromptModal } from '@mahindar5/common-lib';
+import { AIService, COMMON_INSTRUCTIONS, FileItem, FileStatus, PromptModal } from '@mahindar5/common-lib';
 import { addIcons } from 'ionicons';
 import { chatbubblesOutline, clipboardOutline, close, colorWandOutline, createOutline, send, settingsOutline, stopCircleOutline } from 'ionicons/icons';
-import { AiProcessingService } from '../ai-processing.service';
 import { BaseAiComponent } from '../base-ai.component';
 import { FileManagerComponent } from '../file-manager/file-manager.component';
 import { SettingsComponent } from '../settings/settings.component';
@@ -13,7 +12,7 @@ import { SettingsComponent } from '../settings/settings.component';
 	selector: 'app-ai-agent',
 	templateUrl: './ai-agent.component.html',
 	styleUrls: ['./ai-agent.component.scss'],
-	providers: [AiProcessingService, AIService],
+	providers: [AIService],
 	imports: [
 		FormsModule, IonHeader, IonToolbar, IonTitle,
 		IonButton, IonIcon, IonContent, IonTextarea, IonButtons,
@@ -36,7 +35,7 @@ ${settings.selectedPrompt.promptTextList.map(p => p.text).join('\n')}
 ${settings.selectedPrompt.role}`
 		}
 	}, {
-		equal: (a, b) => a.name === b.name
+		equal: (a, b) => a.name === b.name && a.type === b.type && a.prompt === b.prompt
 	});
 
 	constructor() {
@@ -58,10 +57,9 @@ ${settings.selectedPrompt.role}`
 				throw new Error('No files selected for processing');
 			}
 
-			const prompt = `${this.currentPrompt().prompt}\n\n${INDENTATION}\n\n${OUTPUT_FORMAT}`;
 			await this.aiProcessingService.processFiles(
 				filesToProcess,
-				prompt,
+				this.currentPrompt().prompt,
 				this.settings(),
 				this.showAuthenticationAlert.bind(this),
 				this.updateFileItemStatus.bind(this)

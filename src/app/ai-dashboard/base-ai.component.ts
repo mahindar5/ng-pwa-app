@@ -1,9 +1,6 @@
-import { inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { AlertController } from '@ionic/angular/standalone';
-import { DeviceResponse } from '@mahindar5/common-lib';
-
-import { Component } from '@angular/core';
-import { AiProcessingService } from './ai-processing.service';
+import { AiProcessingService, DeviceResponse, resolveService } from '@mahindar5/common-lib';
 import { SettingsService } from './settings/settings.service';
 
 @Component({
@@ -13,7 +10,7 @@ import { SettingsService } from './settings/settings.service';
 export abstract class BaseAiComponent {
 	protected readonly alertController = inject(AlertController);
 	protected readonly settingsService = inject(SettingsService);
-	protected readonly aiProcessingService = inject(AiProcessingService);
+	protected readonly aiProcessingService = resolveService(AiProcessingService);
 
 	isProcessing = signal(false);
 	settings = this.settingsService.settings;
