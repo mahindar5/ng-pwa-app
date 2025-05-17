@@ -24,12 +24,24 @@
 			// "@mahindar5/*": [
 			// 	"../*/"
 			// ],
-			// "@mahindar5/common-lib": [
-			// 	"../common-lib/dist/"
-			// ],
 			"@mahindar5/common-lib": [
-				"../common-lib/src/"
+				"../common-lib/dist/"
 			],
+			"@mahindar5/ng-common-ion-lib/*": [
+				"../ng-mat-app/dist/ng-common-ion-lib/*"
+			],
+			"@mahindar5/ng-common-ion-lib": [
+				"../ng-mat-app/dist/ng-common-ion-lib"
+			],
+			// "@mahindar5/common-lib": [
+			// 	"../common-lib/src/"
+			// ],
+			// "@mahindar5/ng-common-ion-lib/*": [
+			// 	"../ng-mat-app/projects/ng-common-ion-lib/*"
+			// ],
+			// "@mahindar5/ng-common-ion-lib": [
+			// 	"../ng-mat-app/projects/ng-common-ion-lib/src"
+			// ],
 		}
 	},
 	"angularCompilerOptions": {
