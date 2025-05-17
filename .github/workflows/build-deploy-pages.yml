@@ -6,7 +6,7 @@ on:
       - main
   workflow_dispatch:
   repository_dispatch:
-    types: [ng-common-mat-lib-updated]
+    types: [ng-common-ion-lib-updated]
 
 permissions:
   contents: write
