@@ -12634,7 +12634,7 @@
       "format": "esm"
     },
     "src/build-info.ts": {
-      "bytes": 923,
+      "bytes": 947,
       "imports": [],
       "format": "esm"
     },
@@ -12785,14 +12785,14 @@
     }
   },
   "outputs": {
-    "chunk-J6I7QK64.js": {
+    "chunk-5IZO6TDP.js": {
       "imports": [
         {
-          "path": "chunk-SNNJCRBL.js",
+          "path": "chunk-H4UKYBET.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -12871,22 +12871,22 @@
       },
       "bytes": 1825
     },
-    "chunk-323CTF4Q.js": {
+    "chunk-EZKFYSLV.js": {
       "imports": [
         {
-          "path": "chunk-SNNJCRBL.js",
+          "path": "chunk-H4UKYBET.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-YHL7LGOF.js",
+          "path": "chunk-4PZXEWBZ.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SYSUU6IP.js",
+          "path": "chunk-5UUCLLCF.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -12965,10 +12965,10 @@
       },
       "bytes": 5135
     },
-    "chunk-SNNJCRBL.js": {
+    "chunk-H4UKYBET.js": {
       "imports": [
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -12984,7 +12984,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-J6I7QK64.js",
+          "path": "chunk-5IZO6TDP.js",
           "kind": "dynamic-import"
         }
       ],
@@ -13232,14 +13232,14 @@
       },
       "bytes": 2570
     },
-    "chunk-DHOAY7EU.js": {
+    "chunk-LJQZOE6J.js": {
       "imports": [
         {
-          "path": "chunk-SYSUU6IP.js",
+          "path": "chunk-5UUCLLCF.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -13315,18 +13315,18 @@
       "inputs": {},
       "bytes": 566
     },
-    "chunk-UZNQT4JV.js": {
+    "chunk-5SKSO7MF.js": {
       "imports": [
         {
-          "path": "chunk-YHL7LGOF.js",
+          "path": "chunk-4PZXEWBZ.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SYSUU6IP.js",
+          "path": "chunk-5UUCLLCF.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -13405,14 +13405,14 @@
       },
       "bytes": 6842
     },
-    "chunk-YHL7LGOF.js": {
+    "chunk-4PZXEWBZ.js": {
       "imports": [
         {
-          "path": "chunk-SYSUU6IP.js",
+          "path": "chunk-5UUCLLCF.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -13438,10 +13438,10 @@
       },
       "bytes": 1323
     },
-    "chunk-SYSUU6IP.js": {
+    "chunk-5UUCLLCF.js": {
       "imports": [
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -13468,10 +13468,10 @@
       },
       "bytes": 15329
     },
-    "main-OUX7RVQQ.js": {
+    "main-7XV7HEBD.js": {
       "imports": [
         {
-          "path": "chunk-UB6NEHET.js",
+          "path": "chunk-ZOPL5533.js",
           "kind": "import-statement"
         },
         {
@@ -13547,15 +13547,15 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-UZNQT4JV.js",
+          "path": "chunk-5SKSO7MF.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-323CTF4Q.js",
+          "path": "chunk-EZKFYSLV.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-DHOAY7EU.js",
+          "path": "chunk-LJQZOE6J.js",
           "kind": "dynamic-import"
         }
       ],
@@ -13578,15 +13578,15 @@
           "bytesInOutput": 1886
         },
         "src/build-info.ts": {
-          "bytesInOutput": 675
+          "bytesInOutput": 697
         },
         "src/main.ts": {
           "bytesInOutput": 123
         }
       },
-      "bytes": 15327
+      "bytes": 15349
     },
-    "chunk-UB6NEHET.js": {
+    "chunk-ZOPL5533.js": {
       "imports": [
         {
           "path": "chunk-WBSLWVBM.js",
