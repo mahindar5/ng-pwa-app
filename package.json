@@ -20,7 +20,7 @@
     "@angular/router": "^19.2.11",
     "@angular/service-worker": "^19.2.11",
     "@ionic/angular": "^8.4.0",
-    "@mahindar5/common-lib": "^1.1.20",
+    "@mahindar5/common-lib": "^1.1.54",
     "@mahindar5/ng-common-ion-lib": "^1.1.56",
     "@types/wicg-file-system-access": "^2023.10.5",
     "firebase": "^11.1.0",

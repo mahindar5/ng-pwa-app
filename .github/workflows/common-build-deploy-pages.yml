@@ -52,7 +52,7 @@ jobs:
           git commit -m "Update ${DATE}.json [skip ci]" || echo "No changes to commit"
           git push
 
-      - name: Install dependencies
+      - name: Run build-analyze
         run: npx build-analyze
 
       - name: Archive production artifacts
