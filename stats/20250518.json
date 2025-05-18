@@ -15866,7 +15866,7 @@
       "format": "esm"
     },
     "src/build-info.ts": {
-      "bytes": 922,
+      "bytes": 946,
       "imports": [],
       "format": "esm"
     },
@@ -19990,7 +19990,7 @@
       },
       "bytes": 101
     },
-    "main-RPUSDSGE.js": {
+    "main-ZWZJWLHE.js": {
       "imports": [
         {
           "path": "chunk-XMV5TXVU.js",
@@ -20187,13 +20187,13 @@
           "bytesInOutput": 1888
         },
         "src/build-info.ts": {
-          "bytesInOutput": 674
+          "bytesInOutput": 696
         },
         "src/main.ts": {
           "bytesInOutput": 123
         }
       },
-      "bytes": 77662
+      "bytes": 77684
     },
     "chunk-XMV5TXVU.js": {
       "imports": [
