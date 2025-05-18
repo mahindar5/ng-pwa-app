@@ -15569,8 +15569,8 @@
       ],
       "format": "esm"
     },
-    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs": {
-      "bytes": 3058,
+    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CHVvI_Wn.mjs": {
+      "bytes": 2357,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -15586,11 +15586,6 @@
           "path": "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs",
           "kind": "import-statement",
           "original": "@ionic/angular/standalone"
-        },
-        {
-          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager.mjs",
-          "kind": "import-statement",
-          "original": "./mahindar5-ng-common-ion-lib-common-file-manager.mjs"
         }
       ],
       "format": "esm"
@@ -15639,9 +15634,9 @@
           "original": "ionicons/icons"
         },
         {
-          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs",
+          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CHVvI_Wn.mjs",
           "kind": "dynamic-import",
-          "original": "./mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs"
+          "original": "./mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CHVvI_Wn.mjs"
         },
         {
           "path": "<runtime>",
@@ -15718,7 +15713,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 7345,
+      "bytes": 7362,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -16012,26 +16007,26 @@
     }
   },
   "outputs": {
-    "chunk-HLOLLIC3.js": {
+    "chunk-JDECJUO7.js": {
       "imports": [
         {
-          "path": "chunk-J2BDA4MA.js",
+          "path": "chunk-AF7BUCR7.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-C25OIREP.js",
+          "path": "chunk-LC7D4YDY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-O36CFP7K.js",
+          "path": "chunk-JJ3GCM6Z.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-C3FJDSIJ.js",
+          "path": "chunk-HFKWUQDF.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -16093,6 +16088,10 @@
         {
           "path": "chunk-3GJFFWBB.js",
           "kind": "import-statement"
+        },
+        {
+          "path": "chunk-GE4UMYPY.js",
+          "kind": "dynamic-import"
         }
       ],
       "exports": [
@@ -16100,11 +16099,14 @@
       ],
       "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-ai-agent.mjs",
       "inputs": {
+        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager.mjs": {
+          "bytesInOutput": 6781
+        },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-ai-agent.mjs": {
-          "bytesInOutput": 4130
+          "bytesInOutput": 4142
         }
       },
-      "bytes": 5143
+      "bytes": 12159
     },
     "chunk-G7C2VAMR.js": {
       "imports": [
@@ -16226,10 +16228,14 @@
       },
       "bytes": 952
     },
-    "chunk-SKDUZBAC.js": {
+    "chunk-637RHOJZ.js": {
       "imports": [
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-HFKWUQDF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -16302,20 +16308,24 @@
           "bytesInOutput": 1828
         }
       },
-      "bytes": 2569
+      "bytes": 2602
     },
-    "chunk-VNDNEKV4.js": {
+    "chunk-7MZESOYK.js": {
       "imports": [
         {
-          "path": "chunk-C25OIREP.js",
+          "path": "chunk-LC7D4YDY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-C3FJDSIJ.js",
+          "path": "chunk-JJ3GCM6Z.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-HFKWUQDF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -16385,24 +16395,28 @@
       ],
       "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-settings.mjs",
       "inputs": {},
-      "bytes": 566
+      "bytes": 594
     },
-    "chunk-YRXT356J.js": {
+    "chunk-ORGMKHWW.js": {
       "imports": [
         {
-          "path": "chunk-J2BDA4MA.js",
+          "path": "chunk-AF7BUCR7.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-C25OIREP.js",
+          "path": "chunk-LC7D4YDY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-C3FJDSIJ.js",
+          "path": "chunk-JJ3GCM6Z.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-HFKWUQDF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -16475,20 +16489,20 @@
           "bytesInOutput": 5711
         }
       },
-      "bytes": 6848
+      "bytes": 6873
     },
-    "chunk-J2BDA4MA.js": {
+    "chunk-AF7BUCR7.js": {
       "imports": [
         {
-          "path": "chunk-C25OIREP.js",
+          "path": "chunk-LC7D4YDY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-C3FJDSIJ.js",
+          "path": "chunk-JJ3GCM6Z.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -16510,14 +16524,14 @@
       },
       "bytes": 1323
     },
-    "chunk-C25OIREP.js": {
+    "chunk-LC7D4YDY.js": {
       "imports": [
         {
-          "path": "chunk-C3FJDSIJ.js",
+          "path": "chunk-JJ3GCM6Z.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -16538,20 +16552,12 @@
           "bytesInOutput": 14659
         }
       },
-      "bytes": 15335
+      "bytes": 15322
     },
-    "chunk-7WG5WUFQ.js": {
+    "chunk-GE4UMYPY.js": {
       "imports": [
         {
-          "path": "chunk-O36CFP7K.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-C3FJDSIJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -16618,46 +16624,13 @@
       "exports": [
         "FileManagerModalComponent"
       ],
-      "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs",
+      "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CHVvI_Wn.mjs",
       "inputs": {
-        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs": {
-          "bytesInOutput": 1096
+        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CHVvI_Wn.mjs": {
+          "bytesInOutput": 858
         }
       },
-      "bytes": 1829
-    },
-    "chunk-O36CFP7K.js": {
-      "imports": [
-        {
-          "path": "chunk-C3FJDSIJ.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-Z2UUP42X.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-I4POYNV2.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-3GJFFWBB.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-7WG5WUFQ.js",
-          "kind": "dynamic-import"
-        }
-      ],
-      "exports": [
-        "a"
-      ],
-      "inputs": {
-        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager.mjs": {
-          "bytesInOutput": 6774
-        }
-      },
-      "bytes": 7346
+      "bytes": 1486
     },
     "chunk-UHCB56TJ.js": {
       "imports": [
@@ -19985,14 +19958,18 @@
       },
       "bytes": 101
     },
-    "main-ZHCPH33X.js": {
+    "main-S7WREMIR.js": {
       "imports": [
         {
-          "path": "chunk-C3FJDSIJ.js",
+          "path": "chunk-JJ3GCM6Z.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-HFKWUQDF.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-OPAJ7XNT.js",
           "kind": "import-statement"
         },
         {
@@ -20132,19 +20109,19 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-SKDUZBAC.js",
+          "path": "chunk-637RHOJZ.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-YRXT356J.js",
+          "path": "chunk-ORGMKHWW.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-HLOLLIC3.js",
+          "path": "chunk-JDECJUO7.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-VNDNEKV4.js",
+          "path": "chunk-7MZESOYK.js",
           "kind": "dynamic-import"
         }
       ],
@@ -20173,7 +20150,7 @@
           "bytesInOutput": 0
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 1962
+          "bytesInOutput": 1979
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-navigation-menu.mjs": {
           "bytesInOutput": 1271
@@ -20188,12 +20165,12 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 77665
+      "bytes": 77703
     },
-    "chunk-C3FJDSIJ.js": {
+    "chunk-JJ3GCM6Z.js": {
       "imports": [
         {
-          "path": "chunk-Z2UUP42X.js",
+          "path": "chunk-HFKWUQDF.js",
           "kind": "import-statement"
         },
         {
@@ -20370,7 +20347,77 @@
       },
       "bytes": 186796
     },
-    "chunk-Z2UUP42X.js": {
+    "chunk-HFKWUQDF.js": {
+      "imports": [
+        {
+          "path": "chunk-I4POYNV2.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-3GJFFWBB.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w"
+      ],
+      "inputs": {
+        "node_modules/@firebase/util/dist/postinstall.mjs": {
+          "bytesInOutput": 14
+        },
+        "node_modules/@firebase/util/dist/index.esm2017.js": {
+          "bytesInOutput": 13586
+        },
+        "node_modules/@firebase/component/dist/esm/index.esm2017.js": {
+          "bytesInOutput": 4275
+        },
+        "node_modules/@firebase/logger/dist/esm/index.esm2017.js": {
+          "bytesInOutput": 1709
+        },
+        "node_modules/@firebase/app/dist/esm/index.esm2017.js": {
+          "bytesInOutput": 9443
+        },
+        "node_modules/idb/build/wrap-idb-value.js": {
+          "bytesInOutput": 2011
+        },
+        "node_modules/idb/build/index.js": {
+          "bytesInOutput": 1050
+        },
+        "node_modules/@firebase/auth/dist/esm2017/index-683d5879.js": {
+          "bytesInOutput": 73044
+        },
+        "node_modules/@firebase/auth/dist/esm2017/index.js": {
+          "bytesInOutput": 0
+        },
+        "node_modules/firebase/auth/dist/esm/index.esm.js": {
+          "bytesInOutput": 0
+        }
+      },
+      "bytes": 105405
+    },
+    "chunk-OPAJ7XNT.js": {
       "imports": [
         {
           "path": "chunk-WYECDMFH.js",
@@ -20464,41 +20511,23 @@
       "exports": [
         "$",
         "A",
-        "Aa",
         "B",
-        "Ba",
         "C",
-        "Ca",
         "D",
-        "Da",
         "E",
-        "Ea",
         "F",
-        "Fa",
         "G",
-        "Ga",
         "H",
-        "Ha",
         "I",
-        "Ia",
         "J",
-        "Ja",
         "K",
-        "Ka",
         "L",
-        "La",
         "M",
-        "Ma",
         "N",
-        "Na",
         "O",
-        "Oa",
         "P",
-        "Pa",
         "Q",
-        "Qa",
         "R",
-        "Ra",
         "S",
         "T",
         "U",
@@ -20551,15 +20580,10 @@
         "u",
         "ua",
         "v",
-        "va",
         "w",
-        "wa",
         "x",
-        "xa",
         "y",
-        "ya",
-        "z",
-        "za"
+        "z"
       ],
       "inputs": {
         "node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs": {
@@ -20585,36 +20609,6 @@
         },
         "node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs": {
           "bytesInOutput": 257
-        },
-        "node_modules/@firebase/util/dist/postinstall.mjs": {
-          "bytesInOutput": 14
-        },
-        "node_modules/@firebase/util/dist/index.esm2017.js": {
-          "bytesInOutput": 13602
-        },
-        "node_modules/@firebase/component/dist/esm/index.esm2017.js": {
-          "bytesInOutput": 4284
-        },
-        "node_modules/@firebase/logger/dist/esm/index.esm2017.js": {
-          "bytesInOutput": 1735
-        },
-        "node_modules/@firebase/app/dist/esm/index.esm2017.js": {
-          "bytesInOutput": 9482
-        },
-        "node_modules/idb/build/wrap-idb-value.js": {
-          "bytesInOutput": 2017
-        },
-        "node_modules/idb/build/index.js": {
-          "bytesInOutput": 1051
-        },
-        "node_modules/@firebase/auth/dist/esm2017/index-683d5879.js": {
-          "bytesInOutput": 73207
-        },
-        "node_modules/@firebase/auth/dist/esm2017/index.js": {
-          "bytesInOutput": 0
-        },
-        "node_modules/firebase/auth/dist/esm/index.esm.js": {
-          "bytesInOutput": 0
         },
         "node_modules/@angular/router/fesm2022/router-Dwfin5Au.mjs": {
           "bytesInOutput": 64428
@@ -20656,7 +20650,7 @@
           "bytesInOutput": 30179
         },
         "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs": {
-          "bytesInOutput": 24486
+          "bytesInOutput": 24452
         },
         "node_modules/@ionic/core/components/index7.js": {
           "bytesInOutput": 2032
@@ -20866,7 +20860,7 @@
           "bytesInOutput": 47628
         }
       },
-      "bytes": 849652
+      "bytes": 744011
     },
     "chunk-WYECDMFH.js": {
       "imports": [
