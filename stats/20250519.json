@@ -13645,7 +13645,7 @@
       "format": "esm"
     },
     "src/build-info.ts": {
-      "bytes": 947,
+      "bytes": 923,
       "imports": [],
       "format": "esm"
     },
@@ -14483,7 +14483,7 @@
       },
       "bytes": 15333
     },
-    "main-2MBIKNTI.js": {
+    "main-I7KIVU43.js": {
       "imports": [
         {
           "path": "chunk-Y6RWRZ76.js",
@@ -14597,13 +14597,13 @@
           "bytesInOutput": 1886
         },
         "src/build-info.ts": {
-          "bytesInOutput": 697
+          "bytesInOutput": 675
         },
         "src/main.ts": {
           "bytesInOutput": 123
         }
       },
-      "bytes": 15384
+      "bytes": 15362
     },
     "chunk-Y6RWRZ76.js": {
       "imports": [
