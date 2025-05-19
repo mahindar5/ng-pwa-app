@@ -13645,7 +13645,7 @@
       "format": "esm"
     },
     "src/build-info.ts": {
-      "bytes": 923,
+      "bytes": 947,
       "imports": [],
       "format": "esm"
     },
@@ -14483,7 +14483,7 @@
       },
       "bytes": 15333
     },
-    "main-NCR57PMF.js": {
+    "main-OUKHFXTL.js": {
       "imports": [
         {
           "path": "chunk-Y6RWRZ76.js",
@@ -14597,13 +14597,13 @@
           "bytesInOutput": 1886
         },
         "src/build-info.ts": {
-          "bytesInOutput": 675
+          "bytesInOutput": 697
         },
         "src/main.ts": {
           "bytesInOutput": 123
         }
       },
-      "bytes": 15361
+      "bytes": 15383
     },
     "chunk-Y6RWRZ76.js": {
       "imports": [
