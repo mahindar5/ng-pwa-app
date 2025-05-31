@@ -1,34 +1,13 @@
 {
   "inputs": {
-    "node_modules/@angular/core/fesm2022/untracked-BKcld_ew.mjs": {
-      "bytes": 20949,
-      "imports": [
-        {
-          "path": "<runtime>",
-          "kind": "import-statement",
-          "external": true
-        }
-      ],
-      "format": "esm"
-    },
     "node_modules/@angular/core/fesm2022/primitives/di.mjs": {
-      "bytes": 1158,
+      "bytes": 1178,
       "imports": [],
       "format": "esm"
     },
-    "node_modules/@angular/core/fesm2022/primitives/signals.mjs": {
-      "bytes": 3167,
+    "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs": {
+      "bytes": 18900,
       "imports": [
-        {
-          "path": "node_modules/@angular/core/fesm2022/untracked-BKcld_ew.mjs",
-          "kind": "import-statement",
-          "original": "../untracked-BKcld_ew.mjs"
-        },
-        {
-          "path": "node_modules/@angular/core/fesm2022/untracked-BKcld_ew.mjs",
-          "kind": "import-statement",
-          "original": "../untracked-BKcld_ew.mjs"
-        },
         {
           "path": "<runtime>",
           "kind": "import-statement",
@@ -603,7 +582,7 @@
       "format": "esm"
     },
     "node_modules/rxjs/dist/esm/internal/scheduler/AnimationFrameAction.js": {
-      "bytes": 1072,
+      "bytes": 1103,
       "imports": [
         {
           "path": "node_modules/rxjs/dist/esm/internal/scheduler/AsyncAction.js",
@@ -619,7 +598,7 @@
       "format": "esm"
     },
     "node_modules/rxjs/dist/esm/internal/scheduler/AnimationFrameScheduler.js": {
-      "bytes": 692,
+      "bytes": 771,
       "imports": [
         {
           "path": "node_modules/rxjs/dist/esm/internal/scheduler/AsyncScheduler.js",
@@ -3133,17 +3112,12 @@
       "format": "esm"
     },
     "node_modules/rxjs/dist/esm/internal/operators/merge.js": {
-      "bytes": 522,
+      "bytes": 434,
       "imports": [
         {
           "path": "node_modules/rxjs/dist/esm/internal/util/lift.js",
           "kind": "import-statement",
           "original": "../util/lift"
-        },
-        {
-          "path": "node_modules/rxjs/dist/esm/internal/util/argsOrArgArray.js",
-          "kind": "import-statement",
-          "original": "../util/argsOrArgArray"
         },
         {
           "path": "node_modules/rxjs/dist/esm/internal/operators/mergeAll.js",
@@ -5042,9 +5016,87 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/core/fesm2022/primitives/event-dispatch.mjs": {
-      "bytes": 56730,
+    "node_modules/@angular/core/fesm2022/untracked-2ouAFbCz.mjs": {
+      "bytes": 3992,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs",
+          "kind": "import-statement",
+          "original": "./signal-ePSl6jXn.mjs"
+        },
+        {
+          "path": "<runtime>",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@angular/core/fesm2022/weak_ref-BaIq-pgY.mjs": {
+      "bytes": 213,
       "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@angular/core/fesm2022/primitives/signals.mjs": {
+      "bytes": 3384,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs",
+          "kind": "import-statement",
+          "original": "../signal-ePSl6jXn.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs",
+          "kind": "import-statement",
+          "original": "../signal-ePSl6jXn.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/untracked-2ouAFbCz.mjs",
+          "kind": "import-statement",
+          "original": "../untracked-2ouAFbCz.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/weak_ref-BaIq-pgY.mjs",
+          "kind": "import-statement",
+          "original": "../weak_ref-BaIq-pgY.mjs"
+        },
+        {
+          "path": "<runtime>",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@angular/core/fesm2022/root_effect_scheduler-0BxwqIgm.mjs": {
+      "bytes": 144134,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/primitives/di.mjs",
+          "kind": "import-statement",
+          "original": "./primitives/di.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs",
+          "kind": "import-statement",
+          "original": "./signal-ePSl6jXn.mjs"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/index.js",
+          "kind": "import-statement",
+          "original": "rxjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/primitives/di.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core/primitives/di"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/primitives/signals.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core/primitives/signals"
+        }
+      ],
       "format": "esm"
     },
     "node_modules/rxjs/dist/esm/internal/operators/partition.js": {
@@ -5650,33 +5702,23 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/core/fesm2022/core.mjs": {
-      "bytes": 1609572,
+    "node_modules/@angular/core/fesm2022/attribute-BWp59EjE.mjs": {
+      "bytes": 750,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/@angular/core/fesm2022/debug_node-Dn-GvQJo.mjs": {
+      "bytes": 1252681,
       "imports": [
         {
-          "path": "node_modules/@angular/core/fesm2022/untracked-BKcld_ew.mjs",
+          "path": "node_modules/@angular/core/fesm2022/root_effect_scheduler-0BxwqIgm.mjs",
           "kind": "import-statement",
-          "original": "./untracked-BKcld_ew.mjs"
+          "original": "./root_effect_scheduler-0BxwqIgm.mjs"
         },
         {
-          "path": "node_modules/@angular/core/fesm2022/untracked-BKcld_ew.mjs",
+          "path": "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs",
           "kind": "import-statement",
-          "original": "./untracked-BKcld_ew.mjs"
-        },
-        {
-          "path": "node_modules/@angular/core/fesm2022/primitives/di.mjs",
-          "kind": "import-statement",
-          "original": "./primitives/di.mjs"
-        },
-        {
-          "path": "node_modules/@angular/core/fesm2022/primitives/signals.mjs",
-          "kind": "import-statement",
-          "original": "@angular/core/primitives/signals"
-        },
-        {
-          "path": "node_modules/@angular/core/fesm2022/primitives/di.mjs",
-          "kind": "import-statement",
-          "original": "@angular/core/primitives/di"
+          "original": "./signal-ePSl6jXn.mjs"
         },
         {
           "path": "node_modules/rxjs/dist/esm/index.js",
@@ -5684,14 +5726,19 @@
           "original": "rxjs"
         },
         {
-          "path": "node_modules/@angular/core/fesm2022/primitives/event-dispatch.mjs",
+          "path": "node_modules/@angular/core/fesm2022/primitives/signals.mjs",
           "kind": "import-statement",
-          "original": "./primitives/event-dispatch.mjs"
+          "original": "@angular/core/primitives/signals"
         },
         {
           "path": "node_modules/rxjs/dist/esm/operators/index.js",
           "kind": "import-statement",
           "original": "rxjs/operators"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/attribute-BWp59EjE.mjs",
+          "kind": "import-statement",
+          "original": "./attribute-BWp59EjE.mjs"
         },
         {
           "path": "<runtime>",
@@ -5701,19 +5748,136 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs": {
-      "bytes": 479,
+    "node_modules/@angular/core/fesm2022/resource-BPCh38bN.mjs": {
+      "bytes": 22025,
       "imports": [
         {
-          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "path": "node_modules/@angular/core/fesm2022/root_effect_scheduler-0BxwqIgm.mjs",
           "kind": "import-statement",
-          "original": "@angular/core"
+          "original": "./root_effect_scheduler-0BxwqIgm.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs",
+          "kind": "import-statement",
+          "original": "./signal-ePSl6jXn.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/untracked-2ouAFbCz.mjs",
+          "kind": "import-statement",
+          "original": "./untracked-2ouAFbCz.mjs"
+        },
+        {
+          "path": "<runtime>",
+          "kind": "import-statement",
+          "external": true
         }
       ],
       "format": "esm"
     },
-    "node_modules/@angular/common/fesm2022/location-Dq4mJT-A.mjs": {
-      "bytes": 22811,
+    "node_modules/@angular/core/fesm2022/primitives/event-dispatch.mjs": {
+      "bytes": 56158,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/attribute-BWp59EjE.mjs",
+          "kind": "import-statement",
+          "original": "../attribute-BWp59EjE.mjs"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@angular/core/fesm2022/core.mjs": {
+      "bytes": 181243,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/root_effect_scheduler-0BxwqIgm.mjs",
+          "kind": "import-statement",
+          "original": "./root_effect_scheduler-0BxwqIgm.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/root_effect_scheduler-0BxwqIgm.mjs",
+          "kind": "import-statement",
+          "original": "./root_effect_scheduler-0BxwqIgm.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs",
+          "kind": "import-statement",
+          "original": "./signal-ePSl6jXn.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/debug_node-Dn-GvQJo.mjs",
+          "kind": "import-statement",
+          "original": "./debug_node-Dn-GvQJo.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/debug_node-Dn-GvQJo.mjs",
+          "kind": "import-statement",
+          "original": "./debug_node-Dn-GvQJo.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/resource-BPCh38bN.mjs",
+          "kind": "import-statement",
+          "original": "./resource-BPCh38bN.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/resource-BPCh38bN.mjs",
+          "kind": "import-statement",
+          "original": "./resource-BPCh38bN.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/weak_ref-BaIq-pgY.mjs",
+          "kind": "import-statement",
+          "original": "./weak_ref-BaIq-pgY.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/primitives/di.mjs",
+          "kind": "import-statement",
+          "original": "./primitives/di.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/primitives/event-dispatch.mjs",
+          "kind": "import-statement",
+          "original": "./primitives/event-dispatch.mjs"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/index.js",
+          "kind": "import-statement",
+          "original": "rxjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/primitives/di.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core/primitives/di"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/primitives/signals.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core/primitives/signals"
+        },
+        {
+          "path": "node_modules/rxjs/dist/esm/operators/index.js",
+          "kind": "import-statement",
+          "original": "rxjs/operators"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/attribute-BWp59EjE.mjs",
+          "kind": "import-statement",
+          "original": "./attribute-BWp59EjE.mjs"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/untracked-2ouAFbCz.mjs",
+          "kind": "import-statement",
+          "original": "./untracked-2ouAFbCz.mjs"
+        },
+        {
+          "path": "<runtime>",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@angular/common/fesm2022/location-DTVjZRwU.mjs": {
+      "bytes": 22766,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -5729,17 +5893,12 @@
           "path": "node_modules/rxjs/dist/esm/index.js",
           "kind": "import-statement",
           "original": "rxjs"
-        },
-        {
-          "path": "node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs",
-          "kind": "import-statement",
-          "original": "./dom_tokens-rA0ACyx7.mjs"
         }
       ],
       "format": "esm"
     },
-    "node_modules/@angular/common/fesm2022/common_module-Dx7dWex5.mjs": {
-      "bytes": 189295,
+    "node_modules/@angular/common/fesm2022/common_module-B4apSsk3.mjs": {
+      "bytes": 192812,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -5752,20 +5911,20 @@
           "original": "@angular/core"
         },
         {
-          "path": "node_modules/@angular/common/fesm2022/location-Dq4mJT-A.mjs",
+          "path": "node_modules/@angular/common/fesm2022/location-DTVjZRwU.mjs",
           "kind": "import-statement",
-          "original": "./location-Dq4mJT-A.mjs"
+          "original": "./location-DTVjZRwU.mjs"
         }
       ],
       "format": "esm"
     },
     "node_modules/@angular/common/fesm2022/xhr-BfNfxNDv.mjs": {
-      "bytes": 1146,
+      "bytes": 1145,
       "imports": [],
       "format": "esm"
     },
     "node_modules/@angular/common/fesm2022/platform_navigation-B45Jeakb.mjs": {
-      "bytes": 860,
+      "bytes": 859,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -5781,12 +5940,12 @@
       "format": "esm"
     },
     "node_modules/@angular/common/fesm2022/common.mjs": {
-      "bytes": 83901,
+      "bytes": 83727,
       "imports": [
         {
-          "path": "node_modules/@angular/common/fesm2022/common_module-Dx7dWex5.mjs",
+          "path": "node_modules/@angular/common/fesm2022/common_module-B4apSsk3.mjs",
           "kind": "import-statement",
-          "original": "./common_module-Dx7dWex5.mjs"
+          "original": "./common_module-B4apSsk3.mjs"
         },
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -5809,19 +5968,9 @@
           "original": "./xhr-BfNfxNDv.mjs"
         },
         {
-          "path": "node_modules/@angular/common/fesm2022/xhr-BfNfxNDv.mjs",
+          "path": "node_modules/@angular/common/fesm2022/location-DTVjZRwU.mjs",
           "kind": "import-statement",
-          "original": "./xhr-BfNfxNDv.mjs"
-        },
-        {
-          "path": "node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs",
-          "kind": "import-statement",
-          "original": "./dom_tokens-rA0ACyx7.mjs"
-        },
-        {
-          "path": "node_modules/@angular/common/fesm2022/location-Dq4mJT-A.mjs",
-          "kind": "import-statement",
-          "original": "./location-Dq4mJT-A.mjs"
+          "original": "./location-DTVjZRwU.mjs"
         },
         {
           "path": "node_modules/@angular/common/fesm2022/platform_navigation-B45Jeakb.mjs",
@@ -5841,8 +5990,8 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/platform-browser/fesm2022/dom_renderer-DGKzginR.mjs": {
-      "bytes": 29866,
+    "node_modules/@angular/platform-browser/fesm2022/dom_renderer-BMDc99h8.mjs": {
+      "bytes": 29948,
       "imports": [
         {
           "path": "node_modules/@angular/common/fesm2022/common.mjs",
@@ -5867,8 +6016,8 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/platform-browser/fesm2022/browser-X3l5Bmdq.mjs": {
-      "bytes": 20600,
+    "node_modules/@angular/platform-browser/fesm2022/browser-BcrUoxR1.mjs": {
+      "bytes": 20604,
       "imports": [
         {
           "path": "node_modules/@angular/common/fesm2022/common.mjs",
@@ -5886,9 +6035,9 @@
           "original": "@angular/core"
         },
         {
-          "path": "node_modules/@angular/platform-browser/fesm2022/dom_renderer-DGKzginR.mjs",
+          "path": "node_modules/@angular/platform-browser/fesm2022/dom_renderer-BMDc99h8.mjs",
           "kind": "import-statement",
-          "original": "./dom_renderer-DGKzginR.mjs"
+          "original": "./dom_renderer-BMDc99h8.mjs"
         },
         {
           "path": "<runtime>",
@@ -5898,8 +6047,8 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/common/fesm2022/module-CYx9OwZ_.mjs": {
-      "bytes": 112804,
+    "node_modules/@angular/common/fesm2022/module-Bc_q5C8l.mjs": {
+      "bytes": 115107,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -5925,11 +6074,6 @@
           "path": "node_modules/@angular/common/fesm2022/xhr-BfNfxNDv.mjs",
           "kind": "import-statement",
           "original": "./xhr-BfNfxNDv.mjs"
-        },
-        {
-          "path": "node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs",
-          "kind": "import-statement",
-          "original": "./dom_tokens-rA0ACyx7.mjs"
         },
         {
           "path": "<runtime>",
@@ -5940,17 +6084,17 @@
       "format": "esm"
     },
     "node_modules/@angular/common/fesm2022/http.mjs": {
-      "bytes": 16794,
+      "bytes": 17000,
       "imports": [
         {
-          "path": "node_modules/@angular/common/fesm2022/module-CYx9OwZ_.mjs",
+          "path": "node_modules/@angular/common/fesm2022/module-Bc_q5C8l.mjs",
           "kind": "import-statement",
-          "original": "./module-CYx9OwZ_.mjs"
+          "original": "./module-Bc_q5C8l.mjs"
         },
         {
-          "path": "node_modules/@angular/common/fesm2022/module-CYx9OwZ_.mjs",
+          "path": "node_modules/@angular/common/fesm2022/module-Bc_q5C8l.mjs",
           "kind": "import-statement",
-          "original": "./module-CYx9OwZ_.mjs"
+          "original": "./module-Bc_q5C8l.mjs"
         },
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -5973,11 +6117,6 @@
           "original": "./xhr-BfNfxNDv.mjs"
         },
         {
-          "path": "node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs",
-          "kind": "import-statement",
-          "original": "./dom_tokens-rA0ACyx7.mjs"
-        },
-        {
           "path": "<runtime>",
           "kind": "import-statement",
           "external": true
@@ -5986,12 +6125,12 @@
       "format": "esm"
     },
     "node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs": {
-      "bytes": 37763,
+      "bytes": 38203,
       "imports": [
         {
-          "path": "node_modules/@angular/platform-browser/fesm2022/browser-X3l5Bmdq.mjs",
+          "path": "node_modules/@angular/platform-browser/fesm2022/browser-BcrUoxR1.mjs",
           "kind": "import-statement",
-          "original": "./browser-X3l5Bmdq.mjs"
+          "original": "./browser-BcrUoxR1.mjs"
         },
         {
           "path": "node_modules/@angular/common/fesm2022/common.mjs",
@@ -6014,14 +6153,14 @@
           "original": "@angular/core"
         },
         {
-          "path": "node_modules/@angular/platform-browser/fesm2022/dom_renderer-DGKzginR.mjs",
+          "path": "node_modules/@angular/platform-browser/fesm2022/dom_renderer-BMDc99h8.mjs",
           "kind": "import-statement",
-          "original": "./dom_renderer-DGKzginR.mjs"
+          "original": "./dom_renderer-BMDc99h8.mjs"
         },
         {
-          "path": "node_modules/@angular/platform-browser/fesm2022/dom_renderer-DGKzginR.mjs",
+          "path": "node_modules/@angular/platform-browser/fesm2022/dom_renderer-BMDc99h8.mjs",
           "kind": "import-statement",
-          "original": "./dom_renderer-DGKzginR.mjs"
+          "original": "./dom_renderer-BMDc99h8.mjs"
         },
         {
           "path": "node_modules/@angular/common/fesm2022/http.mjs",
@@ -6131,7 +6270,7 @@
       "format": "esm"
     },
     "node_modules/@firebase/util/dist/index.esm2017.js": {
-      "bytes": 73478,
+      "bytes": 73760,
       "imports": [
         {
           "path": "node_modules/@firebase/util/dist/postinstall.mjs",
@@ -6184,7 +6323,7 @@
       "format": "esm"
     },
     "node_modules/@firebase/app/dist/esm/index.esm2017.js": {
-      "bytes": 41188,
+      "bytes": 41179,
       "imports": [
         {
           "path": "node_modules/@firebase/component/dist/esm/index.esm2017.js",
@@ -6236,7 +6375,7 @@
       "format": "esm"
     },
     "node_modules/@firebase/firestore/dist/lite/index.browser.esm2017.js": {
-      "bytes": 290691,
+      "bytes": 290624,
       "imports": [
         {
           "path": "node_modules/@firebase/app/dist/esm/index.esm2017.js",
@@ -6335,655 +6474,655 @@
       ],
       "format": "esm"
     },
-    "node_modules/@opentelemetry/api/build/esm/platform/browser/globalThis.js": {
-      "bytes": 1256,
+    "node_modules/@opentelemetry/api/build/src/platform/browser/globalThis.js": {
+      "bytes": 1363,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/platform/browser/index.js": {
-      "bytes": 636,
+    "node_modules/@opentelemetry/api/build/src/platform/browser/index.js": {
+      "bytes": 1252,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/platform/browser/globalThis.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/platform/browser/globalThis.js",
+          "kind": "require-call",
           "original": "./globalThis"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/version.js": {
-      "bytes": 697,
+    "node_modules/@opentelemetry/api/build/src/version.js": {
+      "bytes": 800,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/internal/semver.js": {
-      "bytes": 4701,
+    "node_modules/@opentelemetry/api/build/src/internal/semver.js": {
+      "bytes": 4894,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/version.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/version.js",
+          "kind": "require-call",
           "original": "../version"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js": {
-      "bytes": 2446,
+    "node_modules/@opentelemetry/api/build/src/internal/global-utils.js": {
+      "bytes": 2716,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/platform/browser/index.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/platform/browser/index.js",
+          "kind": "require-call",
           "original": "../platform"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/version.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/version.js",
+          "kind": "require-call",
           "original": "../version"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/internal/semver.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/internal/semver.js",
+          "kind": "require-call",
           "original": "./semver"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/diag/ComponentLogger.js": {
-      "bytes": 3485,
+    "node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js": {
+      "bytes": 1974,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/internal/global-utils.js",
+          "kind": "require-call",
           "original": "../internal/global-utils"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/diag/types.js": {
-      "bytes": 1822,
+    "node_modules/@opentelemetry/api/build/src/diag/types.js": {
+      "bytes": 1938,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/diag/internal/logLevelLogger.js": {
-      "bytes": 1431,
+    "node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js": {
+      "bytes": 1678,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/diag/types.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/diag/types.js",
+          "kind": "require-call",
           "original": "../types"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/api/diag.js": {
-      "bytes": 4708,
+    "node_modules/@opentelemetry/api/build/src/api/diag.js": {
+      "bytes": 3769,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/diag/ComponentLogger.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js",
+          "kind": "require-call",
           "original": "../diag/ComponentLogger"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/diag/internal/logLevelLogger.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js",
+          "kind": "require-call",
           "original": "../diag/internal/logLevelLogger"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/diag/types.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/diag/types.js",
+          "kind": "require-call",
           "original": "../diag/types"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/internal/global-utils.js",
+          "kind": "require-call",
           "original": "../internal/global-utils"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/baggage/internal/baggage-impl.js": {
-      "bytes": 3283,
+    "node_modules/@opentelemetry/api/build/src/baggage/internal/baggage-impl.js": {
+      "bytes": 1625,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/baggage/internal/symbol.js": {
-      "bytes": 745,
+    "node_modules/@opentelemetry/api/build/src/baggage/internal/symbol.js": {
+      "bytes": 867,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/baggage/utils.js": {
-      "bytes": 1567,
+    "node_modules/@opentelemetry/api/build/src/baggage/utils.js": {
+      "bytes": 1782,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/diag.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/diag.js",
+          "kind": "require-call",
           "original": "../api/diag"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/baggage/internal/baggage-impl.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/baggage/internal/baggage-impl.js",
+          "kind": "require-call",
           "original": "./internal/baggage-impl"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/baggage/internal/symbol.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/baggage/internal/symbol.js",
+          "kind": "require-call",
           "original": "./internal/symbol"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/context/context.js": {
-      "bytes": 2097,
+    "node_modules/@opentelemetry/api/build/src/context/context.js": {
+      "bytes": 2173,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/diag/consoleLogger.js": {
-      "bytes": 2048,
+    "node_modules/@opentelemetry/api/build/src/diag/consoleLogger.js": {
+      "bytes": 1994,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/metrics/NoopMeter.js": {
-      "bytes": 6655,
+    "node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js": {
+      "bytes": 4601,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/metrics/Metric.js": {
-      "bytes": 863,
+    "node_modules/@opentelemetry/api/build/src/metrics/Metric.js": {
+      "bytes": 973,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/propagation/TextMapPropagator.js": {
-      "bytes": 1037,
+    "node_modules/@opentelemetry/api/build/src/propagation/TextMapPropagator.js": {
+      "bytes": 1148,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/context/NoopContextManager.js": {
-      "bytes": 2228,
+    "node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js": {
+      "bytes": 1095,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/context/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/context/context.js",
+          "kind": "require-call",
           "original": "./context"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/api/context.js": {
-      "bytes": 3951,
+    "node_modules/@opentelemetry/api/build/src/api/context.js": {
+      "bytes": 2873,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/context/NoopContextManager.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js",
+          "kind": "require-call",
           "original": "../context/NoopContextManager"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/internal/global-utils.js",
+          "kind": "require-call",
           "original": "../internal/global-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/diag.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/diag.js",
+          "kind": "require-call",
           "original": "./diag"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/trace_flags.js": {
-      "bytes": 910,
+    "node_modules/@opentelemetry/api/build/src/trace/trace_flags.js": {
+      "bytes": 1022,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/invalid-span-constants.js": {
-      "bytes": 886,
+    "node_modules/@opentelemetry/api/build/src/trace/invalid-span-constants.js": {
+      "bytes": 1081,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/trace_flags.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/trace_flags.js",
+          "kind": "require-call",
           "original": "./trace_flags"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/NonRecordingSpan.js": {
-      "bytes": 2338,
+    "node_modules/@opentelemetry/api/build/src/trace/NonRecordingSpan.js": {
+      "bytes": 1929,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/invalid-span-constants.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/invalid-span-constants.js",
+          "kind": "require-call",
           "original": "./invalid-span-constants"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/context-utils.js": {
-      "bytes": 2108,
+    "node_modules/@opentelemetry/api/build/src/trace/context-utils.js": {
+      "bytes": 2536,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/context/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/context/context.js",
+          "kind": "require-call",
           "original": "../context/context"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/NonRecordingSpan.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/NonRecordingSpan.js",
+          "kind": "require-call",
           "original": "./NonRecordingSpan"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/context.js",
+          "kind": "require-call",
           "original": "../api/context"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/spancontext-utils.js": {
-      "bytes": 1609,
+    "node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js": {
+      "bytes": 2015,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/invalid-span-constants.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/invalid-span-constants.js",
+          "kind": "require-call",
           "original": "./invalid-span-constants"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/NonRecordingSpan.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/NonRecordingSpan.js",
+          "kind": "require-call",
           "original": "./NonRecordingSpan"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/NoopTracer.js": {
-      "bytes": 2502,
+    "node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js": {
+      "bytes": 2570,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/context.js",
+          "kind": "require-call",
           "original": "../api/context"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/context-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/context-utils.js",
+          "kind": "require-call",
           "original": "../trace/context-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/NonRecordingSpan.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/NonRecordingSpan.js",
+          "kind": "require-call",
           "original": "./NonRecordingSpan"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/spancontext-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js",
+          "kind": "require-call",
           "original": "./spancontext-utils"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracer.js": {
-      "bytes": 1810,
+    "node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js": {
+      "bytes": 1789,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/NoopTracer.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js",
+          "kind": "require-call",
           "original": "./NoopTracer"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/NoopTracerProvider.js": {
-      "bytes": 1074,
+    "node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js": {
+      "bytes": 1091,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/NoopTracer.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js",
+          "kind": "require-call",
           "original": "./NoopTracer"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracerProvider.js": {
-      "bytes": 2078,
+    "node_modules/@opentelemetry/api/build/src/trace/ProxyTracerProvider.js": {
+      "bytes": 1992,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracer.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js",
+          "kind": "require-call",
           "original": "./ProxyTracer"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/NoopTracerProvider.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js",
+          "kind": "require-call",
           "original": "./NoopTracerProvider"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/SamplingResult.js": {
-      "bytes": 1478,
+    "node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js": {
+      "bytes": 1602,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/span_kind.js": {
-      "bytes": 1682,
+    "node_modules/@opentelemetry/api/build/src/trace/span_kind.js": {
+      "bytes": 1790,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/status.js": {
-      "bytes": 542,
+    "node_modules/@opentelemetry/api/build/src/trace/status.js": {
+      "bytes": 662,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-validators.js": {
-      "bytes": 1786,
+    "node_modules/@opentelemetry/api/build/src/trace/internal/tracestate-validators.js": {
+      "bytes": 1967,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-impl.js": {
-      "bytes": 3728,
+    "node_modules/@opentelemetry/api/build/src/trace/internal/tracestate-impl.js": {
+      "bytes": 3567,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-validators.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/internal/tracestate-validators.js",
+          "kind": "require-call",
           "original": "./tracestate-validators"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace/internal/utils.js": {
-      "bytes": 754,
+    "node_modules/@opentelemetry/api/build/src/trace/internal/utils.js": {
+      "bytes": 929,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/internal/tracestate-impl.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/internal/tracestate-impl.js",
+          "kind": "require-call",
           "original": "./tracestate-impl"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/context-api.js": {
-      "bytes": 840,
+    "node_modules/@opentelemetry/api/build/src/context-api.js": {
+      "bytes": 953,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/context.js",
+          "kind": "require-call",
           "original": "./api/context"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/diag-api.js": {
-      "bytes": 1040,
+    "node_modules/@opentelemetry/api/build/src/diag-api.js": {
+      "bytes": 1147,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/diag.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/diag.js",
+          "kind": "require-call",
           "original": "./api/diag"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/metrics/NoopMeterProvider.js": {
-      "bytes": 1083,
+    "node_modules/@opentelemetry/api/build/src/metrics/NoopMeterProvider.js": {
+      "bytes": 1126,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/metrics/NoopMeter.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js",
+          "kind": "require-call",
           "original": "./NoopMeter"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/api/metrics.js": {
-      "bytes": 2138,
+    "node_modules/@opentelemetry/api/build/src/api/metrics.js": {
+      "bytes": 2116,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/metrics/NoopMeterProvider.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/metrics/NoopMeterProvider.js",
+          "kind": "require-call",
           "original": "../metrics/NoopMeterProvider"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/internal/global-utils.js",
+          "kind": "require-call",
           "original": "../internal/global-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/diag.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/diag.js",
+          "kind": "require-call",
           "original": "./diag"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/metrics-api.js": {
-      "bytes": 840,
+    "node_modules/@opentelemetry/api/build/src/metrics-api.js": {
+      "bytes": 953,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/metrics.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/metrics.js",
+          "kind": "require-call",
           "original": "./api/metrics"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/propagation/NoopTextMapPropagator.js": {
-      "bytes": 1204,
+    "node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js": {
+      "bytes": 1112,
       "imports": [],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/baggage/context-helpers.js": {
-      "bytes": 1777,
+    "node_modules/@opentelemetry/api/build/src/baggage/context-helpers.js": {
+      "bytes": 2101,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/context.js",
+          "kind": "require-call",
           "original": "../api/context"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/context/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/context/context.js",
+          "kind": "require-call",
           "original": "../context/context"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/api/propagation.js": {
-      "bytes": 3573,
+    "node_modules/@opentelemetry/api/build/src/api/propagation.js": {
+      "bytes": 3421,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/internal/global-utils.js",
+          "kind": "require-call",
           "original": "../internal/global-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/propagation/NoopTextMapPropagator.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js",
+          "kind": "require-call",
           "original": "../propagation/NoopTextMapPropagator"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/propagation/TextMapPropagator.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/propagation/TextMapPropagator.js",
+          "kind": "require-call",
           "original": "../propagation/TextMapPropagator"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/baggage/context-helpers.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/baggage/context-helpers.js",
+          "kind": "require-call",
           "original": "../baggage/context-helpers"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/baggage/utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/baggage/utils.js",
+          "kind": "require-call",
           "original": "../baggage/utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/diag.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/diag.js",
+          "kind": "require-call",
           "original": "./diag"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/propagation-api.js": {
-      "bytes": 860,
+    "node_modules/@opentelemetry/api/build/src/propagation-api.js": {
+      "bytes": 981,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/propagation.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/propagation.js",
+          "kind": "require-call",
           "original": "./api/propagation"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/api/trace.js": {
-      "bytes": 2862,
+    "node_modules/@opentelemetry/api/build/src/api/trace.js": {
+      "bytes": 2940,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/internal/global-utils.js",
+          "kind": "require-call",
           "original": "../internal/global-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracerProvider.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/ProxyTracerProvider.js",
+          "kind": "require-call",
           "original": "../trace/ProxyTracerProvider"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/spancontext-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js",
+          "kind": "require-call",
           "original": "../trace/spancontext-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/context-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/context-utils.js",
+          "kind": "require-call",
           "original": "../trace/context-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/diag.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/diag.js",
+          "kind": "require-call",
           "original": "./diag"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/trace-api.js": {
-      "bytes": 830,
+    "node_modules/@opentelemetry/api/build/src/trace-api.js": {
+      "bytes": 939,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/api/trace.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/api/trace.js",
+          "kind": "require-call",
           "original": "./api/trace"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
-    "node_modules/@opentelemetry/api/build/esm/index.js": {
-      "bytes": 2203,
+    "node_modules/@opentelemetry/api/build/src/index.js": {
+      "bytes": 6669,
       "imports": [
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/baggage/utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/baggage/utils.js",
+          "kind": "require-call",
           "original": "./baggage/utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/context/context.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/context/context.js",
+          "kind": "require-call",
           "original": "./context/context"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/diag/consoleLogger.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/diag/consoleLogger.js",
+          "kind": "require-call",
           "original": "./diag/consoleLogger"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/diag/types.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/diag/types.js",
+          "kind": "require-call",
           "original": "./diag/types"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/metrics/NoopMeter.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js",
+          "kind": "require-call",
           "original": "./metrics/NoopMeter"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/metrics/Metric.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/metrics/Metric.js",
+          "kind": "require-call",
           "original": "./metrics/Metric"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/propagation/TextMapPropagator.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/propagation/TextMapPropagator.js",
+          "kind": "require-call",
           "original": "./propagation/TextMapPropagator"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracer.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js",
+          "kind": "require-call",
           "original": "./trace/ProxyTracer"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracerProvider.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/ProxyTracerProvider.js",
+          "kind": "require-call",
           "original": "./trace/ProxyTracerProvider"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/SamplingResult.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js",
+          "kind": "require-call",
           "original": "./trace/SamplingResult"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/span_kind.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/span_kind.js",
+          "kind": "require-call",
           "original": "./trace/span_kind"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/status.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/status.js",
+          "kind": "require-call",
           "original": "./trace/status"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/trace_flags.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/trace_flags.js",
+          "kind": "require-call",
           "original": "./trace/trace_flags"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/internal/utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/internal/utils.js",
+          "kind": "require-call",
           "original": "./trace/internal/utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/spancontext-utils.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js",
+          "kind": "require-call",
           "original": "./trace/spancontext-utils"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace/invalid-span-constants.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace/invalid-span-constants.js",
+          "kind": "require-call",
           "original": "./trace/invalid-span-constants"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/context-api.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/context-api.js",
+          "kind": "require-call",
           "original": "./context-api"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/diag-api.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/diag-api.js",
+          "kind": "require-call",
           "original": "./diag-api"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/metrics-api.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/metrics-api.js",
+          "kind": "require-call",
           "original": "./metrics-api"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/propagation-api.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/propagation-api.js",
+          "kind": "require-call",
           "original": "./propagation-api"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/trace-api.js",
-          "kind": "import-statement",
+          "path": "node_modules/@opentelemetry/api/build/src/trace-api.js",
+          "kind": "require-call",
           "original": "./trace-api"
         }
       ],
-      "format": "esm"
+      "format": "cjs"
     },
     "node_modules/@mahindar5/common-lib/dist/chunk-7GBQ642I.js": {
       "bytes": 1575,
@@ -6999,7 +7138,7 @@
           "original": "./chunk-S3PHHKXH.js"
         },
         {
-          "path": "node_modules/@opentelemetry/api/build/esm/index.js",
+          "path": "node_modules/@opentelemetry/api/build/src/index.js",
           "kind": "import-statement",
           "original": "@opentelemetry/api"
         }
@@ -7558,8 +7697,8 @@
       "imports": [],
       "format": "esm"
     },
-    "node_modules/@firebase/auth/dist/esm2017/index-683d5879.js": {
-      "bytes": 438623,
+    "node_modules/@firebase/auth/dist/esm2017/index-8bd0c73f.js": {
+      "bytes": 438569,
       "imports": [
         {
           "path": "node_modules/@firebase/app/dist/esm/index.esm2017.js",
@@ -7593,9 +7732,9 @@
       "bytes": 2292,
       "imports": [
         {
-          "path": "node_modules/@firebase/auth/dist/esm2017/index-683d5879.js",
+          "path": "node_modules/@firebase/auth/dist/esm2017/index-8bd0c73f.js",
           "kind": "import-statement",
-          "original": "./index-683d5879.js"
+          "original": "./index-8bd0c73f.js"
         },
         {
           "path": "node_modules/@firebase/app/dist/esm/index.esm2017.js",
@@ -7988,8 +8127,8 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/router/fesm2022/router-Dwfin5Au.mjs": {
-      "bytes": 233126,
+    "node_modules/@angular/router/fesm2022/router-BCAMvkKO.mjs": {
+      "bytes": 234346,
       "imports": [
         {
           "path": "node_modules/@angular/common/fesm2022/common.mjs",
@@ -8029,8 +8168,8 @@
       ],
       "format": "esm"
     },
-    "node_modules/@angular/router/fesm2022/router_module-DTJgGWLd.mjs": {
-      "bytes": 59764,
+    "node_modules/@angular/router/fesm2022/router_module-CmZ6FD0-.mjs": {
+      "bytes": 61824,
       "imports": [
         {
           "path": "node_modules/@angular/common/fesm2022/common.mjs",
@@ -8053,9 +8192,9 @@
           "original": "@angular/core"
         },
         {
-          "path": "node_modules/@angular/router/fesm2022/router-Dwfin5Au.mjs",
+          "path": "node_modules/@angular/router/fesm2022/router-BCAMvkKO.mjs",
           "kind": "import-statement",
-          "original": "./router-Dwfin5Au.mjs"
+          "original": "./router-BCAMvkKO.mjs"
         },
         {
           "path": "node_modules/rxjs/dist/esm/index.js",
@@ -8076,17 +8215,17 @@
       "format": "esm"
     },
     "node_modules/@angular/router/fesm2022/router.mjs": {
-      "bytes": 3981,
+      "bytes": 3979,
       "imports": [
         {
-          "path": "node_modules/@angular/router/fesm2022/router-Dwfin5Au.mjs",
+          "path": "node_modules/@angular/router/fesm2022/router-BCAMvkKO.mjs",
           "kind": "import-statement",
-          "original": "./router-Dwfin5Au.mjs"
+          "original": "./router-BCAMvkKO.mjs"
         },
         {
-          "path": "node_modules/@angular/router/fesm2022/router_module-DTJgGWLd.mjs",
+          "path": "node_modules/@angular/router/fesm2022/router_module-CmZ6FD0-.mjs",
           "kind": "import-statement",
-          "original": "./router_module-DTJgGWLd.mjs"
+          "original": "./router_module-CmZ6FD0-.mjs"
         },
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -8117,7 +8256,7 @@
       "format": "esm"
     },
     "node_modules/@angular/service-worker/fesm2022/service-worker.mjs": {
-      "bytes": 24176,
+      "bytes": 24482,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -8652,7 +8791,7 @@
       "format": "esm"
     },
     "node_modules/@angular/forms/fesm2022/forms.mjs": {
-      "bytes": 274845,
+      "bytes": 275723,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -9620,7 +9759,7 @@
       "format": "esm"
     },
     "node_modules/@ionic/core/components/button.js": {
-      "bytes": 28388,
+      "bytes": 29088,
       "imports": [
         {
           "path": "node_modules/@stencil/core/internal/client/index.js",
@@ -10217,7 +10356,7 @@
       "format": "esm"
     },
     "node_modules/@ionic/core/components/ion-input-password-toggle.js": {
-      "bytes": 5364,
+      "bytes": 5402,
       "imports": [
         {
           "path": "node_modules/@stencil/core/internal/client/index.js",
@@ -10899,7 +11038,7 @@
       "format": "esm"
     },
     "node_modules/@ionic/core/components/picker-column2.js": {
-      "bytes": 17647,
+      "bytes": 17643,
       "imports": [
         {
           "path": "node_modules/@stencil/core/internal/client/index.js",
@@ -13153,7 +13292,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-settings.mjs": {
-      "bytes": 37352,
+      "bytes": 37434,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13245,7 +13384,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-ai-chat.mjs": {
-      "bytes": 12974,
+      "bytes": 13001,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13300,7 +13439,89 @@
       ],
       "format": "esm"
     },
-    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs": {
+    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-search-pipe.mjs": {
+      "bytes": 2024,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-wealth-simple.mjs": {
+      "bytes": 112906,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs",
+          "kind": "import-statement",
+          "original": "@ionic/angular/standalone"
+        },
+        {
+          "path": "node_modules/@angular/common/fesm2022/common.mjs",
+          "kind": "import-statement",
+          "original": "@angular/common"
+        },
+        {
+          "path": "node_modules/@angular/forms/fesm2022/forms.mjs",
+          "kind": "import-statement",
+          "original": "@angular/forms"
+        },
+        {
+          "path": "node_modules/@angular/forms/fesm2022/forms.mjs",
+          "kind": "import-statement",
+          "original": "@angular/forms"
+        },
+        {
+          "path": "node_modules/@mahindar5/common-lib/dist/index.js",
+          "kind": "import-statement",
+          "original": "@mahindar5/common-lib"
+        },
+        {
+          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-search-pipe.mjs",
+          "kind": "import-statement",
+          "original": "@mahindar5/ng-common-ion-lib/common/search-pipe"
+        },
+        {
+          "path": "node_modules/ionicons/dist/index.js",
+          "kind": "import-statement",
+          "original": "ionicons"
+        },
+        {
+          "path": "node_modules/ionicons/icons/index.mjs",
+          "kind": "import-statement",
+          "original": "ionicons/icons"
+        },
+        {
+          "path": "node_modules/tslib/tslib.es6.mjs",
+          "kind": "import-statement",
+          "original": "tslib"
+        },
+        {
+          "path": "<runtime>",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs": {
       "bytes": 3058,
       "imports": [
         {
@@ -13327,7 +13548,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager.mjs": {
-      "bytes": 15667,
+      "bytes": 15783,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13370,9 +13591,9 @@
           "original": "ionicons/icons"
         },
         {
-          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs",
+          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs",
           "kind": "dynamic-import",
-          "original": "./mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs"
+          "original": "./mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs"
         },
         {
           "path": "<runtime>",
@@ -13383,7 +13604,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-ai-agent.mjs": {
-      "bytes": 9147,
+      "bytes": 9156,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13449,7 +13670,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 7239,
+      "bytes": 7394,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13502,6 +13723,11 @@
           "original": "@mahindar5/ng-common-ion-lib/components/ai-chat"
         },
         {
+          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-wealth-simple.mjs",
+          "kind": "dynamic-import",
+          "original": "@mahindar5/ng-common-ion-lib/components/wealth-simple"
+        },
+        {
           "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-ai-agent.mjs",
           "kind": "dynamic-import",
           "original": "@mahindar5/ng-common-ion-lib/components/ai-agent"
@@ -13541,13 +13767,8 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-app.mjs": {
-      "bytes": 5758,
+      "bytes": 5724,
       "imports": [
-        {
-          "path": "node_modules/@angular/common/fesm2022/common.mjs",
-          "kind": "import-statement",
-          "original": "@angular/common"
-        },
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
           "kind": "import-statement",
@@ -13582,7 +13803,7 @@
       "format": "esm"
     },
     "src/build-info.ts": {
-      "bytes": 922,
+      "bytes": 924,
       "imports": [],
       "format": "esm"
     },
@@ -13662,7 +13883,7 @@
       "imports": []
     },
     "src/styles.scss": {
-      "bytes": 1628,
+      "bytes": 10519,
       "imports": [
         {
           "path": "node_modules/@ionic/angular/css/core.css",
@@ -13733,46 +13954,38 @@
     }
   },
   "outputs": {
-    "chunk-VEIUJNNH.js": {
+    "chunk-SVR34K2Q.js": {
       "imports": [
         {
-          "path": "chunk-7HPVCXM3.js",
+          "path": "chunk-V4LC5N5Z.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-DPDZAOTM.js",
+          "path": "chunk-MXYDTS5I.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-N45QNTQJ.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-JZK4NCDH.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-DFBKFMMW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-KUYCN4JC.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-EEOVC6OH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-SKO3T2PP.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -13808,7 +14021,97 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "FileManagerModalComponent"
+      ],
+      "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs",
+      "inputs": {
+        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs": {
+          "bytesInOutput": 1096
+        }
+      },
+      "bytes": 1787
+    },
+    "chunk-PWMGE5VA.js": {
+      "imports": [
+        {
+          "path": "chunk-V4LC5N5Z.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SWMKMMVI.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-G7LH4RKP.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-MXYDTS5I.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-6KESDYNW.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-2CMIA4E2.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-JZK4NCDH.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-DFBKFMMW.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-5HUIJQRI.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-ATCXG36G.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-PW4ZHNTX.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-4WFVMWDK.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-WSV62CT6.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-NMYJD6OP.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-C5RQ2IC2.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-7D2EH4XU.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-MMIXVVWR.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SV7S5NYR.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -13821,9 +14124,38 @@
           "bytesInOutput": 4130
         }
       },
-      "bytes": 5091
+      "bytes": 5098
     },
-    "chunk-G7C2VAMR.js": {
+    "chunk-V4LC5N5Z.js": {
+      "imports": [
+        {
+          "path": "chunk-MXYDTS5I.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-6KESDYNW.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-KZZABCGY.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SVR34K2Q.js",
+          "kind": "dynamic-import"
+        }
+      ],
+      "exports": [
+        "a"
+      ],
+      "inputs": {
+        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager.mjs": {
+          "bytesInOutput": 6778
+        }
+      },
+      "bytes": 7302
+    },
+    "chunk-EYKO6B6L.js": {
       "imports": [
         {
           "path": "chunk-WSV62CT6.js",
@@ -13838,7 +14170,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -13853,14 +14185,14 @@
       },
       "bytes": 1628
     },
-    "chunk-2IKKUJRH.js": {
+    "chunk-VVC6CGY4.js": {
       "imports": [
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -13872,7 +14204,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -13887,10 +14219,10 @@
       },
       "bytes": 534
     },
-    "chunk-2MDEX44Q.js": {
+    "chunk-EO7ITPSV.js": {
       "imports": [
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
@@ -13910,7 +14242,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -13925,10 +14257,10 @@
       },
       "bytes": 4811
     },
-    "chunk-BIVWFSQH.js": {
+    "chunk-WF3ASITF.js": {
       "imports": [
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -13943,34 +14275,34 @@
       },
       "bytes": 952
     },
-    "chunk-AU4ZUXCZ.js": {
+    "chunk-YFMSW2F3.js": {
       "imports": [
         {
-          "path": "chunk-NNQDTJ7V.js",
+          "path": "chunk-TOPGFBOY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-KUYCN4JC.js",
+          "path": "chunk-JZK4NCDH.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-EEOVC6OH.js",
+          "path": "chunk-DFBKFMMW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -14006,7 +14338,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -14019,40 +14351,40 @@
           "bytesInOutput": 1828
         }
       },
-      "bytes": 2564
+      "bytes": 2565
     },
-    "chunk-6VEXP4R4.js": {
+    "chunk-YEOW2HOT.js": {
       "imports": [
         {
-          "path": "chunk-DPDZAOTM.js",
+          "path": "chunk-G7LH4RKP.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-MXYDTS5I.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-KUYCN4JC.js",
+          "path": "chunk-JZK4NCDH.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-EEOVC6OH.js",
+          "path": "chunk-DFBKFMMW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -14088,7 +14420,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -14100,42 +14432,42 @@
       "inputs": {},
       "bytes": 538
     },
-    "chunk-CT7RKAHY.js": {
+    "chunk-GWHNTTPR.js": {
       "imports": [
         {
-          "path": "chunk-7HPVCXM3.js",
+          "path": "chunk-SWMKMMVI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-DPDZAOTM.js",
+          "path": "chunk-G7LH4RKP.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-MXYDTS5I.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-KUYCN4JC.js",
+          "path": "chunk-JZK4NCDH.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-EEOVC6OH.js",
+          "path": "chunk-DFBKFMMW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -14171,7 +14503,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -14184,24 +14516,24 @@
           "bytesInOutput": 5711
         }
       },
-      "bytes": 6791
+      "bytes": 6800
     },
-    "chunk-7HPVCXM3.js": {
+    "chunk-SWMKMMVI.js": {
       "imports": [
         {
-          "path": "chunk-DPDZAOTM.js",
+          "path": "chunk-G7LH4RKP.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-MXYDTS5I.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -14215,18 +14547,18 @@
       },
       "bytes": 1288
     },
-    "chunk-DPDZAOTM.js": {
+    "chunk-G7LH4RKP.js": {
       "imports": [
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-MXYDTS5I.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -14236,43 +14568,39 @@
       ],
       "inputs": {
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-settings.mjs": {
-          "bytesInOutput": 14659
+          "bytesInOutput": 14655
         }
       },
       "bytes": 15282
     },
-    "chunk-6M6N3TRH.js": {
+    "chunk-AXQ5Z5OD.js": {
       "imports": [
         {
-          "path": "chunk-N45QNTQJ.js",
+          "path": "chunk-MXYDTS5I.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-JZK4NCDH.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-KUYCN4JC.js",
+          "path": "chunk-DFBKFMMW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-EEOVC6OH.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SKO3T2PP.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -14308,82 +14636,53 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
       "exports": [
-        "FileManagerModalComponent"
+        "WealthSimplePage"
       ],
-      "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs",
+      "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-wealth-simple.mjs",
       "inputs": {
-        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-Bl5XDFB6.mjs": {
-          "bytesInOutput": 1096
+        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-wealth-simple.mjs": {
+          "bytesInOutput": 48653
         }
       },
-      "bytes": 1784
+      "bytes": 50031
     },
-    "chunk-N45QNTQJ.js": {
+    "main-AR3CR775.js": {
       "imports": [
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-TOPGFBOY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-MXYDTS5I.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-6M6N3TRH.js",
-          "kind": "dynamic-import"
-        }
-      ],
-      "exports": [
-        "a"
-      ],
-      "inputs": {
-        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager.mjs": {
-          "bytesInOutput": 6774
-        }
-      },
-      "bytes": 7286
-    },
-    "main-2YPWCUPE.js": {
-      "imports": [
-        {
-          "path": "chunk-NNQDTJ7V.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XZAHAIUT.js",
+          "path": "chunk-JZK4NCDH.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-DFBKFMMW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-KUYCN4JC.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-EEOVC6OH.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-SKO3T2PP.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -14419,23 +14718,27 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-AU4ZUXCZ.js",
+          "path": "chunk-YFMSW2F3.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-CT7RKAHY.js",
+          "path": "chunk-GWHNTTPR.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-VEIUJNNH.js",
+          "path": "chunk-AXQ5Z5OD.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-6VEXP4R4.js",
+          "path": "chunk-PWMGE5VA.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "chunk-YEOW2HOT.js",
           "kind": "dynamic-import"
         }
       ],
@@ -14443,10 +14746,10 @@
       "entryPoint": "src/main.ts",
       "inputs": {
         "node_modules/@angular/service-worker/fesm2022/service-worker.mjs": {
-          "bytesInOutput": 5071
+          "bytesInOutput": 5086
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 1957
+          "bytesInOutput": 2077
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-navigation-menu.mjs": {
           "bytesInOutput": 1263
@@ -14455,18 +14758,18 @@
           "bytesInOutput": 1886
         },
         "src/build-info.ts": {
-          "bytesInOutput": 674
+          "bytesInOutput": 676
         },
         "src/main.ts": {
           "bytesInOutput": 121
         }
       },
-      "bytes": 12157
+      "bytes": 12304
     },
-    "chunk-NNQDTJ7V.js": {
+    "chunk-TOPGFBOY.js": {
       "imports": [
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         }
       ],
@@ -14476,8 +14779,8 @@
         "c"
       ],
       "inputs": {
-        "node_modules/@firebase/auth/dist/esm2017/index-683d5879.js": {
-          "bytesInOutput": 73001
+        "node_modules/@firebase/auth/dist/esm2017/index-8bd0c73f.js": {
+          "bytesInOutput": 72988
         },
         "node_modules/@firebase/auth/dist/esm2017/index.js": {
           "bytesInOutput": 0
@@ -14486,17 +14789,22 @@
           "bytesInOutput": 0
         }
       },
-      "bytes": 73335
+      "bytes": 73322
     },
-    "chunk-XZAHAIUT.js": {
+    "chunk-MXYDTS5I.js": {
       "imports": [
         {
-          "path": "chunk-4AI3QWQ7.js",
+          "path": "chunk-6KESDYNW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
+        },
+        {
+          "path": "crypto",
+          "kind": "dynamic-import",
+          "external": true
         }
       ],
       "exports": [
@@ -14539,18 +14847,31 @@
         "e",
         "ea",
         "f",
+        "fa",
         "g",
+        "ga",
         "h",
+        "ha",
         "i",
+        "ia",
         "j",
+        "ja",
         "k",
+        "ka",
         "l",
+        "la",
         "m",
+        "ma",
         "n",
+        "na",
         "o",
+        "oa",
         "p",
+        "pa",
         "q",
+        "qa",
         "r",
+        "ra",
         "s",
         "t",
         "u",
@@ -14561,6 +14882,144 @@
         "z"
       ],
       "inputs": {
+        "node_modules/@opentelemetry/api/build/src/platform/browser/globalThis.js": {
+          "bytesInOutput": 247
+        },
+        "node_modules/@opentelemetry/api/build/src/platform/browser/index.js": {
+          "bytesInOutput": 416
+        },
+        "node_modules/@opentelemetry/api/build/src/version.js": {
+          "bytesInOutput": 116
+        },
+        "node_modules/@opentelemetry/api/build/src/internal/semver.js": {
+          "bytesInOutput": 788
+        },
+        "node_modules/@opentelemetry/api/build/src/internal/global-utils.js": {
+          "bytesInOutput": 1129
+        },
+        "node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js": {
+          "bytesInOutput": 556
+        },
+        "node_modules/@opentelemetry/api/build/src/diag/types.js": {
+          "bytesInOutput": 315
+        },
+        "node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js": {
+          "bytesInOutput": 562
+        },
+        "node_modules/@opentelemetry/api/build/src/api/diag.js": {
+          "bytesInOutput": 1302
+        },
+        "node_modules/@opentelemetry/api/build/src/baggage/internal/baggage-impl.js": {
+          "bytesInOutput": 591
+        },
+        "node_modules/@opentelemetry/api/build/src/baggage/internal/symbol.js": {
+          "bytesInOutput": 177
+        },
+        "node_modules/@opentelemetry/api/build/src/baggage/utils.js": {
+          "bytesInOutput": 504
+        },
+        "node_modules/@opentelemetry/api/build/src/context/context.js": {
+          "bytesInOutput": 499
+        },
+        "node_modules/@opentelemetry/api/build/src/diag/consoleLogger.js": {
+          "bytesInOutput": 481
+        },
+        "node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js": {
+          "bytesInOutput": 1940
+        },
+        "node_modules/@opentelemetry/api/build/src/metrics/Metric.js": {
+          "bytesInOutput": 197
+        },
+        "node_modules/@opentelemetry/api/build/src/propagation/TextMapPropagator.js": {
+          "bytesInOutput": 291
+        },
+        "node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js": {
+          "bytesInOutput": 289
+        },
+        "node_modules/@opentelemetry/api/build/src/api/context.js": {
+          "bytesInOutput": 699
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/trace_flags.js": {
+          "bytesInOutput": 204
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/invalid-span-constants.js": {
+          "bytesInOutput": 358
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/NonRecordingSpan.js": {
+          "bytesInOutput": 486
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/context-utils.js": {
+          "bytesInOutput": 681
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js": {
+          "bytesInOutput": 526
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js": {
+          "bytesInOutput": 754
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js": {
+          "bytesInOutput": 578
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js": {
+          "bytesInOutput": 198
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/ProxyTracerProvider.js": {
+          "bytesInOutput": 512
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js": {
+          "bytesInOutput": 279
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/span_kind.js": {
+          "bytesInOutput": 281
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/status.js": {
+          "bytesInOutput": 229
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/internal/tracestate-validators.js": {
+          "bytesInOutput": 392
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/internal/tracestate-impl.js": {
+          "bytesInOutput": 1057
+        },
+        "node_modules/@opentelemetry/api/build/src/trace/internal/utils.js": {
+          "bytesInOutput": 188
+        },
+        "node_modules/@opentelemetry/api/build/src/context-api.js": {
+          "bytesInOutput": 148
+        },
+        "node_modules/@opentelemetry/api/build/src/diag-api.js": {
+          "bytesInOutput": 136
+        },
+        "node_modules/@opentelemetry/api/build/src/metrics/NoopMeterProvider.js": {
+          "bytesInOutput": 244
+        },
+        "node_modules/@opentelemetry/api/build/src/api/metrics.js": {
+          "bytesInOutput": 543
+        },
+        "node_modules/@opentelemetry/api/build/src/metrics-api.js": {
+          "bytesInOutput": 148
+        },
+        "node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js": {
+          "bytesInOutput": 207
+        },
+        "node_modules/@opentelemetry/api/build/src/baggage/context-helpers.js": {
+          "bytesInOutput": 492
+        },
+        "node_modules/@opentelemetry/api/build/src/api/propagation.js": {
+          "bytesInOutput": 931
+        },
+        "node_modules/@opentelemetry/api/build/src/propagation-api.js": {
+          "bytesInOutput": 160
+        },
+        "node_modules/@opentelemetry/api/build/src/api/trace.js": {
+          "bytesInOutput": 1015
+        },
+        "node_modules/@opentelemetry/api/build/src/trace-api.js": {
+          "bytesInOutput": 142
+        },
+        "node_modules/@opentelemetry/api/build/src/index.js": {
+          "bytesInOutput": 3558
+        },
         "node_modules/@mahindar5/common-lib/dist/chunk-TW5LLERF.js": {
           "bytesInOutput": 103
         },
@@ -14574,7 +15033,103 @@
           "bytesInOutput": 706
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-WVP4WJ5M.js": {
-          "bytesInOutput": 634
+          "bytesInOutput": 636
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-BNA4I6DB.js": {
+          "bytesInOutput": 897
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-6WXYV7RY.js": {
+          "bytesInOutput": 675
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-C24BTBPC.js": {
+          "bytesInOutput": 212
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-4BI6W4UR.js": {
+          "bytesInOutput": 1295
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-ZQQNCBZJ.js": {
+          "bytesInOutput": 155
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-TC5CWS6D.js": {
+          "bytesInOutput": 161
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-DUCQMR52.js": {
+          "bytesInOutput": 291
+        },
+        "node_modules/firebase/app/dist/esm/index.esm.js": {
+          "bytesInOutput": 46
+        },
+        "node_modules/@firebase/webchannel-wrapper/dist/bloom-blob/esm/bloom_blob_es2018.js": {
+          "bytesInOutput": 10957
+        },
+        "node_modules/@firebase/firestore/dist/lite/index.browser.esm2017.js": {
+          "bytesInOutput": 53983
+        },
+        "node_modules/firebase/firestore/lite/dist/esm/index.esm.js": {
+          "bytesInOutput": 0
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-GUYB3RGJ.js": {
+          "bytesInOutput": 68
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-NWDVFKGU.js": {
+          "bytesInOutput": 234
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-JV64TANJ.js": {
+          "bytesInOutput": 157
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-TKQA6VLD.js": {
+          "bytesInOutput": 713
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-S3PHHKXH.js": {
+          "bytesInOutput": 437
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-7GBQ642I.js": {
+          "bytesInOutput": 1075
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-MQT2W7DM.js": {
+          "bytesInOutput": 1443
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-VN23TR7U.js": {
+          "bytesInOutput": 460
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-MB43J5Z2.js": {
+          "bytesInOutput": 224
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-JIMKSWWK.js": {
+          "bytesInOutput": 1943
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-7QSC42US.js": {
+          "bytesInOutput": 3375
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-MEQVT2QF.js": {
+          "bytesInOutput": 2209
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-7HPYFVVF.js": {
+          "bytesInOutput": 1051
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-FSUCD4NS.js": {
+          "bytesInOutput": 486
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-ZDVBX6CD.js": {
+          "bytesInOutput": 1987
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-GMD7BI2D.js": {
+          "bytesInOutput": 230
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-DPPTRNPV.js": {
+          "bytesInOutput": 540
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-WLPJNJUL.js": {
+          "bytesInOutput": 3899
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-QBFET5NC.js": {
+          "bytesInOutput": 1542
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-WGJ3JBTA.js": {
+          "bytesInOutput": 32003
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-C6KGANCS.js": {
+          "bytesInOutput": 84
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-FX6FTCGN.js": {
           "bytesInOutput": 49
@@ -14595,16 +15150,16 @@
           "bytesInOutput": 1043
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-5V6AHK4E.js": {
-          "bytesInOutput": 527
+          "bytesInOutput": 528
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-DKG2YH3R.js": {
-          "bytesInOutput": 711
+          "bytesInOutput": 712
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-TKMQ27YF.js": {
-          "bytesInOutput": 597
+          "bytesInOutput": 598
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-S6XMCFP5.js": {
-          "bytesInOutput": 896
+          "bytesInOutput": 897
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-IIRQD7XW.js": {
           "bytesInOutput": 4336
@@ -14614,135 +15169,6 @@
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-SUXFXN6P.js": {
           "bytesInOutput": 86
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-BNA4I6DB.js": {
-          "bytesInOutput": 897
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-6WXYV7RY.js": {
-          "bytesInOutput": 675
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-C24BTBPC.js": {
-          "bytesInOutput": 93
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-4BI6W4UR.js": {
-          "bytesInOutput": 1295
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-ZQQNCBZJ.js": {
-          "bytesInOutput": 155
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-TC5CWS6D.js": {
-          "bytesInOutput": 161
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-DUCQMR52.js": {
-          "bytesInOutput": 291
-        },
-        "node_modules/firebase/app/dist/esm/index.esm.js": {
-          "bytesInOutput": 46
-        },
-        "node_modules/@firebase/webchannel-wrapper/dist/bloom-blob/esm/bloom_blob_es2018.js": {
-          "bytesInOutput": 10942
-        },
-        "node_modules/@firebase/firestore/dist/lite/index.browser.esm2017.js": {
-          "bytesInOutput": 54002
-        },
-        "node_modules/firebase/firestore/lite/dist/esm/index.esm.js": {
-          "bytesInOutput": 0
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-GUYB3RGJ.js": {
-          "bytesInOutput": 68
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-NWDVFKGU.js": {
-          "bytesInOutput": 234
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-JV64TANJ.js": {
-          "bytesInOutput": 157
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-TKQA6VLD.js": {
-          "bytesInOutput": 160
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-S3PHHKXH.js": {
-          "bytesInOutput": 407
-        },
-        "node_modules/@opentelemetry/api/build/esm/platform/browser/globalThis.js": {
-          "bytesInOutput": 138
-        },
-        "node_modules/@opentelemetry/api/build/esm/version.js": {
-          "bytesInOutput": 14
-        },
-        "node_modules/@opentelemetry/api/build/esm/internal/semver.js": {
-          "bytesInOutput": 618
-        },
-        "node_modules/@opentelemetry/api/build/esm/internal/global-utils.js": {
-          "bytesInOutput": 836
-        },
-        "node_modules/@opentelemetry/api/build/esm/diag/ComponentLogger.js": {
-          "bytesInOutput": 1292
-        },
-        "node_modules/@opentelemetry/api/build/esm/diag/types.js": {
-          "bytesInOutput": 184
-        },
-        "node_modules/@opentelemetry/api/build/esm/diag/internal/logLevelLogger.js": {
-          "bytesInOutput": 279
-        },
-        "node_modules/@opentelemetry/api/build/esm/api/diag.js": {
-          "bytesInOutput": 1626
-        },
-        "node_modules/@opentelemetry/api/build/esm/context/context.js": {
-          "bytesInOutput": 384
-        },
-        "node_modules/@opentelemetry/api/build/esm/context/NoopContextManager.js": {
-          "bytesInOutput": 829
-        },
-        "node_modules/@opentelemetry/api/build/esm/api/context.js": {
-          "bytesInOutput": 1179
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/trace_flags.js": {
-          "bytesInOutput": 81
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/invalid-span-constants.js": {
-          "bytesInOutput": 109
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/NonRecordingSpan.js": {
-          "bytesInOutput": 599
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/context-utils.js": {
-          "bytesInOutput": 339
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/spancontext-utils.js": {
-          "bytesInOutput": 211
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/NoopTracer.js": {
-          "bytesInOutput": 580
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracer.js": {
-          "bytesInOutput": 520
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/NoopTracerProvider.js": {
-          "bytesInOutput": 97
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/ProxyTracerProvider.js": {
-          "bytesInOutput": 447
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace/status.js": {
-          "bytesInOutput": 94
-        },
-        "node_modules/@opentelemetry/api/build/esm/index.js": {
-          "bytesInOutput": 0
-        },
-        "node_modules/@opentelemetry/api/build/esm/context-api.js": {
-          "bytesInOutput": 24
-        },
-        "node_modules/@opentelemetry/api/build/esm/api/trace.js": {
-          "bytesInOutput": 751
-        },
-        "node_modules/@opentelemetry/api/build/esm/trace-api.js": {
-          "bytesInOutput": 24
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-7GBQ642I.js": {
-          "bytesInOutput": 1001
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-MQT2W7DM.js": {
-          "bytesInOutput": 1452
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-DPAB3TWN.js": {
           "bytesInOutput": 5246
@@ -14754,23 +15180,23 @@
           "bytesInOutput": 0
         },
         "node_modules/ionicons/icons/index.mjs": {
-          "bytesInOutput": 28903
+          "bytesInOutput": 32093
         }
       },
-      "bytes": 149709
+      "bytes": 218125
     },
-    "chunk-4AI3QWQ7.js": {
+    "chunk-6KESDYNW.js": {
       "imports": [
         {
-          "path": "chunk-WYECDMFH.js",
+          "path": "chunk-2CMIA4E2.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -14806,49 +15232,66 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-QP4LMWWH.js",
+          "path": "chunk-PNMJH242.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-G7C2VAMR.js",
+          "path": "chunk-EYKO6B6L.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-2IKKUJRH.js",
+          "path": "chunk-VVC6CGY4.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-2MDEX44Q.js",
+          "path": "chunk-EO7ITPSV.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-QITTBYA7.js",
+          "path": "chunk-X3MRXUC3.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-UMFCT4BM.js",
+          "path": "chunk-Y7LX56F4.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-BIVWFSQH.js",
+          "path": "chunk-WF3ASITF.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-B7TKH3SI.js",
+          "path": "chunk-JXMYEHBE.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-B7TKH3SI.js",
+          "path": "chunk-JXMYEHBE.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "chunk-JXMYEHBE.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "chunk-JXMYEHBE.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "chunk-JXMYEHBE.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "chunk-JXMYEHBE.js",
           "kind": "dynamic-import"
         }
       ],
       "exports": [
         "$",
         "$a",
+        "$b",
         "A",
         "Aa",
         "Ab",
@@ -14887,70 +15330,97 @@
         "Lb",
         "M",
         "Ma",
+        "Mb",
         "N",
         "Na",
+        "Nb",
         "O",
         "Oa",
+        "Ob",
         "P",
         "Pa",
+        "Pb",
         "Q",
         "Qa",
+        "Qb",
         "R",
         "Ra",
+        "Rb",
         "S",
         "Sa",
+        "Sb",
         "T",
         "Ta",
+        "Tb",
         "U",
         "Ua",
+        "Ub",
         "V",
         "Va",
+        "Vb",
         "W",
         "Wa",
+        "Wb",
         "X",
         "Xa",
+        "Xb",
         "Y",
         "Ya",
+        "Yb",
         "Z",
         "Za",
+        "Zb",
         "_",
         "_a",
+        "_b",
         "a",
         "aa",
         "ab",
+        "ac",
         "b",
         "ba",
         "bb",
+        "bc",
         "c",
         "ca",
         "cb",
+        "cc",
         "d",
         "da",
         "db",
+        "dc",
         "e",
         "ea",
         "eb",
+        "ec",
         "f",
         "fa",
         "fb",
+        "fc",
         "g",
         "ga",
         "gb",
+        "gc",
         "h",
         "ha",
         "hb",
+        "hc",
         "i",
         "ia",
         "ib",
+        "ic",
         "j",
         "ja",
         "jb",
+        "jc",
         "k",
         "ka",
         "kb",
+        "kc",
         "l",
         "la",
         "lb",
+        "lc",
         "m",
         "ma",
         "mb",
@@ -14995,14 +15465,14 @@
         "zb"
       ],
       "inputs": {
-        "node_modules/@angular/core/fesm2022/untracked-BKcld_ew.mjs": {
-          "bytesInOutput": 5136
+        "node_modules/tslib/tslib.es6.mjs": {
+          "bytesInOutput": 2561
         },
         "node_modules/@angular/core/fesm2022/primitives/di.mjs": {
-          "bytesInOutput": 95
+          "bytesInOutput": 223
         },
-        "node_modules/@angular/core/fesm2022/primitives/signals.mjs": {
-          "bytesInOutput": 0
+        "node_modules/@angular/core/fesm2022/signal-ePSl6jXn.mjs": {
+          "bytesInOutput": 4369
         },
         "node_modules/rxjs/dist/esm/internal/util/isFunction.js": {
           "bytesInOutput": 42
@@ -15085,9 +15555,6 @@
         "node_modules/rxjs/dist/esm/internal/util/args.js": {
           "bytesInOutput": 129
         },
-        "node_modules/tslib/tslib.es6.mjs": {
-          "bytesInOutput": 2562
-        },
         "node_modules/rxjs/dist/esm/internal/util/isArrayLike.js": {
           "bytesInOutput": 61
         },
@@ -15149,7 +15616,7 @@
           "bytesInOutput": 40
         },
         "node_modules/rxjs/dist/esm/internal/observable/of.js": {
-          "bytesInOutput": 44
+          "bytesInOutput": 45
         },
         "node_modules/rxjs/dist/esm/internal/observable/throwError.js": {
           "bytesInOutput": 94
@@ -15253,44 +15720,59 @@
         "node_modules/rxjs/dist/esm/internal/operators/tap.js": {
           "bytesInOutput": 493
         },
+        "node_modules/@angular/core/fesm2022/primitives/signals.mjs": {
+          "bytesInOutput": 0
+        },
+        "node_modules/@angular/core/fesm2022/untracked-2ouAFbCz.mjs": {
+          "bytesInOutput": 781
+        },
+        "node_modules/@angular/core/fesm2022/root_effect_scheduler-0BxwqIgm.mjs": {
+          "bytesInOutput": 18983
+        },
         "node_modules/rxjs/dist/esm/operators/index.js": {
           "bytesInOutput": 0
         },
+        "node_modules/@angular/core/fesm2022/debug_node-Dn-GvQJo.mjs": {
+          "bytesInOutput": 90094
+        },
+        "node_modules/@angular/core/fesm2022/resource-BPCh38bN.mjs": {
+          "bytesInOutput": 2474
+        },
         "node_modules/@angular/core/fesm2022/core.mjs": {
-          "bytesInOutput": 108536
+          "bytesInOutput": 3798
         },
-        "node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs": {
-          "bytesInOutput": 17
-        },
-        "node_modules/@angular/common/fesm2022/location-Dq4mJT-A.mjs": {
+        "node_modules/@angular/common/fesm2022/location-DTVjZRwU.mjs": {
           "bytesInOutput": 5323
         },
-        "node_modules/@angular/common/fesm2022/xhr-BfNfxNDv.mjs": {
-          "bytesInOutput": 266
+        "node_modules/@angular/common/fesm2022/common_module-B4apSsk3.mjs": {
+          "bytesInOutput": 5372
         },
         "node_modules/@angular/common/fesm2022/common.mjs": {
           "bytesInOutput": 0
         },
-        "node_modules/@angular/platform-browser/fesm2022/dom_renderer-DGKzginR.mjs": {
-          "bytesInOutput": 7956
+        "node_modules/@angular/common/fesm2022/xhr-BfNfxNDv.mjs": {
+          "bytesInOutput": 266
         },
-        "node_modules/@angular/platform-browser/fesm2022/browser-X3l5Bmdq.mjs": {
-          "bytesInOutput": 3536
+        "node_modules/@angular/platform-browser/fesm2022/dom_renderer-BMDc99h8.mjs": {
+          "bytesInOutput": 7798
+        },
+        "node_modules/@angular/platform-browser/fesm2022/browser-BcrUoxR1.mjs": {
+          "bytesInOutput": 3541
         },
         "node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs": {
           "bytesInOutput": 257
         },
-        "node_modules/@angular/router/fesm2022/router-Dwfin5Au.mjs": {
-          "bytesInOutput": 64409
+        "node_modules/@angular/router/fesm2022/router-BCAMvkKO.mjs": {
+          "bytesInOutput": 65031
         },
         "node_modules/@angular/router/fesm2022/router.mjs": {
           "bytesInOutput": 0
         },
-        "node_modules/@angular/router/fesm2022/router_module-DTJgGWLd.mjs": {
-          "bytesInOutput": 3520
+        "node_modules/@angular/router/fesm2022/router_module-CmZ6FD0-.mjs": {
+          "bytesInOutput": 4169
         },
         "node_modules/@angular/forms/fesm2022/forms.mjs": {
-          "bytesInOutput": 29396
+          "bytesInOutput": 29614
         },
         "node_modules/@ionic/core/components/index.js": {
           "bytesInOutput": 0
@@ -15305,7 +15787,7 @@
           "bytesInOutput": 1490
         },
         "node_modules/@ionic/core/components/theme.js": {
-          "bytesInOutput": 475
+          "bytesInOutput": 474
         },
         "node_modules/@ionic/core/components/index5.js": {
           "bytesInOutput": 3183
@@ -15317,13 +15799,13 @@
           "bytesInOutput": 7068
         },
         "node_modules/@ionic/angular/fesm2022/ionic-angular-common.mjs": {
-          "bytesInOutput": 20426
+          "bytesInOutput": 20429
         },
         "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs": {
-          "bytesInOutput": 24618
+          "bytesInOutput": 32576
         },
         "node_modules/@ionic/core/components/index7.js": {
-          "bytesInOutput": 2032
+          "bytesInOutput": 4184
         },
         "node_modules/@ionic/core/components/icon.js": {
           "bytesInOutput": 6428
@@ -15359,13 +15841,16 @@
           "bytesInOutput": 4624
         },
         "node_modules/@ionic/core/components/haptic.js": {
-          "bytesInOutput": 817
+          "bytesInOutput": 870
         },
         "node_modules/@ionic/core/components/button-active.js": {
           "bytesInOutput": 514
         },
         "node_modules/@ionic/core/components/action-sheet.js": {
           "bytesInOutput": 22892
+        },
+        "node_modules/@ionic/core/components/ion-action-sheet.js": {
+          "bytesInOutput": 10
         },
         "node_modules/@ionic/core/components/alert.js": {
           "bytesInOutput": 35713
@@ -15380,10 +15865,10 @@
           "bytesInOutput": 991
         },
         "node_modules/@ionic/core/components/ion-badge.js": {
-          "bytesInOutput": 2395
+          "bytesInOutput": 2394
         },
         "node_modules/@ionic/core/components/button.js": {
-          "bytesInOutput": 22331
+          "bytesInOutput": 22579
         },
         "node_modules/@ionic/core/components/ion-button.js": {
           "bytesInOutput": 10
@@ -15394,14 +15879,26 @@
         "node_modules/@ionic/core/components/ion-buttons.js": {
           "bytesInOutput": 10
         },
+        "node_modules/@ionic/core/components/ion-card.js": {
+          "bytesInOutput": 5706
+        },
+        "node_modules/@ionic/core/components/ion-card-content.js": {
+          "bytesInOutput": 2104
+        },
+        "node_modules/@ionic/core/components/ion-card-header.js": {
+          "bytesInOutput": 1962
+        },
+        "node_modules/@ionic/core/components/ion-card-subtitle.js": {
+          "bytesInOutput": 1355
+        },
         "node_modules/@ionic/core/components/ion-chip.js": {
-          "bytesInOutput": 6789
+          "bytesInOutput": 6788
         },
         "node_modules/@ionic/core/components/ion-col.js": {
           "bytesInOutput": 5817
         },
         "node_modules/@ionic/core/components/content.js": {
-          "bytesInOutput": 8535
+          "bytesInOutput": 8534
         },
         "node_modules/@ionic/core/components/ion-content.js": {
           "bytesInOutput": 10
@@ -15421,11 +15918,17 @@
         "node_modules/@ionic/core/components/ion-header.js": {
           "bytesInOutput": 10
         },
+        "node_modules/@ionic/core/components/spinner.js": {
+          "bytesInOutput": 7202
+        },
         "node_modules/@ionic/core/components/item.js": {
-          "bytesInOutput": 24501
+          "bytesInOutput": 24500
         },
         "node_modules/@ionic/core/components/ion-item.js": {
           "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-item-divider.js": {
+          "bytesInOutput": 9207
         },
         "node_modules/@ionic/core/components/ion-item-group.js": {
           "bytesInOutput": 541
@@ -15434,7 +15937,7 @@
           "bytesInOutput": 402
         },
         "node_modules/@ionic/core/components/label.js": {
-          "bytesInOutput": 10811
+          "bytesInOutput": 10810
         },
         "node_modules/@ionic/core/components/ion-label.js": {
           "bytesInOutput": 10
@@ -15446,7 +15949,7 @@
           "bytesInOutput": 10
         },
         "node_modules/@ionic/core/components/list-header.js": {
-          "bytesInOutput": 5164
+          "bytesInOutput": 5163
         },
         "node_modules/@ionic/core/components/ion-menu.js": {
           "bytesInOutput": 15732
@@ -15455,31 +15958,43 @@
           "bytesInOutput": 72
         },
         "node_modules/@ionic/core/components/ion-menu-button.js": {
-          "bytesInOutput": 8017
+          "bytesInOutput": 8016
         },
         "node_modules/@ionic/core/components/ion-menu-toggle.js": {
           "bytesInOutput": 973
         },
+        "node_modules/@ionic/core/components/ion-note.js": {
+          "bytesInOutput": 1089
+        },
         "node_modules/@ionic/core/components/ion-progress-bar.js": {
-          "bytesInOutput": 19016
+          "bytesInOutput": 19015
         },
         "node_modules/@ionic/core/components/radio.js": {
-          "bytesInOutput": 14554
+          "bytesInOutput": 14553
+        },
+        "node_modules/@ionic/core/components/refresher.utils.js": {
+          "bytesInOutput": 2833
+        },
+        "node_modules/@ionic/core/components/ion-refresher.js": {
+          "bytesInOutput": 19637
+        },
+        "node_modules/@ionic/core/components/ion-refresher-content.js": {
+          "bytesInOutput": 2804
         },
         "node_modules/@ionic/core/components/ion-row.js": {
           "bytesInOutput": 533
         },
         "node_modules/@ionic/core/components/checkbox.js": {
-          "bytesInOutput": 16903
+          "bytesInOutput": 16902
         },
         "node_modules/@ionic/core/components/radio-group.js": {
           "bytesInOutput": 4730
         },
         "node_modules/@ionic/core/components/title.js": {
-          "bytesInOutput": 3837
+          "bytesInOutput": 3836
         },
         "node_modules/@ionic/core/components/toolbar.js": {
-          "bytesInOutput": 7111
+          "bytesInOutput": 7110
         },
         "node_modules/@ionic/core/components/select-modal.js": {
           "bytesInOutput": 5635
@@ -15487,14 +16002,20 @@
         "node_modules/@ionic/core/components/ion-select-option.js": {
           "bytesInOutput": 600
         },
+        "node_modules/@ionic/core/components/ion-spinner.js": {
+          "bytesInOutput": 10
+        },
         "node_modules/@ionic/core/components/ion-split-pane.js": {
           "bytesInOutput": 3591
+        },
+        "node_modules/@ionic/core/components/ion-text.js": {
+          "bytesInOutput": 570
         },
         "node_modules/@ionic/core/components/ion-title.js": {
           "bytesInOutput": 10
         },
         "node_modules/@ionic/core/components/ion-toast.js": {
-          "bytesInOutput": 20107
+          "bytesInOutput": 20106
         },
         "node_modules/@ionic/core/components/ion-toolbar.js": {
           "bytesInOutput": 10
@@ -15515,25 +16036,31 @@
           "bytesInOutput": 839
         },
         "node_modules/@ionic/core/components/ion-input.js": {
-          "bytesInOutput": 41843
+          "bytesInOutput": 41842
         },
         "node_modules/@ionic/core/components/ion-range.js": {
-          "bytesInOutput": 28376
+          "bytesInOutput": 28375
+        },
+        "node_modules/@ionic/core/components/ion-searchbar.js": {
+          "bytesInOutput": 24129
         },
         "node_modules/@ionic/core/components/select-popover.js": {
           "bytesInOutput": 4613
         },
         "node_modules/@ionic/core/components/ion-select.js": {
-          "bytesInOutput": 40454
+          "bytesInOutput": 40453
         },
         "node_modules/@ionic/core/components/ion-textarea.js": {
-          "bytesInOutput": 47630
+          "bytesInOutput": 47629
+        },
+        "node_modules/@ionic/core/components/ion-toggle.js": {
+          "bytesInOutput": 22920
         },
         "node_modules/@firebase/util/dist/postinstall.mjs": {
           "bytesInOutput": 14
         },
         "node_modules/@firebase/util/dist/index.esm2017.js": {
-          "bytesInOutput": 13602
+          "bytesInOutput": 13619
         },
         "node_modules/@firebase/component/dist/esm/index.esm2017.js": {
           "bytesInOutput": 4284
@@ -15542,7 +16069,7 @@
           "bytesInOutput": 1735
         },
         "node_modules/@firebase/app/dist/esm/index.esm2017.js": {
-          "bytesInOutput": 9482
+          "bytesInOutput": 9480
         },
         "node_modules/idb/build/wrap-idb-value.js": {
           "bytesInOutput": 2017
@@ -15551,9 +16078,9 @@
           "bytesInOutput": 1051
         }
       },
-      "bytes": 897173
+      "bytes": 1023096
     },
-    "chunk-WYECDMFH.js": {
+    "chunk-2CMIA4E2.js": {
       "imports": [
         {
           "path": "chunk-WSV62CT6.js",
@@ -15573,19 +16100,21 @@
         "f",
         "g",
         "h",
-        "i"
+        "i",
+        "j",
+        "k"
       ],
       "inputs": {
         "node_modules/@ionic/core/components/index8.js": {
           "bytesInOutput": 655
         }
       },
-      "bytes": 807
+      "bytes": 821
     },
-    "chunk-6O2PXOHZ.js": {
+    "chunk-DFG4RQYO.js": {
       "imports": [
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -15600,18 +16129,18 @@
       },
       "bytes": 4173
     },
-    "chunk-CZ2E6HNB.js": {
+    "chunk-A2SACZ37.js": {
       "imports": [
         {
-          "path": "chunk-KUYCN4JC.js",
+          "path": "chunk-JZK4NCDH.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -15627,7 +16156,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -15639,10 +16168,10 @@
       "inputs": {},
       "bytes": 254
     },
-    "chunk-KUYCN4JC.js": {
+    "chunk-JZK4NCDH.js": {
       "imports": [
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         }
       ],
@@ -15657,18 +16186,18 @@
       },
       "bytes": 10285
     },
-    "chunk-LA2Q6OVN.js": {
+    "chunk-LBQ54ZUW.js": {
       "imports": [
         {
-          "path": "chunk-EEOVC6OH.js",
+          "path": "chunk-DFBKFMMW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -15684,7 +16213,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -15695,10 +16224,10 @@
       "inputs": {},
       "bytes": 239
     },
-    "chunk-EEOVC6OH.js": {
+    "chunk-DFBKFMMW.js": {
       "imports": [
         {
-          "path": "chunk-SKO3T2PP.js",
+          "path": "chunk-5HUIJQRI.js",
           "kind": "import-statement"
         }
       ],
@@ -15712,10 +16241,10 @@
       },
       "bytes": 946
     },
-    "chunk-SKO3T2PP.js": {
+    "chunk-5HUIJQRI.js": {
       "imports": [
         {
-          "path": "chunk-NH5PT3KB.js",
+          "path": "chunk-ATCXG36G.js",
           "kind": "import-statement"
         },
         {
@@ -15731,11 +16260,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-CZ2E6HNB.js",
+          "path": "chunk-A2SACZ37.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-LA2Q6OVN.js",
+          "path": "chunk-LBQ54ZUW.js",
           "kind": "dynamic-import"
         }
       ],
@@ -15761,14 +16290,14 @@
       },
       "bytes": 9037
     },
-    "chunk-NH5PT3KB.js": {
+    "chunk-ATCXG36G.js": {
       "imports": [
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-6O2PXOHZ.js",
+          "path": "chunk-DFG4RQYO.js",
           "kind": "dynamic-import"
         }
       ],
@@ -15796,14 +16325,14 @@
       },
       "bytes": 38159
     },
-    "chunk-B7TKH3SI.js": {
+    "chunk-JXMYEHBE.js": {
       "imports": [
         {
           "path": "chunk-NMYJD6OP.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -15815,7 +16344,7 @@
       "inputs": {},
       "bytes": 127
     },
-    "chunk-QITTBYA7.js": {
+    "chunk-X3MRXUC3.js": {
       "imports": [
         {
           "path": "chunk-PW4ZHNTX.js",
@@ -15830,7 +16359,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -15870,7 +16399,7 @@
       },
       "bytes": 913
     },
-    "chunk-QP4LMWWH.js": {
+    "chunk-PNMJH242.js": {
       "imports": [
         {
           "path": "chunk-4WFVMWDK.js",
@@ -15889,7 +16418,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -15986,7 +16515,7 @@
       },
       "bytes": 1320
     },
-    "chunk-UMFCT4BM.js": {
+    "chunk-Y7LX56F4.js": {
       "imports": [
         {
           "path": "chunk-7D2EH4XU.js",
@@ -16001,7 +16530,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3GJFFWBB.js",
+          "path": "chunk-KZZABCGY.js",
           "kind": "import-statement"
         }
       ],
@@ -16084,19 +16613,21 @@
       },
       "bytes": 99
     },
-    "chunk-3GJFFWBB.js": {
+    "chunk-KZZABCGY.js": {
       "imports": [],
       "exports": [
         "a",
         "b",
         "c",
         "d",
-        "e"
+        "e",
+        "f",
+        "g"
       ],
       "inputs": {},
-      "bytes": 968
+      "bytes": 1417
     },
-    "styles-ZPOY3CVS.css": {
+    "styles-732ZKEEU.css": {
       "imports": [],
       "entryPoint": "angular:styles/global:styles",
       "inputs": {
@@ -16134,13 +16665,13 @@
           "bytesInOutput": 5600
         },
         "src/styles.scss": {
-          "bytesInOutput": 144
+          "bytesInOutput": 6977
         },
         "angular:styles/global:styles": {
           "bytesInOutput": 0
         }
       },
-      "bytes": 29467
+      "bytes": 36300
     }
   }
 }
