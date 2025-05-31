@@ -13,7 +13,7 @@
     "@mahindar5/ng-common-ion-lib": "^1.1.94"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^20.0.0",
+    "@angular/build": "^20.0.0",
     "@angular/cli": "^20.0.0"
   }
 }
