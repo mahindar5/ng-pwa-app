@@ -9,11 +9,13 @@
     "test": "ng test"
   },
   "private": true,
-  "dependencies": {
-    "@mahindar5/ng-common-ion-lib": "^1.1.94"
-  },
   "devDependencies": {
-    "@angular/build": "^20.0.0",
-    "@angular/cli": "^20.0.0"
+    "@angular/build": "^20.0.1",
+    "@angular/cli": "^20.0.1",
+    "@angular/compiler": "^20.0.2",
+    "@angular/compiler-cli": "^20.0.2"
+  },
+  "dependencies": {
+    "@mahindar5/ng-common-ion-lib": "^1.1.108"
   }
 }
