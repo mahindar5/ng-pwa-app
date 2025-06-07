@@ -3,9 +3,9 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
+		"copy-extension": "cp -r ./node_modules/@mahindar5/common-lib/dist/crx/* ./dist/",
 		"start": "update-build-info && ng serve",
-		"build": "update-build-info && ng build",
-		"copy-extension": "cp -r ./node_modules/@mahindar5/common-lib/dist/crx/* ./dist/ng-pwa-app/",
+		"build": "update-build-info && ng build && npm run copy-extension",
 		"watch": "update-build-info && ng build --watch --configuration development",
 		"test": "ng test"
 	},
