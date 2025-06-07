@@ -13254,7 +13254,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-      "bytes": 2263,
+      "bytes": 2258,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13747,7 +13747,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6561,
+      "bytes": 6556,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14724,7 +14724,7 @@
       },
       "bytes": 7302
     },
-    "main-DDJ7PBIE.js": {
+    "main-5JNJOBJ7.js": {
       "imports": [
         {
           "path": "chunk-7F2KCMQX.js",
@@ -14822,10 +14822,10 @@
           "bytesInOutput": 5279
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-          "bytesInOutput": 1067
+          "bytesInOutput": 1062
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 1847
+          "bytesInOutput": 1842
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1410
@@ -14843,7 +14843,7 @@
           "bytesInOutput": 83
         }
       },
-      "bytes": 14883
+      "bytes": 14873
     },
     "chunk-7F2KCMQX.js": {
       "imports": [
