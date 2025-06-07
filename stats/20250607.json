@@ -13203,7 +13203,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-      "bytes": 2257,
+      "bytes": 2259,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13696,7 +13696,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6555,
+      "bytes": 6558,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -13860,7 +13860,7 @@
       "format": "esm"
     },
     "src/main.ts": {
-      "bytes": 598,
+      "bytes": 491,
       "imports": [
         {
           "path": "node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
@@ -14006,14 +14006,14 @@
     }
   },
   "outputs": {
-    "chunk-B73M4CM5.js": {
+    "chunk-EKVUPGEI.js": {
       "imports": [
         {
-          "path": "chunk-2DT37CAW.js",
+          "path": "chunk-3LGQUXDY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14088,22 +14088,22 @@
       },
       "bytes": 1787
     },
-    "chunk-LLGBWID3.js": {
+    "chunk-AJWFAFDF.js": {
       "imports": [
         {
-          "path": "chunk-2DT37CAW.js",
+          "path": "chunk-3LGQUXDY.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-P6QEQAU6.js",
+          "path": "chunk-MNRRTUQV.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-VUWQF2FW.js",
+          "path": "chunk-FZKGQAJB.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14178,10 +14178,10 @@
       },
       "bytes": 5098
     },
-    "chunk-2DT37CAW.js": {
+    "chunk-3LGQUXDY.js": {
       "imports": [
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14193,7 +14193,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-B73M4CM5.js",
+          "path": "chunk-EKVUPGEI.js",
           "kind": "dynamic-import"
         }
       ],
@@ -14405,14 +14405,14 @@
       },
       "bytes": 2565
     },
-    "chunk-EN4QVLZ4.js": {
+    "chunk-GPNQMOIR.js": {
       "imports": [
         {
-          "path": "chunk-VUWQF2FW.js",
+          "path": "chunk-FZKGQAJB.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14484,18 +14484,18 @@
       "inputs": {},
       "bytes": 538
     },
-    "chunk-GZEPA2FY.js": {
+    "chunk-5O5LLBKF.js": {
       "imports": [
         {
-          "path": "chunk-P6QEQAU6.js",
+          "path": "chunk-MNRRTUQV.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-VUWQF2FW.js",
+          "path": "chunk-FZKGQAJB.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14570,14 +14570,14 @@
       },
       "bytes": 6800
     },
-    "chunk-P6QEQAU6.js": {
+    "chunk-MNRRTUQV.js": {
       "imports": [
         {
-          "path": "chunk-VUWQF2FW.js",
+          "path": "chunk-FZKGQAJB.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14599,10 +14599,10 @@
       },
       "bytes": 1288
     },
-    "chunk-VUWQF2FW.js": {
+    "chunk-FZKGQAJB.js": {
       "imports": [
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14625,10 +14625,10 @@
       },
       "bytes": 15282
     },
-    "chunk-KL2EIKYX.js": {
+    "chunk-LYCBZVPZ.js": {
       "imports": [
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14703,14 +14703,14 @@
       },
       "bytes": 50031
     },
-    "main-L6YFC2X3.js": {
+    "main-UZ43R64A.js": {
       "imports": [
         {
           "path": "chunk-2X7LIFGX.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-XEDWLY2C.js",
+          "path": "chunk-XTXJNLLH.js",
           "kind": "import-statement"
         },
         {
@@ -14778,19 +14778,19 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-GZEPA2FY.js",
+          "path": "chunk-5O5LLBKF.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-KL2EIKYX.js",
+          "path": "chunk-LYCBZVPZ.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-LLGBWID3.js",
+          "path": "chunk-AJWFAFDF.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-EN4QVLZ4.js",
+          "path": "chunk-GPNQMOIR.js",
           "kind": "dynamic-import"
         }
       ],
@@ -14798,13 +14798,13 @@
       "entryPoint": "src/main.ts",
       "inputs": {
         "node_modules/@angular/service-worker/fesm2022/service-worker.mjs": {
-          "bytesInOutput": 5088
+          "bytesInOutput": 5087
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-          "bytesInOutput": 1061
+          "bytesInOutput": 1063
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 1838
+          "bytesInOutput": 1844
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1410
@@ -14813,16 +14813,16 @@
           "bytesInOutput": 1287
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-app.mjs": {
-          "bytesInOutput": 1887
+          "bytesInOutput": 1886
         },
         "src/build-info.ts": {
           "bytesInOutput": 675
         },
         "src/main.ts": {
-          "bytesInOutput": 121
+          "bytesInOutput": 83
         }
       },
-      "bytes": 14582
+      "bytes": 14549
     },
     "chunk-2X7LIFGX.js": {
       "imports": [
@@ -14849,7 +14849,7 @@
       },
       "bytes": 73322
     },
-    "chunk-XEDWLY2C.js": {
+    "chunk-XTXJNLLH.js": {
       "imports": [
         {
           "path": "chunk-GEU5UUDZ.js",
@@ -14948,9 +14948,6 @@
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-C2M5LC5W.js": {
           "bytesInOutput": 1305
-        },
-        "node_modules/@mahindar5/common-lib/dist/chunk-NFIY3NH4.js": {
-          "bytesInOutput": 730
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-WVP4WJ5M.js": {
           "bytesInOutput": 636
@@ -15164,6 +15161,9 @@
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-SUXFXN6P.js": {
           "bytesInOutput": 86
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-NFIY3NH4.js": {
+          "bytesInOutput": 730
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-RCG44Z4W.js": {
           "bytesInOutput": 5246
