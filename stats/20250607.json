@@ -13855,7 +13855,7 @@
       "format": "esm"
     },
     "src/build-info.ts": {
-      "bytes": 923,
+      "bytes": 947,
       "imports": [],
       "format": "esm"
     },
@@ -14703,7 +14703,7 @@
       },
       "bytes": 50031
     },
-    "main-UZ43R64A.js": {
+    "main-QC5CO7CZ.js": {
       "imports": [
         {
           "path": "chunk-2X7LIFGX.js",
@@ -14816,13 +14816,13 @@
           "bytesInOutput": 1886
         },
         "src/build-info.ts": {
-          "bytesInOutput": 675
+          "bytesInOutput": 697
         },
         "src/main.ts": {
           "bytesInOutput": 83
         }
       },
-      "bytes": 14549
+      "bytes": 14571
     },
     "chunk-2X7LIFGX.js": {
       "imports": [
