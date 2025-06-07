@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
-		"postbuild": "cp -r ./node_modules/@mahindar5/common-lib/dist/crx/* ./dist/",
+		"postbuild": "cp -r ./node_modules/@mahindar5/common-lib/dist/crx/* ./dist/browser/",
 		"start": "update-build-info && ng serve",
 		"build": "update-build-info && ng build",
 		"watch": "update-build-info && ng build --watch --configuration development",
