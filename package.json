@@ -1,21 +1,22 @@
 {
-  "name": "ng-pwa-app",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "update-build-info && ng serve",
-    "build": "update-build-info && ng build",
-    "watch": "update-build-info && ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "private": true,
-  "devDependencies": {
-    "@angular/build": "^20.0.1",
-    "@angular/cli": "^20.0.1",
-    "@angular/compiler": "^20.0.2",
-    "@angular/compiler-cli": "^20.0.2"
-  },
-  "dependencies": {
-    "@mahindar5/ng-common-ion-lib": "^1.1.108"
-  }
+	"name": "ng-pwa-app",
+	"version": "0.0.0",
+	"scripts": {
+		"ng": "ng",
+		"start": "update-build-info && ng serve",
+		"build": "update-build-info && ng build && npm run copy-extension",
+		"copy-extension": "cp -r ./node_modules/common-lib/dist/crx/* ./dist/ng-pwa-app/",
+		"watch": "update-build-info && ng build --watch --configuration development",
+		"test": "ng test"
+	},
+	"private": true,
+	"devDependencies": {
+		"@angular/build": "^20.0.1",
+		"@angular/cli": "^20.0.1",
+		"@angular/compiler": "^20.0.2",
+		"@angular/compiler-cli": "^20.0.2"
+	},
+	"dependencies": {
+		"@mahindar5/ng-common-ion-lib": "^1.1.113"
+	}
 }
