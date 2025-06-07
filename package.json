@@ -4,7 +4,7 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "update-build-info && ng serve",
-		"build": "update-build-info && ng build && npm run copy-extension",
+		"build": "update-build-info && ng build",
 		"copy-extension": "cp -r ./node_modules/@mahindar5/common-lib/dist/crx/* ./dist/ng-pwa-app/",
 		"watch": "update-build-info && ng build --watch --configuration development",
 		"test": "ng test"
