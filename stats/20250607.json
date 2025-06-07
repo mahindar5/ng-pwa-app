@@ -13547,7 +13547,7 @@
       ],
       "format": "esm"
     },
-    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs": {
+    "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CprtAWF5.mjs": {
       "bytes": 3058,
       "imports": [
         {
@@ -13617,9 +13617,9 @@
           "original": "ionicons/icons"
         },
         {
-          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs",
+          "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CprtAWF5.mjs",
           "kind": "dynamic-import",
-          "original": "./mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs"
+          "original": "./mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CprtAWF5.mjs"
         },
         {
           "path": "<runtime>",
@@ -13696,7 +13696,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6300,
+      "bytes": 6819,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14001,10 +14001,10 @@
     }
   },
   "outputs": {
-    "chunk-6EQVCLD6.js": {
+    "chunk-B73M4CM5.js": {
       "imports": [
         {
-          "path": "chunk-7MVXMFV3.js",
+          "path": "chunk-2DT37CAW.js",
           "kind": "import-statement"
         },
         {
@@ -14075,18 +14075,18 @@
       "exports": [
         "FileManagerModalComponent"
       ],
-      "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs",
+      "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CprtAWF5.mjs",
       "inputs": {
-        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-BB8uY4mU.mjs": {
+        "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-common-file-manager-file-manager-modal.component-CprtAWF5.mjs": {
           "bytesInOutput": 1096
         }
       },
       "bytes": 1787
     },
-    "chunk-XV7QBGES.js": {
+    "chunk-LLGBWID3.js": {
       "imports": [
         {
-          "path": "chunk-7MVXMFV3.js",
+          "path": "chunk-2DT37CAW.js",
           "kind": "import-statement"
         },
         {
@@ -14173,7 +14173,7 @@
       },
       "bytes": 5098
     },
-    "chunk-7MVXMFV3.js": {
+    "chunk-2DT37CAW.js": {
       "imports": [
         {
           "path": "chunk-XEDWLY2C.js",
@@ -14188,7 +14188,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-6EQVCLD6.js",
+          "path": "chunk-B73M4CM5.js",
           "kind": "dynamic-import"
         }
       ],
@@ -14698,7 +14698,7 @@
       },
       "bytes": 50031
     },
-    "main-A3TCB55S.js": {
+    "main-YNZWEGVY.js": {
       "imports": [
         {
           "path": "chunk-2X7LIFGX.js",
@@ -14781,7 +14781,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-XV7QBGES.js",
+          "path": "chunk-LLGBWID3.js",
           "kind": "dynamic-import"
         },
         {
@@ -14799,7 +14799,7 @@
           "bytesInOutput": 347
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 1742
+          "bytesInOutput": 2261
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1410
@@ -14817,7 +14817,7 @@
           "bytesInOutput": 123
         }
       },
-      "bytes": 13762
+      "bytes": 14281
     },
     "chunk-2X7LIFGX.js": {
       "imports": [
