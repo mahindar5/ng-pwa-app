@@ -19,4 +19,4 @@ jobs:
     uses: ./.github/workflows/common-build-deploy-pages.yml
     with:
       base-href: "/ng-pwa-app/"
-      npm-packages: "@mahindar5/common-lib@latest @mahindar5/ng-common-ion-lib@latest"
+      npm-packages: "@mahindar5/common-lib@latest @mahindar5/ng-common-lib@latest @mahindar5/ng-common-ion-lib@latest"
