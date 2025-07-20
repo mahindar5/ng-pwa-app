@@ -13684,7 +13684,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-      "bytes": 2267,
+      "bytes": 2289,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14325,7 +14325,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-spotify.mjs": {
-      "bytes": 101926,
+      "bytes": 102462,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14585,7 +14585,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6906,
+      "bytes": 6928,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14844,7 +14844,7 @@
       "imports": []
     },
     "src/styles.scss": {
-      "bytes": 10990,
+      "bytes": 10519,
       "imports": [
         {
           "path": "node_modules/@ionic/angular/css/core.css",
@@ -15672,7 +15672,7 @@
       },
       "bytes": 49732
     },
-    "chunk-L64F25PM.js": {
+    "chunk-F4IAVIDQ.js": {
       "imports": [
         {
           "path": "chunk-CSTODAPL.js",
@@ -15783,12 +15783,12 @@
           "bytesInOutput": 2827
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-spotify.mjs": {
-          "bytesInOutput": 47681
+          "bytesInOutput": 48217
         }
       },
-      "bytes": 80124
+      "bytes": 80660
     },
-    "main-YW7J5HKN.js": {
+    "main-2XER2XFB.js": {
       "imports": [
         {
           "path": "chunk-AVCECTMR.js",
@@ -15879,7 +15879,7 @@
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-L64F25PM.js",
+          "path": "chunk-F4IAVIDQ.js",
           "kind": "dynamic-import"
         },
         {
@@ -15905,13 +15905,13 @@
           "bytesInOutput": 5280
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-          "bytesInOutput": 1071
+          "bytesInOutput": 1093
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-common-route-storage.mjs": {
           "bytesInOutput": 906
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 2047
+          "bytesInOutput": 2069
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1365
@@ -15929,7 +15929,7 @@
           "bytesInOutput": 83
         }
       },
-      "bytes": 16087
+      "bytes": 16131
     },
     "chunk-AVCECTMR.js": {
       "imports": [
@@ -17889,7 +17889,7 @@
       "inputs": {},
       "bytes": 968
     },
-    "styles-MKEJYUIN.css": {
+    "styles-QZB27DDH.css": {
       "imports": [],
       "entryPoint": "angular:styles/global:styles",
       "inputs": {
@@ -17927,13 +17927,13 @@
           "bytesInOutput": 5600
         },
         "src/styles.scss": {
-          "bytesInOutput": 7385
+          "bytesInOutput": 6977
         },
         "angular:styles/global:styles": {
           "bytesInOutput": 0
         }
       },
-      "bytes": 36778
+      "bytes": 36370
     }
   }
 }
