@@ -13684,7 +13684,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-      "bytes": 2254,
+      "bytes": 2266,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14585,7 +14585,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6893,
+      "bytes": 6905,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14844,7 +14844,7 @@
       "imports": []
     },
     "src/styles.scss": {
-      "bytes": 10519,
+      "bytes": 10786,
       "imports": [
         {
           "path": "node_modules/@ionic/angular/css/core.css",
@@ -15788,7 +15788,7 @@
       },
       "bytes": 80124
     },
-    "main-LQQ3S3NW.js": {
+    "main-ZP2FXYNT.js": {
       "imports": [
         {
           "path": "chunk-AVCECTMR.js",
@@ -15905,13 +15905,13 @@
           "bytesInOutput": 5280
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-          "bytesInOutput": 1058
+          "bytesInOutput": 1070
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-common-route-storage.mjs": {
           "bytesInOutput": 906
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 2034
+          "bytesInOutput": 2046
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1365
@@ -15929,7 +15929,7 @@
           "bytesInOutput": 83
         }
       },
-      "bytes": 16061
+      "bytes": 16085
     },
     "chunk-AVCECTMR.js": {
       "imports": [
@@ -17889,7 +17889,7 @@
       "inputs": {},
       "bytes": 968
     },
-    "styles-QZB27DDH.css": {
+    "styles-KGHKBNPO.css": {
       "imports": [],
       "entryPoint": "angular:styles/global:styles",
       "inputs": {
@@ -17927,13 +17927,13 @@
           "bytesInOutput": 5600
         },
         "src/styles.scss": {
-          "bytesInOutput": 6977
+          "bytesInOutput": 7209
         },
         "angular:styles/global:styles": {
           "bytesInOutput": 0
         }
       },
-      "bytes": 36370
+      "bytes": 36602
     }
   }
 }
