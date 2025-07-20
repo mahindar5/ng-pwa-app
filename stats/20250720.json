@@ -13684,7 +13684,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-      "bytes": 2257,
+      "bytes": 2255,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14563,8 +14563,29 @@
       ],
       "format": "esm"
     },
+    "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-token-callback.mjs": {
+      "bytes": 1154,
+      "imports": [
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@angular/core/fesm2022/core.mjs",
+          "kind": "import-statement",
+          "original": "@angular/core"
+        },
+        {
+          "path": "node_modules/@mahindar5/common-lib/dist/index.js",
+          "kind": "import-statement",
+          "original": "@mahindar5/common-lib"
+        }
+      ],
+      "format": "esm"
+    },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6745,
+      "bytes": 6894,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14635,6 +14656,11 @@
           "path": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-settings.mjs",
           "kind": "dynamic-import",
           "original": "@mahindar5/ng-common-ion-lib/components/settings"
+        },
+        {
+          "path": "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-token-callback.mjs",
+          "kind": "dynamic-import",
+          "original": "@mahindar5/ng-common-lib/components/token-callback"
         },
         {
           "path": "<runtime>",
@@ -14889,18 +14915,26 @@
     }
   },
   "outputs": {
-    "chunk-AYIBEM4E.js": {
+    "chunk-YTRUM5AU.js": {
       "imports": [
         {
-          "path": "chunk-K6RJCEBF.js",
+          "path": "chunk-62PGW3VD.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -14969,28 +15003,36 @@
           "bytesInOutput": 1096
         }
       },
-      "bytes": 1794
+      "bytes": 1852
     },
-    "chunk-UIBT4YUZ.js": {
+    "chunk-BZ4HUPMG.js": {
       "imports": [
         {
-          "path": "chunk-K6RJCEBF.js",
+          "path": "chunk-62PGW3VD.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-3CVOR5UY.js",
+          "path": "chunk-GQPWB7AW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-K3TWOPXA.js",
+          "path": "chunk-2P6KJT67.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15059,16 +15101,24 @@
           "bytesInOutput": 4130
         }
       },
-      "bytes": 5112
+      "bytes": 5172
     },
-    "chunk-K6RJCEBF.js": {
+    "chunk-62PGW3VD.js": {
       "imports": [
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15076,7 +15126,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-AYIBEM4E.js",
+          "path": "chunk-YTRUM5AU.js",
           "kind": "dynamic-import"
         }
       ],
@@ -15088,7 +15138,33 @@
           "bytesInOutput": 6778
         }
       },
-      "bytes": 7323
+      "bytes": 7379
+    },
+    "chunk-HFBZYXFX.js": {
+      "imports": [
+        {
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-3GJFFWBB.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "TokenCallbackComponent"
+      ],
+      "entryPoint": "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-token-callback.mjs",
+      "inputs": {
+        "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-token-callback.mjs": {
+          "bytesInOutput": 312
+        }
+      },
+      "bytes": 468
     },
     "chunk-X6N4NSLI.js": {
       "imports": [
@@ -15180,14 +15256,18 @@
       },
       "bytes": 952
     },
-    "chunk-2SEWAHR7.js": {
+    "chunk-Q76TFVLT.js": {
       "imports": [
         {
-          "path": "chunk-AVJ6ZA2S.js",
+          "path": "chunk-AVCECTMR.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15256,20 +15336,28 @@
           "bytesInOutput": 1828
         }
       },
-      "bytes": 2579
+      "bytes": 2603
     },
-    "chunk-6ULPWAPS.js": {
+    "chunk-TECGKCMF.js": {
       "imports": [
         {
-          "path": "chunk-K3TWOPXA.js",
+          "path": "chunk-2P6KJT67.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15335,24 +15423,32 @@
       ],
       "entryPoint": "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-settings.mjs",
       "inputs": {},
-      "bytes": 538
+      "bytes": 594
     },
-    "chunk-PWOVTZZM.js": {
+    "chunk-2KNSLF7Y.js": {
       "imports": [
         {
-          "path": "chunk-3CVOR5UY.js",
+          "path": "chunk-GQPWB7AW.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-K3TWOPXA.js",
+          "path": "chunk-2P6KJT67.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15421,20 +15517,24 @@
           "bytesInOutput": 5711
         }
       },
-      "bytes": 6822
+      "bytes": 6870
     },
-    "chunk-3CVOR5UY.js": {
+    "chunk-GQPWB7AW.js": {
       "imports": [
         {
-          "path": "chunk-K3TWOPXA.js",
+          "path": "chunk-2P6KJT67.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-P4RWDXRL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15450,16 +15550,24 @@
           "bytesInOutput": 1076
         }
       },
-      "bytes": 1288
+      "bytes": 1323
     },
-    "chunk-K3TWOPXA.js": {
+    "chunk-2P6KJT67.js": {
       "imports": [
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15476,16 +15584,24 @@
           "bytesInOutput": 14655
         }
       },
-      "bytes": 15301
+      "bytes": 15354
     },
-    "chunk-BNHYIILN.js": {
+    "chunk-WQDQ7JFM.js": {
       "imports": [
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15554,16 +15670,24 @@
           "bytesInOutput": 48295
         }
       },
-      "bytes": 49690
+      "bytes": 49732
     },
-    "chunk-SUA7DWAJ.js": {
+    "chunk-66NY5UFD.js": {
       "imports": [
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15662,20 +15786,28 @@
           "bytesInOutput": 47681
         }
       },
-      "bytes": 80068
+      "bytes": 80124
     },
-    "main-5MUGUQAB.js": {
+    "main-KPRWOT6Z.js": {
       "imports": [
         {
-          "path": "chunk-AVJ6ZA2S.js",
+          "path": "chunk-AVCECTMR.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-PTY3ILDN.js",
+          "path": "chunk-CSTODAPL.js",
           "kind": "import-statement"
         },
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-P4RWDXRL.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-SICFR2YE.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15735,27 +15867,31 @@
           "kind": "import-statement"
         },
         {
-          "path": "chunk-2SEWAHR7.js",
+          "path": "chunk-Q76TFVLT.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-PWOVTZZM.js",
+          "path": "chunk-2KNSLF7Y.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-BNHYIILN.js",
+          "path": "chunk-WQDQ7JFM.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-SUA7DWAJ.js",
+          "path": "chunk-66NY5UFD.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-UIBT4YUZ.js",
+          "path": "chunk-BZ4HUPMG.js",
           "kind": "dynamic-import"
         },
         {
-          "path": "chunk-6ULPWAPS.js",
+          "path": "chunk-TECGKCMF.js",
+          "kind": "dynamic-import"
+        },
+        {
+          "path": "chunk-HFBZYXFX.js",
           "kind": "dynamic-import"
         }
       ],
@@ -15769,13 +15905,13 @@
           "bytesInOutput": 5280
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-          "bytesInOutput": 1061
+          "bytesInOutput": 1059
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-common-route-storage.mjs": {
           "bytesInOutput": 906
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 1931
+          "bytesInOutput": 2035
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1365
@@ -15793,12 +15929,12 @@
           "bytesInOutput": 83
         }
       },
-      "bytes": 15924
+      "bytes": 16064
     },
-    "chunk-AVJ6ZA2S.js": {
+    "chunk-AVCECTMR.js": {
       "imports": [
         {
-          "path": "chunk-JUSSLYET.js",
+          "path": "chunk-LTJJHRSK.js",
           "kind": "import-statement"
         },
         {
@@ -15847,46 +15983,23 @@
       },
       "bytes": 104456
     },
-    "chunk-PTY3ILDN.js": {
-      "imports": [
-        {
-          "path": "chunk-3GJFFWBB.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "crypto",
-          "kind": "dynamic-import",
-          "external": true
-        }
-      ],
+    "chunk-CSTODAPL.js": {
+      "imports": [],
       "exports": [
         "$",
         "A",
-        "Aa",
         "B",
-        "Ba",
         "C",
-        "Ca",
         "D",
-        "Da",
         "E",
-        "Ea",
         "F",
-        "Fa",
         "G",
-        "Ga",
         "H",
-        "Ha",
         "I",
-        "Ia",
         "J",
-        "Ja",
         "K",
-        "Ka",
         "L",
-        "La",
         "M",
-        "Ma",
         "N",
         "O",
         "P",
@@ -15924,35 +16037,76 @@
         "k",
         "ka",
         "l",
-        "la",
         "m",
-        "ma",
         "n",
-        "na",
         "o",
-        "oa",
         "p",
-        "pa",
         "q",
-        "qa",
         "r",
-        "ra",
         "s",
-        "sa",
         "t",
-        "ta",
         "u",
-        "ua",
         "v",
-        "va",
         "w",
-        "wa",
         "x",
-        "xa",
         "y",
-        "ya",
-        "z",
-        "za"
+        "z"
+      ],
+      "inputs": {
+        "node_modules/ionicons/dist/esm-es5/utils-2c56d1c8.js": {
+          "bytesInOutput": 524
+        },
+        "node_modules/ionicons/dist/esm-es5/index.js": {
+          "bytesInOutput": 0
+        },
+        "node_modules/ionicons/icons/index.mjs": {
+          "bytesInOutput": 36745
+        }
+      },
+      "bytes": 37765
+    },
+    "chunk-P4RWDXRL.js": {
+      "imports": [
+        {
+          "path": "chunk-3GJFFWBB.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "crypto",
+          "kind": "dynamic-import",
+          "external": true
+        }
+      ],
+      "exports": [
+        "A",
+        "B",
+        "C",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z"
       ],
       "inputs": {
         "node_modules/@mahindar5/common-lib/dist/chunk-2I7TJPO6.js": {
@@ -16000,9 +16154,6 @@
         "node_modules/@mahindar5/common-lib/dist/chunk-C6KGANCS.js": {
           "bytesInOutput": 84
         },
-        "node_modules/@mahindar5/common-lib/dist/chunk-TOW4ITV5.js": {
-          "bytesInOutput": 1942
-        },
         "node_modules/@mahindar5/common-lib/dist/chunk-C24BTBPC.js": {
           "bytesInOutput": 211
         },
@@ -16034,7 +16185,10 @@
           "bytesInOutput": 484
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-3GRSLAUN.js": {
-          "bytesInOutput": 3868
+          "bytesInOutput": 3867
+        },
+        "node_modules/@mahindar5/common-lib/dist/chunk-TOW4ITV5.js": {
+          "bytesInOutput": 1942
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-BNA4I6DB.js": {
           "bytesInOutput": 896
@@ -16058,7 +16212,7 @@
           "bytesInOutput": 1542
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-GXRFZPYX.js": {
-          "bytesInOutput": 15781
+          "bytesInOutput": 15780
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-BA2T4EEM.js": {
           "bytesInOutput": 786
@@ -16067,7 +16221,7 @@
           "bytesInOutput": 49
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-ZL27GSZS.js": {
-          "bytesInOutput": 12288
+          "bytesInOutput": 12289
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-CM7ZCPPZ.js": {
           "bytesInOutput": 1026
@@ -16109,25 +16263,20 @@
           "bytesInOutput": 291
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-CEB6ISRX.js": {
-          "bytesInOutput": 5244
+          "bytesInOutput": 5245
         },
         "node_modules/@mahindar5/common-lib/dist/chunk-W2A3YSUW.js": {
           "bytesInOutput": 711
-        },
-        "node_modules/ionicons/dist/esm-es5/utils-2c56d1c8.js": {
-          "bytesInOutput": 534
-        },
-        "node_modules/ionicons/dist/esm-es5/index.js": {
-          "bytesInOutput": 0
-        },
-        "node_modules/ionicons/icons/index.mjs": {
-          "bytesInOutput": 36788
         }
       },
-      "bytes": 126038
+      "bytes": 88159
     },
-    "chunk-JUSSLYET.js": {
+    "chunk-SICFR2YE.js": {
       "imports": [
+        {
+          "path": "chunk-LTJJHRSK.js",
+          "kind": "import-statement"
+        },
         {
           "path": "chunk-UWWRSBJN.js",
           "kind": "import-statement"
@@ -16235,16 +16384,438 @@
       ],
       "exports": [
         "$",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "_",
+        "a",
+        "aa",
+        "b",
+        "ba",
+        "c",
+        "ca",
+        "d",
+        "da",
+        "e",
+        "ea",
+        "f",
+        "fa",
+        "g",
+        "ga",
+        "h",
+        "ha",
+        "i",
+        "ia",
+        "j",
+        "ja",
+        "k",
+        "ka",
+        "l",
+        "la",
+        "m",
+        "ma",
+        "n",
+        "na",
+        "o",
+        "oa",
+        "p",
+        "pa",
+        "q",
+        "qa",
+        "r",
+        "ra",
+        "s",
+        "sa",
+        "t",
+        "ta",
+        "u",
+        "ua",
+        "v",
+        "va",
+        "w",
+        "wa",
+        "x",
+        "xa",
+        "y",
+        "z"
+      ],
+      "inputs": {
+        "node_modules/@angular/common/fesm2022/location-BIEtBxGx.mjs": {
+          "bytesInOutput": 5324
+        },
+        "node_modules/@angular/common/fesm2022/common_module-D4mHDfs1.mjs": {
+          "bytesInOutput": 6282
+        },
+        "node_modules/@angular/common/fesm2022/common.mjs": {
+          "bytesInOutput": 87
+        },
+        "node_modules/@angular/common/fesm2022/xhr-CEmSPUGj.mjs": {
+          "bytesInOutput": 208
+        },
+        "node_modules/@angular/platform-browser/fesm2022/dom_renderer-Frqw9gM5.mjs": {
+          "bytesInOutput": 7803
+        },
+        "node_modules/@angular/platform-browser/fesm2022/browser-DKgH74dt.mjs": {
+          "bytesInOutput": 3541
+        },
+        "node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs": {
+          "bytesInOutput": 257
+        },
+        "node_modules/@angular/router/fesm2022/router-CsukTOog.mjs": {
+          "bytesInOutput": 64979
+        },
+        "node_modules/@angular/router/fesm2022/router.mjs": {
+          "bytesInOutput": 0
+        },
+        "node_modules/@angular/router/fesm2022/router_module-DTmwsUYo.mjs": {
+          "bytesInOutput": 4173
+        },
+        "node_modules/@angular/forms/fesm2022/forms.mjs": {
+          "bytesInOutput": 29631
+        },
+        "node_modules/@ionic/core/components/index.js": {
+          "bytesInOutput": 0
+        },
+        "node_modules/@ionic/core/components/cubic-bezier.js": {
+          "bytesInOutput": 955
+        },
+        "node_modules/@ionic/core/components/ionic-global.js": {
+          "bytesInOutput": 2277
+        },
+        "node_modules/@ionic/core/components/config.js": {
+          "bytesInOutput": 1490
+        },
+        "node_modules/@ionic/core/components/theme.js": {
+          "bytesInOutput": 474
+        },
+        "node_modules/@ionic/core/components/index5.js": {
+          "bytesInOutput": 3169
+        },
+        "node_modules/@ionic/core/components/framework-delegate.js": {
+          "bytesInOutput": 1365
+        },
+        "node_modules/@ionic/core/components/overlays.js": {
+          "bytesInOutput": 7084
+        },
+        "node_modules/@ionic/angular/fesm2022/ionic-angular-common.mjs": {
+          "bytesInOutput": 20430
+        },
+        "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs": {
+          "bytesInOutput": 35092
+        },
+        "node_modules/@ionic/core/components/index6.js": {
+          "bytesInOutput": 4184
+        },
+        "node_modules/@ionic/core/components/icon.js": {
+          "bytesInOutput": 6422
+        },
+        "node_modules/@ionic/core/components/ripple-effect.js": {
+          "bytesInOutput": 3244
+        },
+        "node_modules/@ionic/core/components/lock-controller.js": {
+          "bytesInOutput": 104
+        },
+        "node_modules/@ionic/core/components/ion-router-outlet.js": {
+          "bytesInOutput": 3424
+        },
+        "node_modules/@ionic/core/components/backdrop.js": {
+          "bytesInOutput": 1583
+        },
+        "node_modules/@ionic/core/components/modal.js": {
+          "bytesInOutput": 29290
+        },
+        "node_modules/@ionic/core/components/ion-modal.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/popover.js": {
+          "bytesInOutput": 24035
+        },
+        "node_modules/@ionic/core/components/ion-popover.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-accordion.js": {
+          "bytesInOutput": 7616
+        },
+        "node_modules/@ionic/core/components/ion-accordion-group.js": {
+          "bytesInOutput": 4572
+        },
+        "node_modules/@ionic/core/components/haptic.js": {
+          "bytesInOutput": 870
+        },
+        "node_modules/@ionic/core/components/button-active.js": {
+          "bytesInOutput": 514
+        },
+        "node_modules/@ionic/core/components/action-sheet.js": {
+          "bytesInOutput": 22724
+        },
+        "node_modules/@ionic/core/components/ion-action-sheet.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/alert.js": {
+          "bytesInOutput": 35524
+        },
+        "node_modules/@ionic/core/components/ion-alert.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-app.js": {
+          "bytesInOutput": 1924
+        },
+        "node_modules/@ionic/core/components/ion-avatar.js": {
+          "bytesInOutput": 979
+        },
+        "node_modules/@ionic/core/components/ion-badge.js": {
+          "bytesInOutput": 2364
+        },
+        "node_modules/@ionic/core/components/button.js": {
+          "bytesInOutput": 22376
+        },
+        "node_modules/@ionic/core/components/ion-button.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/buttons.js": {
+          "bytesInOutput": 6279
+        },
+        "node_modules/@ionic/core/components/ion-buttons.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-card.js": {
+          "bytesInOutput": 5594
+        },
+        "node_modules/@ionic/core/components/ion-card-content.js": {
+          "bytesInOutput": 2092
+        },
+        "node_modules/@ionic/core/components/ion-card-header.js": {
+          "bytesInOutput": 1932
+        },
+        "node_modules/@ionic/core/components/ion-card-subtitle.js": {
+          "bytesInOutput": 1325
+        },
+        "node_modules/@ionic/core/components/ion-chip.js": {
+          "bytesInOutput": 6758
+        },
+        "node_modules/@ionic/core/components/ion-col.js": {
+          "bytesInOutput": 5351
+        },
+        "node_modules/@ionic/core/components/content.js": {
+          "bytesInOutput": 8482
+        },
+        "node_modules/@ionic/core/components/ion-content.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/keyboard-controller.js": {
+          "bytesInOutput": 878
+        },
+        "node_modules/@ionic/core/components/ion-footer.js": {
+          "bytesInOutput": 3265
+        },
+        "node_modules/@ionic/core/components/ion-grid.js": {
+          "bytesInOutput": 3776
+        },
+        "node_modules/@ionic/core/components/header.js": {
+          "bytesInOutput": 7975
+        },
+        "node_modules/@ionic/core/components/ion-header.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-img.js": {
+          "bytesInOutput": 1893
+        },
+        "node_modules/@ionic/core/components/spinner.js": {
+          "bytesInOutput": 7140
+        },
+        "node_modules/@ionic/core/components/item.js": {
+          "bytesInOutput": 24343
+        },
+        "node_modules/@ionic/core/components/ion-item.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-item-divider.js": {
+          "bytesInOutput": 9177
+        },
+        "node_modules/@ionic/core/components/ion-item-group.js": {
+          "bytesInOutput": 529
+        },
+        "node_modules/@ionic/core/components/ion-item-option.js": {
+          "bytesInOutput": 6868
+        },
+        "node_modules/@ionic/core/components/ion-item-options.js": {
+          "bytesInOutput": 6054
+        },
+        "node_modules/@ionic/core/components/watch-options.js": {
+          "bytesInOutput": 402
+        },
+        "node_modules/@ionic/core/components/ion-item-sliding.js": {
+          "bytesInOutput": 7788
+        },
+        "node_modules/@ionic/core/components/label.js": {
+          "bytesInOutput": 10759
+        },
+        "node_modules/@ionic/core/components/ion-label.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/list.js": {
+          "bytesInOutput": 3202
+        },
+        "node_modules/@ionic/core/components/ion-list.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/list-header.js": {
+          "bytesInOutput": 5115
+        },
+        "node_modules/@ionic/core/components/ion-loading.js": {
+          "bytesInOutput": 9655
+        },
+        "node_modules/@ionic/core/components/ion-menu.js": {
+          "bytesInOutput": 15662
+        },
+        "node_modules/@ionic/core/components/menu-toggle-util.js": {
+          "bytesInOutput": 72
+        },
+        "node_modules/@ionic/core/components/ion-menu-button.js": {
+          "bytesInOutput": 7969
+        },
+        "node_modules/@ionic/core/components/ion-menu-toggle.js": {
+          "bytesInOutput": 950
+        },
+        "node_modules/@ionic/core/components/ion-note.js": {
+          "bytesInOutput": 1059
+        },
+        "node_modules/@ionic/core/components/ion-progress-bar.js": {
+          "bytesInOutput": 18985
+        },
+        "node_modules/@ionic/core/components/radio.js": {
+          "bytesInOutput": 14463
+        },
+        "node_modules/@ionic/core/components/refresher.utils.js": {
+          "bytesInOutput": 2833
+        },
+        "node_modules/@ionic/core/components/ion-refresher.js": {
+          "bytesInOutput": 19621
+        },
+        "node_modules/@ionic/core/components/ion-refresher-content.js": {
+          "bytesInOutput": 2699
+        },
+        "node_modules/@ionic/core/components/ion-row.js": {
+          "bytesInOutput": 527
+        },
+        "node_modules/@ionic/core/components/checkbox.js": {
+          "bytesInOutput": 16785
+        },
+        "node_modules/@ionic/core/components/radio-group.js": {
+          "bytesInOutput": 4631
+        },
+        "node_modules/@ionic/core/components/title.js": {
+          "bytesInOutput": 3789
+        },
+        "node_modules/@ionic/core/components/toolbar.js": {
+          "bytesInOutput": 7080
+        },
+        "node_modules/@ionic/core/components/select-modal.js": {
+          "bytesInOutput": 5577
+        },
+        "node_modules/@ionic/core/components/ion-select-option.js": {
+          "bytesInOutput": 576
+        },
+        "node_modules/@ionic/core/components/ion-spinner.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-split-pane.js": {
+          "bytesInOutput": 3555
+        },
+        "node_modules/@ionic/core/components/ion-text.js": {
+          "bytesInOutput": 546
+        },
+        "node_modules/@ionic/core/components/ion-thumbnail.js": {
+          "bytesInOutput": 739
+        },
+        "node_modules/@ionic/core/components/ion-title.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-toast.js": {
+          "bytesInOutput": 19826
+        },
+        "node_modules/@ionic/core/components/ion-toolbar.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/@ionic/core/components/ion-checkbox.js": {
+          "bytesInOutput": 10
+        },
+        "node_modules/ionicons/components/utils.js": {
+          "bytesInOutput": 1115
+        },
+        "node_modules/ionicons/components/ion-icon.js": {
+          "bytesInOutput": 5230
+        },
+        "node_modules/@ionic/core/components/notch-controller.js": {
+          "bytesInOutput": 562
+        },
+        "node_modules/@ionic/core/components/input.utils.js": {
+          "bytesInOutput": 838
+        },
+        "node_modules/@ionic/core/components/ion-input.js": {
+          "bytesInOutput": 41393
+        },
+        "node_modules/@ionic/core/components/ion-range.js": {
+          "bytesInOutput": 28269
+        },
+        "node_modules/@ionic/core/components/ion-searchbar.js": {
+          "bytesInOutput": 23941
+        },
+        "node_modules/@ionic/core/components/select-popover.js": {
+          "bytesInOutput": 4519
+        },
+        "node_modules/@ionic/core/components/ion-select.js": {
+          "bytesInOutput": 40164
+        },
+        "node_modules/@ionic/core/components/ion-textarea.js": {
+          "bytesInOutput": 47305
+        },
+        "node_modules/@ionic/core/components/ion-toggle.js": {
+          "bytesInOutput": 22829
+        }
+      },
+      "bytes": 879838
+    },
+    "chunk-LTJJHRSK.js": {
+      "imports": [
+        {
+          "path": "chunk-3GJFFWBB.js",
+          "kind": "import-statement"
+        }
+      ],
+      "exports": [
+        "$",
         "$a",
         "$b",
         "A",
         "Aa",
         "Ab",
-        "Ac",
         "B",
         "Ba",
         "Bb",
-        "Bc",
         "C",
         "Ca",
         "Cb",
@@ -16367,63 +16938,48 @@
         "l",
         "la",
         "lb",
-        "lc",
         "m",
         "ma",
         "mb",
-        "mc",
         "n",
         "na",
         "nb",
-        "nc",
         "o",
         "oa",
         "ob",
-        "oc",
         "p",
         "pa",
         "pb",
-        "pc",
         "q",
         "qa",
         "qb",
-        "qc",
         "r",
         "ra",
         "rb",
-        "rc",
         "s",
         "sa",
         "sb",
-        "sc",
         "t",
         "ta",
         "tb",
-        "tc",
         "u",
         "ua",
         "ub",
-        "uc",
         "v",
         "va",
         "vb",
-        "vc",
         "w",
         "wa",
         "wb",
-        "wc",
         "x",
         "xa",
         "xb",
-        "xc",
         "y",
         "ya",
         "yb",
-        "yc",
         "z",
         "za",
-        "zb",
-        "zc"
+        "zb"
       ],
       "inputs": {
         "node_modules/rxjs/dist/esm/internal/util/isFunction.js": {
@@ -16439,7 +16995,7 @@
           "bytesInOutput": 63
         },
         "node_modules/rxjs/dist/esm/internal/Subscription.js": {
-          "bytesInOutput": 1294
+          "bytesInOutput": 1289
         },
         "node_modules/rxjs/dist/esm/internal/config.js": {
           "bytesInOutput": 142
@@ -16460,46 +17016,46 @@
           "bytesInOutput": 281
         },
         "node_modules/rxjs/dist/esm/internal/Subscriber.js": {
-          "bytesInOutput": 1572
+          "bytesInOutput": 1571
         },
         "node_modules/rxjs/dist/esm/internal/symbol/observable.js": {
           "bytesInOutput": 68
         },
         "node_modules/rxjs/dist/esm/internal/util/identity.js": {
-          "bytesInOutput": 24
+          "bytesInOutput": 23
         },
         "node_modules/rxjs/dist/esm/internal/util/pipe.js": {
-          "bytesInOutput": 131
+          "bytesInOutput": 130
         },
         "node_modules/rxjs/dist/esm/internal/Observable.js": {
-          "bytesInOutput": 936
+          "bytesInOutput": 935
         },
         "node_modules/rxjs/dist/esm/internal/util/ObjectUnsubscribedError.js": {
           "bytesInOutput": 105
         },
         "node_modules/rxjs/dist/esm/internal/Subject.js": {
-          "bytesInOutput": 1979
+          "bytesInOutput": 1976
         },
         "node_modules/tslib/tslib.es6.mjs": {
-          "bytesInOutput": 2609
+          "bytesInOutput": 2610
         },
         "node_modules/rxjs/dist/esm/index.js": {
           "bytesInOutput": 0
         },
         "node_modules/rxjs/dist/esm/internal/util/lift.js": {
-          "bytesInOutput": 204
+          "bytesInOutput": 203
         },
         "node_modules/rxjs/dist/esm/internal/operators/OperatorSubscriber.js": {
-          "bytesInOutput": 590
+          "bytesInOutput": 589
         },
         "node_modules/rxjs/dist/esm/internal/operators/refCount.js": {
-          "bytesInOutput": 272
+          "bytesInOutput": 270
         },
         "node_modules/rxjs/dist/esm/internal/observable/ConnectableObservable.js": {
-          "bytesInOutput": 745
+          "bytesInOutput": 741
         },
         "node_modules/rxjs/dist/esm/internal/scheduler/animationFrameProvider.js": {
-          "bytesInOutput": 432
+          "bytesInOutput": 431
         },
         "node_modules/rxjs/dist/esm/internal/BehaviorSubject.js": {
           "bytesInOutput": 310
@@ -16511,7 +17067,7 @@
           "bytesInOutput": 898
         },
         "node_modules/rxjs/dist/esm/internal/scheduler/Action.js": {
-          "bytesInOutput": 79
+          "bytesInOutput": 78
         },
         "node_modules/rxjs/dist/esm/internal/scheduler/intervalProvider.js": {
           "bytesInOutput": 215
@@ -16553,7 +17109,7 @@
           "bytesInOutput": 18
         },
         "node_modules/rxjs/dist/esm/internal/observable/empty.js": {
-          "bytesInOutput": 31
+          "bytesInOutput": 30
         },
         "node_modules/rxjs/dist/esm/internal/util/isScheduler.js": {
           "bytesInOutput": 39
@@ -16586,31 +17142,31 @@
           "bytesInOutput": 236
         },
         "node_modules/rxjs/dist/esm/internal/observable/innerFrom.js": {
-          "bytesInOutput": 1049
+          "bytesInOutput": 1042
         },
         "node_modules/rxjs/dist/esm/internal/util/executeSchedule.js": {
-          "bytesInOutput": 138
+          "bytesInOutput": 137
         },
         "node_modules/rxjs/dist/esm/internal/operators/observeOn.js": {
-          "bytesInOutput": 144
+          "bytesInOutput": 139
         },
         "node_modules/rxjs/dist/esm/internal/operators/subscribeOn.js": {
-          "bytesInOutput": 79
+          "bytesInOutput": 78
         },
         "node_modules/rxjs/dist/esm/internal/scheduled/scheduleObservable.js": {
-          "bytesInOutput": 48
+          "bytesInOutput": 47
         },
         "node_modules/rxjs/dist/esm/internal/scheduled/schedulePromise.js": {
-          "bytesInOutput": 48
+          "bytesInOutput": 47
         },
         "node_modules/rxjs/dist/esm/internal/scheduled/scheduleArray.js": {
-          "bytesInOutput": 145
+          "bytesInOutput": 144
         },
         "node_modules/rxjs/dist/esm/internal/scheduled/scheduleIterable.js": {
-          "bytesInOutput": 214
+          "bytesInOutput": 211
         },
         "node_modules/rxjs/dist/esm/internal/scheduled/scheduleAsyncIterable.js": {
-          "bytesInOutput": 207
+          "bytesInOutput": 204
         },
         "node_modules/rxjs/dist/esm/internal/scheduled/scheduleReadableStreamLike.js": {
           "bytesInOutput": 36
@@ -16619,16 +17175,16 @@
           "bytesInOutput": 185
         },
         "node_modules/rxjs/dist/esm/internal/observable/from.js": {
-          "bytesInOutput": 40
+          "bytesInOutput": 39
         },
         "node_modules/rxjs/dist/esm/internal/observable/of.js": {
           "bytesInOutput": 45
         },
         "node_modules/rxjs/dist/esm/internal/observable/throwError.js": {
-          "bytesInOutput": 94
+          "bytesInOutput": 93
         },
         "node_modules/rxjs/dist/esm/internal/util/isObservable.js": {
-          "bytesInOutput": 71
+          "bytesInOutput": 70
         },
         "node_modules/rxjs/dist/esm/internal/util/EmptyError.js": {
           "bytesInOutput": 96
@@ -16637,7 +17193,7 @@
           "bytesInOutput": 51
         },
         "node_modules/rxjs/dist/esm/internal/operators/map.js": {
-          "bytesInOutput": 93
+          "bytesInOutput": 91
         },
         "node_modules/rxjs/dist/esm/internal/util/mapOneOrManyArgs.js": {
           "bytesInOutput": 102
@@ -16649,16 +17205,16 @@
           "bytesInOutput": 60
         },
         "node_modules/rxjs/dist/esm/internal/observable/combineLatest.js": {
-          "bytesInOutput": 426
+          "bytesInOutput": 421
         },
         "node_modules/rxjs/dist/esm/internal/operators/mergeInternals.js": {
-          "bytesInOutput": 383
+          "bytesInOutput": 379
         },
         "node_modules/rxjs/dist/esm/internal/operators/mergeMap.js": {
-          "bytesInOutput": 133
+          "bytesInOutput": 131
         },
         "node_modules/rxjs/dist/esm/internal/operators/mergeAll.js": {
-          "bytesInOutput": 35
+          "bytesInOutput": 34
         },
         "node_modules/rxjs/dist/esm/internal/operators/concatAll.js": {
           "bytesInOutput": 27
@@ -16667,448 +17223,115 @@
           "bytesInOutput": 43
         },
         "node_modules/rxjs/dist/esm/internal/observable/defer.js": {
-          "bytesInOutput": 56
+          "bytesInOutput": 54
         },
         "node_modules/rxjs/dist/esm/internal/observable/forkJoin.js": {
-          "bytesInOutput": 314
+          "bytesInOutput": 311
         },
         "node_modules/rxjs/dist/esm/internal/observable/fromEvent.js": {
-          "bytesInOutput": 651
+          "bytesInOutput": 649
         },
         "node_modules/rxjs/dist/esm/internal/observable/timer.js": {
-          "bytesInOutput": 221
+          "bytesInOutput": 220
         },
         "node_modules/rxjs/dist/esm/internal/observable/never.js": {
-          "bytesInOutput": 18
+          "bytesInOutput": 17
         },
         "node_modules/rxjs/dist/esm/internal/operators/filter.js": {
-          "bytesInOutput": 94
+          "bytesInOutput": 92
         },
         "node_modules/rxjs/dist/esm/internal/operators/audit.js": {
-          "bytesInOutput": 290
+          "bytesInOutput": 286
         },
         "node_modules/rxjs/dist/esm/internal/operators/auditTime.js": {
           "bytesInOutput": 43
         },
         "node_modules/rxjs/dist/esm/internal/operators/catchError.js": {
-          "bytesInOutput": 203
+          "bytesInOutput": 200
         },
         "node_modules/rxjs/dist/esm/internal/operators/scanInternals.js": {
-          "bytesInOutput": 160
+          "bytesInOutput": 159
         },
         "node_modules/rxjs/dist/esm/internal/operators/concatMap.js": {
           "bytesInOutput": 47
         },
         "node_modules/rxjs/dist/esm/internal/operators/defaultIfEmpty.js": {
-          "bytesInOutput": 115
+          "bytesInOutput": 113
         },
         "node_modules/rxjs/dist/esm/internal/operators/take.js": {
-          "bytesInOutput": 118
+          "bytesInOutput": 116
         },
         "node_modules/rxjs/dist/esm/internal/operators/distinctUntilChanged.js": {
-          "bytesInOutput": 159
+          "bytesInOutput": 156
         },
         "node_modules/rxjs/dist/esm/internal/operators/throwIfEmpty.js": {
-          "bytesInOutput": 146
+          "bytesInOutput": 144
         },
         "node_modules/rxjs/dist/esm/internal/operators/finalize.js": {
-          "bytesInOutput": 72
+          "bytesInOutput": 71
         },
         "node_modules/rxjs/dist/esm/internal/operators/first.js": {
-          "bytesInOutput": 115
+          "bytesInOutput": 114
         },
         "node_modules/rxjs/dist/esm/internal/operators/takeLast.js": {
-          "bytesInOutput": 176
+          "bytesInOutput": 174
         },
         "node_modules/rxjs/dist/esm/internal/operators/last.js": {
-          "bytesInOutput": 115
+          "bytesInOutput": 114
         },
         "node_modules/rxjs/dist/esm/internal/operators/pairwise.js": {
-          "bytesInOutput": 103
+          "bytesInOutput": 101
         },
         "node_modules/rxjs/dist/esm/internal/operators/scan.js": {
-          "bytesInOutput": 59
+          "bytesInOutput": 58
         },
         "node_modules/rxjs/dist/esm/internal/operators/share.js": {
-          "bytesInOutput": 652
+          "bytesInOutput": 654
         },
         "node_modules/rxjs/dist/esm/internal/operators/shareReplay.js": {
           "bytesInOutput": 223
         },
         "node_modules/rxjs/dist/esm/internal/operators/startWith.js": {
-          "bytesInOutput": 85
+          "bytesInOutput": 84
         },
         "node_modules/rxjs/dist/esm/internal/operators/switchMap.js": {
-          "bytesInOutput": 228
+          "bytesInOutput": 224
         },
         "node_modules/rxjs/dist/esm/internal/operators/takeUntil.js": {
-          "bytesInOutput": 104
+          "bytesInOutput": 101
         },
         "node_modules/rxjs/dist/esm/internal/operators/tap.js": {
-          "bytesInOutput": 493
+          "bytesInOutput": 490
         },
         "node_modules/@angular/core/fesm2022/primitives/di.mjs": {
           "bytesInOutput": 223
         },
         "node_modules/@angular/core/fesm2022/signal-nCiHhWf6.mjs": {
-          "bytesInOutput": 4395
+          "bytesInOutput": 4370
         },
         "node_modules/@angular/core/fesm2022/primitives/signals.mjs": {
           "bytesInOutput": 0
         },
         "node_modules/@angular/core/fesm2022/untracked-DmD_2MlC.mjs": {
-          "bytesInOutput": 782
+          "bytesInOutput": 780
         },
         "node_modules/@angular/core/fesm2022/root_effect_scheduler-DCy1y1b8.mjs": {
-          "bytesInOutput": 19110
+          "bytesInOutput": 19008
         },
         "node_modules/rxjs/dist/esm/operators/index.js": {
           "bytesInOutput": 0
         },
         "node_modules/@angular/core/fesm2022/debug_node-JnOYh9kg.mjs": {
-          "bytesInOutput": 93817
+          "bytesInOutput": 93581
         },
         "node_modules/@angular/core/fesm2022/resource-BarKSp_3.mjs": {
-          "bytesInOutput": 2477
+          "bytesInOutput": 2470
         },
         "node_modules/@angular/core/fesm2022/core.mjs": {
-          "bytesInOutput": 14462
-        },
-        "node_modules/@angular/common/fesm2022/location-BIEtBxGx.mjs": {
-          "bytesInOutput": 5323
-        },
-        "node_modules/@angular/common/fesm2022/common_module-D4mHDfs1.mjs": {
-          "bytesInOutput": 6277
-        },
-        "node_modules/@angular/common/fesm2022/common.mjs": {
-          "bytesInOutput": 87
-        },
-        "node_modules/@angular/common/fesm2022/xhr-CEmSPUGj.mjs": {
-          "bytesInOutput": 208
-        },
-        "node_modules/@angular/platform-browser/fesm2022/dom_renderer-Frqw9gM5.mjs": {
-          "bytesInOutput": 7798
-        },
-        "node_modules/@angular/platform-browser/fesm2022/browser-DKgH74dt.mjs": {
-          "bytesInOutput": 3541
-        },
-        "node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs": {
-          "bytesInOutput": 257
-        },
-        "node_modules/@angular/router/fesm2022/router-CsukTOog.mjs": {
-          "bytesInOutput": 65042
-        },
-        "node_modules/@angular/router/fesm2022/router.mjs": {
-          "bytesInOutput": 0
-        },
-        "node_modules/@angular/router/fesm2022/router_module-DTmwsUYo.mjs": {
-          "bytesInOutput": 4169
-        },
-        "node_modules/@angular/forms/fesm2022/forms.mjs": {
-          "bytesInOutput": 29623
-        },
-        "node_modules/@ionic/core/components/index.js": {
-          "bytesInOutput": 0
-        },
-        "node_modules/@ionic/core/components/cubic-bezier.js": {
-          "bytesInOutput": 955
-        },
-        "node_modules/@ionic/core/components/ionic-global.js": {
-          "bytesInOutput": 2278
-        },
-        "node_modules/@ionic/core/components/config.js": {
-          "bytesInOutput": 1490
-        },
-        "node_modules/@ionic/core/components/theme.js": {
-          "bytesInOutput": 474
-        },
-        "node_modules/@ionic/core/components/index5.js": {
-          "bytesInOutput": 3198
-        },
-        "node_modules/@ionic/core/components/framework-delegate.js": {
-          "bytesInOutput": 1365
-        },
-        "node_modules/@ionic/core/components/overlays.js": {
-          "bytesInOutput": 7085
-        },
-        "node_modules/@ionic/angular/fesm2022/ionic-angular-common.mjs": {
-          "bytesInOutput": 20430
-        },
-        "node_modules/@ionic/angular/fesm2022/ionic-angular-standalone.mjs": {
-          "bytesInOutput": 35140
-        },
-        "node_modules/@ionic/core/components/index6.js": {
-          "bytesInOutput": 4184
-        },
-        "node_modules/@ionic/core/components/icon.js": {
-          "bytesInOutput": 6422
-        },
-        "node_modules/@ionic/core/components/ripple-effect.js": {
-          "bytesInOutput": 3244
-        },
-        "node_modules/@ionic/core/components/lock-controller.js": {
-          "bytesInOutput": 104
-        },
-        "node_modules/@ionic/core/components/ion-router-outlet.js": {
-          "bytesInOutput": 3424
-        },
-        "node_modules/@ionic/core/components/backdrop.js": {
-          "bytesInOutput": 1583
-        },
-        "node_modules/@ionic/core/components/modal.js": {
-          "bytesInOutput": 29318
-        },
-        "node_modules/@ionic/core/components/ion-modal.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/popover.js": {
-          "bytesInOutput": 24054
-        },
-        "node_modules/@ionic/core/components/ion-popover.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-accordion.js": {
-          "bytesInOutput": 7621
-        },
-        "node_modules/@ionic/core/components/ion-accordion-group.js": {
-          "bytesInOutput": 4573
-        },
-        "node_modules/@ionic/core/components/haptic.js": {
-          "bytesInOutput": 870
-        },
-        "node_modules/@ionic/core/components/button-active.js": {
-          "bytesInOutput": 514
-        },
-        "node_modules/@ionic/core/components/action-sheet.js": {
-          "bytesInOutput": 22725
-        },
-        "node_modules/@ionic/core/components/ion-action-sheet.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/alert.js": {
-          "bytesInOutput": 35526
-        },
-        "node_modules/@ionic/core/components/ion-alert.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-app.js": {
-          "bytesInOutput": 1925
-        },
-        "node_modules/@ionic/core/components/ion-avatar.js": {
-          "bytesInOutput": 979
-        },
-        "node_modules/@ionic/core/components/ion-badge.js": {
-          "bytesInOutput": 2364
-        },
-        "node_modules/@ionic/core/components/button.js": {
-          "bytesInOutput": 22379
-        },
-        "node_modules/@ionic/core/components/ion-button.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/buttons.js": {
-          "bytesInOutput": 6279
-        },
-        "node_modules/@ionic/core/components/ion-buttons.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-card.js": {
-          "bytesInOutput": 5594
-        },
-        "node_modules/@ionic/core/components/ion-card-content.js": {
-          "bytesInOutput": 2092
-        },
-        "node_modules/@ionic/core/components/ion-card-header.js": {
-          "bytesInOutput": 1932
-        },
-        "node_modules/@ionic/core/components/ion-card-subtitle.js": {
-          "bytesInOutput": 1325
-        },
-        "node_modules/@ionic/core/components/ion-chip.js": {
-          "bytesInOutput": 6758
-        },
-        "node_modules/@ionic/core/components/ion-col.js": {
-          "bytesInOutput": 5351
-        },
-        "node_modules/@ionic/core/components/content.js": {
-          "bytesInOutput": 8482
-        },
-        "node_modules/@ionic/core/components/ion-content.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/keyboard-controller.js": {
-          "bytesInOutput": 878
-        },
-        "node_modules/@ionic/core/components/ion-footer.js": {
-          "bytesInOutput": 3265
-        },
-        "node_modules/@ionic/core/components/ion-grid.js": {
-          "bytesInOutput": 3776
-        },
-        "node_modules/@ionic/core/components/header.js": {
-          "bytesInOutput": 7975
-        },
-        "node_modules/@ionic/core/components/ion-header.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-img.js": {
-          "bytesInOutput": 1893
-        },
-        "node_modules/@ionic/core/components/spinner.js": {
-          "bytesInOutput": 7140
-        },
-        "node_modules/@ionic/core/components/item.js": {
-          "bytesInOutput": 24353
-        },
-        "node_modules/@ionic/core/components/ion-item.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-item-divider.js": {
-          "bytesInOutput": 9177
-        },
-        "node_modules/@ionic/core/components/ion-item-group.js": {
-          "bytesInOutput": 529
-        },
-        "node_modules/@ionic/core/components/ion-item-option.js": {
-          "bytesInOutput": 6868
-        },
-        "node_modules/@ionic/core/components/ion-item-options.js": {
-          "bytesInOutput": 6054
-        },
-        "node_modules/@ionic/core/components/watch-options.js": {
-          "bytesInOutput": 402
-        },
-        "node_modules/@ionic/core/components/ion-item-sliding.js": {
-          "bytesInOutput": 7789
-        },
-        "node_modules/@ionic/core/components/label.js": {
-          "bytesInOutput": 10759
-        },
-        "node_modules/@ionic/core/components/ion-label.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/list.js": {
-          "bytesInOutput": 3202
-        },
-        "node_modules/@ionic/core/components/ion-list.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/list-header.js": {
-          "bytesInOutput": 5115
-        },
-        "node_modules/@ionic/core/components/ion-loading.js": {
-          "bytesInOutput": 9656
-        },
-        "node_modules/@ionic/core/components/ion-menu.js": {
-          "bytesInOutput": 15662
-        },
-        "node_modules/@ionic/core/components/menu-toggle-util.js": {
-          "bytesInOutput": 72
-        },
-        "node_modules/@ionic/core/components/ion-menu-button.js": {
-          "bytesInOutput": 7969
-        },
-        "node_modules/@ionic/core/components/ion-menu-toggle.js": {
-          "bytesInOutput": 950
-        },
-        "node_modules/@ionic/core/components/ion-note.js": {
-          "bytesInOutput": 1059
-        },
-        "node_modules/@ionic/core/components/ion-progress-bar.js": {
-          "bytesInOutput": 18985
-        },
-        "node_modules/@ionic/core/components/radio.js": {
-          "bytesInOutput": 14463
-        },
-        "node_modules/@ionic/core/components/refresher.utils.js": {
-          "bytesInOutput": 2833
-        },
-        "node_modules/@ionic/core/components/ion-refresher.js": {
-          "bytesInOutput": 19625
-        },
-        "node_modules/@ionic/core/components/ion-refresher-content.js": {
-          "bytesInOutput": 2699
-        },
-        "node_modules/@ionic/core/components/ion-row.js": {
-          "bytesInOutput": 527
-        },
-        "node_modules/@ionic/core/components/checkbox.js": {
-          "bytesInOutput": 16785
-        },
-        "node_modules/@ionic/core/components/radio-group.js": {
-          "bytesInOutput": 4631
-        },
-        "node_modules/@ionic/core/components/title.js": {
-          "bytesInOutput": 3789
-        },
-        "node_modules/@ionic/core/components/toolbar.js": {
-          "bytesInOutput": 7080
-        },
-        "node_modules/@ionic/core/components/select-modal.js": {
-          "bytesInOutput": 5577
-        },
-        "node_modules/@ionic/core/components/ion-select-option.js": {
-          "bytesInOutput": 576
-        },
-        "node_modules/@ionic/core/components/ion-spinner.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-split-pane.js": {
-          "bytesInOutput": 3557
-        },
-        "node_modules/@ionic/core/components/ion-text.js": {
-          "bytesInOutput": 546
-        },
-        "node_modules/@ionic/core/components/ion-thumbnail.js": {
-          "bytesInOutput": 739
-        },
-        "node_modules/@ionic/core/components/ion-title.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-toast.js": {
-          "bytesInOutput": 19838
-        },
-        "node_modules/@ionic/core/components/ion-toolbar.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/@ionic/core/components/ion-checkbox.js": {
-          "bytesInOutput": 10
-        },
-        "node_modules/ionicons/components/utils.js": {
-          "bytesInOutput": 1115
-        },
-        "node_modules/ionicons/components/ion-icon.js": {
-          "bytesInOutput": 5230
-        },
-        "node_modules/@ionic/core/components/notch-controller.js": {
-          "bytesInOutput": 563
-        },
-        "node_modules/@ionic/core/components/input.utils.js": {
-          "bytesInOutput": 839
-        },
-        "node_modules/@ionic/core/components/ion-input.js": {
-          "bytesInOutput": 41393
-        },
-        "node_modules/@ionic/core/components/ion-range.js": {
-          "bytesInOutput": 28274
-        },
-        "node_modules/@ionic/core/components/ion-searchbar.js": {
-          "bytesInOutput": 23942
-        },
-        "node_modules/@ionic/core/components/select-popover.js": {
-          "bytesInOutput": 4519
-        },
-        "node_modules/@ionic/core/components/ion-select.js": {
-          "bytesInOutput": 40166
-        },
-        "node_modules/@ionic/core/components/ion-textarea.js": {
-          "bytesInOutput": 47305
-        },
-        "node_modules/@ionic/core/components/ion-toggle.js": {
-          "bytesInOutput": 22829
+          "bytesInOutput": 14455
         }
       },
-      "bytes": 1043252
+      "bytes": 164195
     },
     "chunk-UWWRSBJN.js": {
       "imports": [
