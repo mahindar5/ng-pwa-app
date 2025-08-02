@@ -14955,12 +14955,12 @@
       "format": "esm"
     },
     "src/build-info.ts": {
-      "bytes": 923,
+      "bytes": 947,
       "imports": [],
       "format": "esm"
     },
     "src/main.ts": {
-      "bytes": 491,
+      "bytes": 524,
       "imports": [
         {
           "path": "node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
@@ -15979,7 +15979,7 @@
       },
       "bytes": 81278
     },
-    "main-CR2NSX2S.js": {
+    "main-Q5FRIQMM.js": {
       "imports": [
         {
           "path": "chunk-PMJ4LIVR.js",
@@ -16111,16 +16111,16 @@
           "bytesInOutput": 1413
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib-components-app.mjs": {
-          "bytesInOutput": 1905
+          "bytesInOutput": 1906
         },
         "src/build-info.ts": {
-          "bytesInOutput": 675
+          "bytesInOutput": 696
         },
         "src/main.ts": {
-          "bytesInOutput": 83
+          "bytesInOutput": 104
         }
       },
-      "bytes": 18265
+      "bytes": 18314
     },
     "chunk-PMJ4LIVR.js": {
       "imports": [
