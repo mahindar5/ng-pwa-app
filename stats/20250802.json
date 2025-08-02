@@ -13875,7 +13875,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-      "bytes": 2287,
+      "bytes": 2260,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -14776,7 +14776,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6996,
+      "bytes": 6969,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -15979,7 +15979,7 @@
       },
       "bytes": 81278
     },
-    "main-3AFQOYIV.js": {
+    "main-25EXU5YM.js": {
       "imports": [
         {
           "path": "chunk-PMJ4LIVR.js",
@@ -16096,13 +16096,13 @@
           "bytesInOutput": 5280
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib.mjs": {
-          "bytesInOutput": 1091
+          "bytesInOutput": 1064
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-common-route-storage.mjs": {
           "bytesInOutput": 729
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 2110
+          "bytesInOutput": 2083
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1365
@@ -16120,7 +16120,7 @@
           "bytesInOutput": 104
         }
       },
-      "bytes": 16028
+      "bytes": 15974
     },
     "chunk-PMJ4LIVR.js": {
       "imports": [
