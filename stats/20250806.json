@@ -14776,7 +14776,7 @@
       "format": "esm"
     },
     "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-      "bytes": 6748,
+      "bytes": 6816,
       "imports": [
         {
           "path": "node_modules/@angular/core/fesm2022/core.mjs",
@@ -15979,7 +15979,7 @@
       },
       "bytes": 81278
     },
-    "main-HNL4Q6YQ.js": {
+    "main-H6DW5EAQ.js": {
       "imports": [
         {
           "path": "chunk-PMJ4LIVR.js",
@@ -16102,7 +16102,7 @@
           "bytesInOutput": 729
         },
         "node_modules/@mahindar5/ng-common-ion-lib/fesm2022/mahindar5-ng-common-ion-lib.mjs": {
-          "bytesInOutput": 1939
+          "bytesInOutput": 2007
         },
         "node_modules/@mahindar5/ng-common-lib/fesm2022/mahindar5-ng-common-lib-components-build-info.mjs": {
           "bytesInOutput": 1365
@@ -16120,7 +16120,7 @@
           "bytesInOutput": 104
         }
       },
-      "bytes": 15557
+      "bytes": 15625
     },
     "chunk-PMJ4LIVR.js": {
       "imports": [
